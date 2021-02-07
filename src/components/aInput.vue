@@ -1,0 +1,95 @@
+<template>
+  <div class="w-100 wrap" :style="{color: color}">
+    <div class="m-lab" :class="ifFocus? 'lab-blur':'lab-focus'">
+      {{placeholder}}
+    </div>
+    <input @focus="ifFocus = true" :style="{borderBottom: `solid ${color} 2px`, color: color}" @blur="checkFocus" :value="modelValue"
+      @input="emitText" :required="required" :type="type" :pattern="pattern" :minlength="minlength"
+      :maxlength="maxlength">
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'aInput',
+    components: {},
+    props: {
+      modelValue: String,
+      placeholder: String,
+      color: {
+        type: String,
+        default: '#444'
+      },
+      type: {
+        type: String,
+        default: 'text'
+      },
+      required: {
+        type: Boolean,
+        default: true
+      },
+      maxlength: String,
+      minlength: String,
+      pattern: String,
+    },
+    data() {
+      return {
+        ifFocus: false,
+        text: ""
+      }
+    },
+    methods: {
+      checkFocus() {
+        if (!this.text) {
+          this.ifFocus = false
+        }
+      },
+      emitText(e) {
+        this.text = e.target.value;
+        this.$emit('update:modelValue', e.target.value);
+      }
+    },
+  }
+</script>
+
+<style scoped>
+  .wrap {
+    position: relative;
+  }
+
+  input {
+    width: 100%;
+    padding: 5px 5px;
+    outline: none;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+  .m-lab {
+    position: absolute;
+    top: 21%;
+    transition: .2s;
+    pointer-events: none;
+  }
+
+  .lab-focus {
+    top: 21%;
+  }
+
+  .lab-blur {
+    top: -35%;
+    font-size: 13px;
+  }
+
+
+
+  @media (max-width: 767.98px) {
+    /* .box-product {
+      width: calc(100% / 2 + 0px);
+    }
+
+    .box-product h5 {
+      font-size: 15px;
+    } */
+  }
+</style>
