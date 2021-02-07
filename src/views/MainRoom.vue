@@ -42,9 +42,10 @@
         // name: ""
       }
     },
-    // beforeUnmount () {
-    //   alert()
-    // }
+    beforeUnmount () {
+    //  alert('You are trying to leave.');
+  return false
+    }
 
   }
 </script>
