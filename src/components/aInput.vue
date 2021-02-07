@@ -63,6 +63,7 @@
     outline: none;
     border: none;
     background-color: rgba(255, 255, 255, 0);
+    font-size: 25px;
   }
 
   .m-lab {
@@ -73,12 +74,13 @@
   }
 
   .lab-focus {
-    top: 21%;
+    top: 18%;
+    font-size: 25px;
   }
 
   .lab-blur {
-    top: -35%;
-    font-size: 13px;
+    top: -45%;
+    font-size: 18px;
   }
 
 
