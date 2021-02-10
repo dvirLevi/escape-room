@@ -8,7 +8,7 @@
               <img class="w-100" src="../assets/logo.png" alt="">
             </router-link>
 
-            <socialIcons />
+            <!-- <socialIcons /> -->
           </div>
         </div>
       </div>
@@ -18,12 +18,12 @@
 
 <script>
   // @ is an alias to /src
-  import socialIcons from '@/components/socialIcons.vue'
+  // import socialIcons from '@/components/socialIcons.vue'
 
   export default {
     name: "toolBar",
     components: {
-      socialIcons
+      // socialIcons
     },
     data() {
       return {};
@@ -46,7 +46,7 @@
 
   @media (max-width: 767.98px) {
       .logo {
-    width: 110px;
+    width: 100px;
   }
   }
 </style>

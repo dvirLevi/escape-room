@@ -18,7 +18,7 @@
       placeholder: String,
       color: {
         type: String,
-        default: '#444'
+        default: 'rgb(22, 22, 22)'
       },
       type: {
         type: String,

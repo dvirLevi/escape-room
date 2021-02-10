@@ -1,7 +1,9 @@
 <template>
   <div class="row" :class="{'transparent-color': seconds === 0}">
     <div class="col">
-      <h2 class="f-center text-center"><i class="las la-hourglass-half"></i><div>{{seconds}}</div> : <div>{{minutes}}</div></h2>
+      <h2 class="f-center text-center"><i class="las la-hourglass-half"></i>
+        <div>{{seconds}}</div> : <div>{{minutes}}</div>
+      </h2>
     </div>
   </div>
 </template>
@@ -40,9 +42,9 @@
 </script>
 
 <style scoped>
-.transparent-color {
-color: transparent;
-}
+  .transparent-color {
+    color: transparent;
+  }
 
   h2 {
     font-family: 'Miriam Libre', sans-serif;
@@ -53,5 +55,14 @@ color: transparent;
   h2 div {
     width: 80px;
   }
-  @media (max-width: 767.98px) {}
+
+  @media (max-width: 767.98px) {
+    h2 {
+      font-size: 40px;
+    }
+
+    h2 div {
+      width: 45px;
+    }
+  }
 </style>

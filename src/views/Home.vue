@@ -30,7 +30,7 @@
             <img src="@/assets/ass3.png" class="el building-el">
             <img src="@/assets/ass4.png" class="el page-el">
             <img src="@/assets/ass5.png" class="el box-el">
-            <h1>חדר בריחה</h1>
+            <h1 class="m-0">חדר בריחה</h1>
             <h2>מרכז מורשת הרמב"ם ועדות ישראל</h2>
             <img class="w-25" src="@/assets/ass2.png" alt="">
           </div>
@@ -143,7 +143,7 @@
     }
 
     .building-el {
-      width: 150px;
+      width: 100px;
       /* bottom: 0%; */
       left: 5%;
     }

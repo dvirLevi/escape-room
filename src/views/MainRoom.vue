@@ -4,20 +4,7 @@
     <div class="col ">
       <div class="container p-0">
         <timer class="mt-1"/>
-        <div class="row">
-          <div class="col position-relative">
-            <div class="row">
-              <div class="col-4 img-contain mt-3 c-p" v-for="i in 6" :key="i">
-              </div>
-            </div>
-            <!-- <h1>שלום {{$store.state.name}}, נבחרת להיות שליח למשימה סודית!</h1>
-            <h2>סיפור מסגרת סיפור מסגרת סיפור מסגרת סיפור מסגרת הההההההסיפור מסגרת סיפור מסגרת הההסיפור מסגרת סיפור
-              מסגרת סיפור מסגרת סיפור מסגרת סיפור מסגרת סיפור מסגרת סיפור מסגרת סיפור מסגרת סיפור מסגרת סיפור מסגרת
-              סיפור מסגרת סיפור מסגרת סיפור מסגרת </h2>
-            <button class="g-butt bg-gradient mt-3 h2 p-2 ps-3 pe-3" type="submit">התחל מסע</button> -->
-            <!-- <img src="@/assets/ass6.png" class="el journey-el"> -->
-          </div>
-        </div>
+        <router-view></router-view>
       </div>
     </div>
   </div>
@@ -42,10 +29,9 @@
         // name: ""
       }
     },
-    beforeUnmount () {
+    // beforeUnmount () {
     //  alert('You are trying to leave.');
-  return false
-    }
+    // }
 
   }
 </script>
@@ -99,5 +85,10 @@
       bottom: 8%;
       right: 32%;
     }
+
+     .col-4 {
+    /* background-image: url('../assets/ass7.png'); */
+    height: 200px;
+  }
   }
 </style>

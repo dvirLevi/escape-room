@@ -18,16 +18,31 @@ const routes = [
   {
     path: '/MainRoom',
     name: 'MainRoom',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/MainRoom.vue')
+    component: () => import('../views/MainRoom.vue'),
+    children: [
+      {
+        path: '',
+        component: () => import('../views/rooms/index.vue'),
+      },
+      {
+        path: 'room1',
+        component: () => import('../views/rooms/room1.vue'),
+      },
+      
+      // {
+      //   path: 'posts',
+      //   component: UserPosts
+      // }
+    ]
   }
 
   
 ]
 
 const router = createRouter({
+  scrollBehavior() {
+    return { left: 0, top: 0 };
+  },
   history: createWebHistory(process.env.BASE_URL),
   routes
 })

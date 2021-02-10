@@ -10,7 +10,7 @@
 בכוחך להציל אותם משמד על ידי העברת אגרת חשובה שכתב להם הרמב"ם ובכוחה לסייע להם.
 עלייך להעביר את האגרת מהרמב"ם לתימן הרחוקה במהירות האפשרית - לפני שהדבר יוודע והאגרת תושמד.
 בכל אחת מהדלתות שבמסך תוכלו להגיע לחידה שבפתירתה תוכלו להזין את הקוד הסודי שיפתח את התיבה.</h2>
-            <button class="g-butt bg-gradient mt-3 h2 p-2 ps-3 pe-3" @click="$router.push('/MainRoom')">קדימה למשימה!</button>
+            <button class="g-butt bg-gradient mt-3 mb-3 h2 p-2 ps-3 pe-3" @click="$router.push('/MainRoom')">קדימה למשימה!</button>
             <img src="@/assets/ass6.png" class="el journey-el">
           </div>
         </div>
