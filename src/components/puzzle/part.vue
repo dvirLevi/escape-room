@@ -13,6 +13,7 @@
     props: {
       part: Object,
       activePos: Object,
+      asd: Number
     },
     data() {
       return {
@@ -22,22 +23,24 @@
         posTop: 0,
         ifDrag: false,
         zindex: "0",
-        location: {
+        block: false
+        // location: {
 
-        }
+        // }
       }
     },
     mounted() {
-      setTimeout(() => {
-        let rect = this.$refs.part.getBoundingClientRect();
-        this.posW = rect.left + rect.width / 2;
-        this.posH = rect.top + rect.height / 2;
-      }, 100)
+      this.getPos()
     },
     methods: {
+      getPos() {
+        setTimeout(() => {
+          let rect = this.$refs.part.getBoundingClientRect();
+          this.posW = rect.left + rect.width / 2;
+          this.posH = rect.top + rect.height / 2;
+        }, 100)
+      },
       drag(e) {
-        // console.log(e)
-        // type: "mousemove"
         if (e.type === "mousedown") {
           this.ifDrag = true;
           this.zindex = "2"
@@ -55,6 +58,11 @@
             posTop: this.posTop + this.posH,
             id: this.part.id
           })
+          this.posLeft = 0;
+          this.posTop = 0;
+          this.zindex = "0"
+          this.ifDrag = false;
+          this.getPos();
         }
       }
     },
@@ -63,8 +71,11 @@
         // console.log(this.activePos);
         // console.log(Math.abs(this.activePos.posLeft - this.posW), Math.abs(this.activePos.posTop - this.posH))
         if (Math.abs(this.activePos.posLeft - this.posW) < 100 && Math.abs(this.activePos.posTop - this.posH) < 100) {
-          console.log(this.part.id);
-           this.$emit('drop-el', {id: this.part.id})
+          // console.log(this.part.id);
+          this.$emit('drop-el', {
+            id: this.part.id
+          })
+        // this.getPos();
         }
       }
     }

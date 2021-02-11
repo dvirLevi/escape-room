@@ -96,7 +96,23 @@
     },
     methods: {
       endDrag(e) {
-        console.log(e.id, this.activePos.id)
+        // console.log(e.id, this.activePos.id);
+        let dragEl = this.activePos.id;
+        let dropEl = e.id;
+        this.replaseObjElements(dragEl, dropEl, this.parts);
+      },
+      replaseObjElements(id1, id2, arr) {
+        let index1 = arr.findIndex((el) => {
+          return el.id === id1;
+        })
+        let index2 = arr.findIndex((el) => {
+          return el.id === id2;
+        })
+        let el1 = arr[index1];
+        let el2 = arr[index2];
+        arr[index1] = el2;
+        arr[index2] = el1;
+        console.log(arr)
       }
     }
 
