@@ -3,10 +3,7 @@
     <div class="col f-center">
       <div class="f-center w-100">
         <div class="wrap-part" v-for="part in parts" :key="part.id" :style="{width: widthParts + '%'}">
-          <div class="box-part">
-            <part :part="part" @active-pos="activePos = $event" @drop-el="endDrag" :activePos="activePos" />
-
-          </div>
+          <part :part="part" @drag-el="dragID = $event" @drop-el="endDrag" />
         </div>
       </div>
     </div>
@@ -30,7 +27,8 @@
     },
     data() {
       return {
-        activePos: {},
+        dragID: 0,
+        // dropID: 0,
         parts: [{
             img: require('@/assets/puzzle/ass1.jpg'),
             id: 1
@@ -96,9 +94,8 @@
     },
     methods: {
       endDrag(e) {
-        // console.log(e.id, this.activePos.id);
-        let dragEl = this.activePos.id;
-        let dropEl = e.id;
+        let dragEl = this.dragID;
+        let dropEl = e;
         this.replaseObjElements(dragEl, dropEl, this.parts);
       },
       replaseObjElements(id1, id2, arr) {
@@ -112,7 +109,6 @@
         let el2 = arr[index2];
         arr[index1] = el2;
         arr[index2] = el1;
-        console.log(arr)
       }
     }
 
@@ -126,15 +122,7 @@
     /* position: relative; */
   }
 
-  .box-part {
-    width: 100%;
-    padding-top: 100%;
-    position: relative;
-  }
 
-  @media (max-width: 767.98px) {
-    .grid {
-      width: 100%;
-    }
-  }
+
+  @media (max-width: 767.98px) {}
 </style>
