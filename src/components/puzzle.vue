@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col f-center">
-      <div class="f-center w-100">
+      <div class="f-center puzzle">
         <div class="wrap-part" v-for="part in parts" :key="part.id" :style="{width: widthParts + '%'}">
           <part :part="part" @drag-el="dragID = $event" @drop-el="endDrag" />
         </div>
@@ -13,7 +13,7 @@
 <script>
   // @ is an alias to /src
   import part from '@/components/puzzle/part.vue'
-
+  import shuffle from '../helpers/shuffle'
   export default {
     name: 'puzzle',
     components: {
@@ -92,6 +92,9 @@
         ]
       }
     },
+    mounted() {
+      this.parts = shuffle(this.parts);
+    },
     methods: {
       endDrag(e) {
         let dragEl = this.dragID;
@@ -116,13 +119,19 @@
 </script>
 
 <style scoped>
+  .puzzle {
+    width: 100%;
+  }
+
   .wrap-part {
-    /* width: 20%; */
-    padding: 2px;
-    /* position: relative; */
+    padding: 1px;
   }
 
 
 
-  @media (max-width: 767.98px) {}
+  @media (max-width: 767.98px) {
+    /* .puzzle {
+      width: 100%;
+    } */
+  }
 </style>

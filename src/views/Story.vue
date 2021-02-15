@@ -51,14 +51,14 @@
   h1 {
     font-family: 'Miriam Libre', sans-serif;
     font-weight: 800;
-    font-size: 60px;
+    font-size: 50px;
     color: #d80806;
   }
 
   h2 {
     font-family: 'Miriam Libre', sans-serif;
     font-weight: 400;
-    font-size: 50px;
+    font-size: 40px;
   }
 
 
@@ -77,11 +77,11 @@
 
   @media (max-width: 767.98px) {
     h1 {
-      font-size: 40px;
+      font-size: 30px;
     }
 
     h2 {
-      font-size: 25px;
+      font-size: 23px;
     }
 
     .journey-el {

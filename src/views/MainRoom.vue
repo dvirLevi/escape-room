@@ -1,5 +1,5 @@
 <template>
-  <div class="row min-height-screen position-relative">
+  <div class="row main-room min-height-screen position-relative">
     <bg :img="require('../assets/ass.jpg')" />
     <div class="col ">
       <div class="container p-0">
@@ -38,16 +38,17 @@
 
 <style scoped>
   /* @import url('https://fonts.googleapis.com/css2?family=Miriam+Libre:wght@400;700&display=swap'); */
-
-  h1 {
+.main-room {
     font-family: 'Miriam Libre', sans-serif;
+
+}
+  h1 {
     font-weight: 800;
     font-size: 60px;
     color: #d80806;
   }
 
   h2 {
-    font-family: 'Miriam Libre', sans-serif;
     font-weight: 400;
     font-size: 50px;
   }

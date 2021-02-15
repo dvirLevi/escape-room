@@ -1,5 +1,5 @@
 <template>
-  <div class="row" :class="{'transparent-color': seconds === 0}">
+  <div class="row" :class="seconds === 0? 'transparent-color':'main-color'">
     <div class="col">
       <h2 class="f-center text-center"><i class="las la-hourglass-half"></i>
         <div>{{seconds}}</div> : <div>{{minutes}}</div>

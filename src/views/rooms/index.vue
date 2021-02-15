@@ -1,9 +1,16 @@
 <template>
   <div class="row position-relative">
-    <div class="col-4 f-center mt-3 " v-for="room in rooms" :key="room.id">
+    <div class="row">
+      <div class="col f-center">
+        <h3 class="text-center">כנסו לחדרים פתרו את החידות ומצאו ספרה שתהיה חלק מהצופן שיפתח את התיבה שבה מוצפנת האיגרת</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4 f-center mt-3 " v-for="room in rooms" :key="room.id">
       <router-link :to="room.link" class="door f-center-top img-contain c-p">
         <h3 class="mt-4">{{room.text}}</h3>
       </router-link>
+    </div>
     </div>
   </div>
 </template>
