@@ -12,10 +12,10 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2 f-center-right">
-          <!-- <router-link to="/MainRoom"><h5><i class="las la-angle-double-right"></i> חזרה לחדר הראשי</h5></router-link> -->
+        <div class="col-md-2 order-md-0 order-1 f-center-top">
+          <checkCode :dataRoom="correntRoom" />
         </div>
-        <div class="col-md-10">
+        <div class="col-md-10 order-md-1 order-0">
           <puzzle />
         </div>
       </div>
@@ -26,18 +26,27 @@
 <script>
   // @ is an alias to /src
   import puzzle from '@/components/puzzle.vue'
+  import checkCode from '@/components/checkCode.vue'
   // import bg from '@/components/bg.vue'
 
   export default {
     name: 'room1',
     components: {
-      puzzle
+      puzzle,
+      checkCode
     },
     data() {
       return {
 
       }
     },
+    computed: {
+      correntRoom() {
+       return this.$store.state.rooms.filter((el)=> {
+          return el.id === +this.$route.name;
+        })[0]
+      }
+    }
   }
 </script>
 

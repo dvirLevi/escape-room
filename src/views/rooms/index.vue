@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-4 f-center mt-3 " v-for="room in rooms" :key="room.id">
+      <div class="col-4 f-center mt-3 " v-for="room in $store.state.rooms" :key="room.id">
       <router-link :to="room.link" class="door f-center-top img-contain c-p">
         <h3 class="mt-4">{{room.text}}</h3>
       </router-link>
@@ -25,37 +25,7 @@
     components: {},
     data() {
       return {
-        rooms: [{
-            text: "חדר 1",
-            link: "/MainRoom/room1",
-            id: 1
-          },
-          {
-            text: "חדר 2",
-            link: "",
-            id: 2
-          },
-          {
-            text: "חדר 3",
-            link: "",
-            id: 3
-          },
-          {
-            text: "חדר 4",
-            link: "",
-            id: 4
-          },
-          {
-            text: "חדר 5",
-            link: "",
-            id: 5
-          },
-          {
-            text: "חדר 6",
-            link: "",
-            id: 6
-          },
-        ]
+       
       }
     },
   }

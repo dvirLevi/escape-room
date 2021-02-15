@@ -22,10 +22,12 @@ const routes = [
     children: [
       {
         path: '',
+        name: 'index',
         component: () => import('../views/rooms/index.vue'),
       },
       {
-        path: 'room1',
+        path: '1',
+        name: '1',
         component: () => import('../views/rooms/room1.vue'),
       },
       
