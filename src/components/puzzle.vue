@@ -23,7 +23,8 @@
       widthParts: {
         default: 20,
         type: Number
-      }
+      },
+      ifShuffle: Boolean
     },
     data() {
       return {
@@ -93,7 +94,9 @@
       }
     },
     mounted() {
-      this.parts = shuffle(this.parts);
+      if (!this.ifShuffle) {
+        this.parts = shuffle(this.parts);
+      }
     },
     methods: {
       endDrag(e) {

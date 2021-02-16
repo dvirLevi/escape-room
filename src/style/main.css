@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Miriam+Libre:wght@400;700&display=swap');
 
-
+.el {
+    position: absolute;
+    opacity: 0.6;
+    z-index: -1;
+  }
+  
 @media (max-width: 767.98px) {
 
 }

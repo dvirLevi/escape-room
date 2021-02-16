@@ -15,7 +15,7 @@ export default createStore({
       {
         text: "חדר 2",
         link: "",
-        code: 3,
+        code: 15,
         ifResolved: false,
         id: 2
       },
@@ -52,6 +52,13 @@ export default createStore({
   mutations: {
     pushName(state, name) {
       state.name = name;
+    },
+    completeRoom(state, id) {
+      state.rooms.forEach((el) => {
+        if (el.id === id) {
+          el.ifResolved = true;
+        }
+      })
     }
   },
   actions: {},

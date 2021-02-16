@@ -70,16 +70,10 @@
 <style scoped>
   /* @import url('https://fonts.googleapis.com/css2?family=Miriam+Libre:wght@400;700&display=swap'); */
 
-  .el {
-    position: absolute;
-    opacity: 0.6;
-    z-index: -1;
-  }
-
   .lock-el {
-    width: 50%;
-    top: 37%;
-    right: 42%;
+      width: 29%;
+    top: 65%;
+    right: 56%;
   }
 
   .building-el {
@@ -139,7 +133,8 @@
     }
 
     .lock-el {
-      top: 25%;
+      top: auto;
+      bottom: 5%
     }
 
     .building-el {

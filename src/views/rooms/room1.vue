@@ -12,11 +12,12 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2 order-md-0 order-1 f-center-top">
+        <div class="col-md-2 order-md-0 order-1 f-center-top position-relative">
           <checkCode :dataRoom="correntRoom" />
+          <img src="@/assets/ass8.png" class="jug">
         </div>
         <div class="col-md-10 order-md-1 order-0">
-          <puzzle />
+          <puzzle :ifShuffle="correntRoom.ifResolved" />
         </div>
       </div>
     </div>
@@ -42,7 +43,7 @@
     },
     computed: {
       correntRoom() {
-       return this.$store.state.rooms.filter((el)=> {
+        return this.$store.state.rooms.filter((el) => {
           return el.id === +this.$route.name;
         })[0]
       }
@@ -51,5 +52,21 @@
 </script>
 
 <style scoped>
-  @media (max-width: 767.98px) {}
+  .jug {
+    width: 143px;
+    margin-top: 30px;
+    /* top: -101px; */
+    /* left: -109px; */
+    transform: rotate(-11deg);
+  }
+
+  @media (max-width: 767.98px) {
+    .jug {
+      position: absolute;
+      width: 81px;
+      top: 0;
+      left: 27px;
+      z-index: -1;
+    }
+  }
 </style>

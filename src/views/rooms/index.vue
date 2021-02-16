@@ -7,8 +7,9 @@
     </div>
     <div class="row">
       <div class="col-4 f-center mt-3 " v-for="room in $store.state.rooms" :key="room.id">
-      <router-link :to="room.link" class="door f-center-top img-contain c-p">
-        <h3 class="mt-4">{{room.text}}</h3>
+      <router-link :to="room.link" class="door f-center-top img-contain c-p" :style="{filter:`drop-shadow(0px 4px 6px black) ${room.ifResolved? 'saturate(1)':'saturate(0.7)'}`}">
+        <h4 class="mt-md-4 fw-bold">{{room.text}}</h4>
+        <h2 class="w-100 text-center fw-bold main-color" v-if="room.ifResolved">{{room.code}}</h2>
       </router-link>
     </div>
     </div>
@@ -37,6 +38,11 @@
     font-weight: 800;
   }
 
+  h2 {
+    margin-top: 100px;
+    text-shadow: 1px 2px 4px #000000;
+  }
+
   .door {
     background-image: url('../../assets/ass7.png');
     width: 50%;
@@ -53,6 +59,15 @@
 
   h3 {
     font-size: 18px;
+  }
+
+  h4 {
+    font-size: 17px;
+    margin-top: 30px;
+  }
+
+   h2 {
+    margin-top: 50px;
   }
   }
 </style>
