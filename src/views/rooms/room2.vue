@@ -14,7 +14,7 @@
       <div class="row">
         <div class="col-md-2 order-md-0 order-1 f-center-top position-relative">
           <checkCode :dataRoom="correntRoom" />
-          <img src="@/assets/ass8.png" class="jug">
+          <img src="@/assets/ass9.png" class="jug">
         </div>
         <div class="col-md-10 order-md-1 order-0">
           <moneyBills />
@@ -53,17 +53,17 @@
 
 <style scoped>
   .jug {
-    width: 143px;
+    width: 185px;
     margin-top: 30px;
     /* top: -101px; */
     /* left: -109px; */
-    transform: rotate(-11deg);
+    transform: rotate(-5deg);
   }
 
   @media (max-width: 767.98px) {
     .jug {
       position: absolute;
-      width: 81px;
+      /* width: 81px; */
       top: 0;
       left: 27px;
       z-index: -1;
