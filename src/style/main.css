@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Miriam+Libre:wght@400;700&display=swap');
 
+html,
+body {
+  user-select: none;
+}
+
 .el {
     position: absolute;
     opacity: 0.6;
