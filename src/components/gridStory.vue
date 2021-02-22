@@ -6,7 +6,7 @@
           <input class="w-100 form-control text-center" v-model="box.num" type="text">
           <div class="position-absolute h2 operator" :class="box.class">{{box.operator}}</div>
         </div>
-        <div class="result h2 f-center m-0">
+        <div class="result h1 f-center m-0">
           = {{result}}
         </div>
         <div class="story-box">
@@ -170,31 +170,34 @@
             class: "left",
             id: "m21"
           },
-          {
-            num: "",
-            operator: "-",
-            class: "left",
-            id: "m22"
-          },
+          // {
+          //   num: "",
+          //   operator: "-",
+          //   class: "left",
+          //   id: "m22"
+          // },
 
         ]
       }
     },
     computed: {
       result() {
-        let result = 0;
+        let result = +this.boxes[0].num;
         for (let i in this.boxes) {
-          
-          if (this.boxes[i].num) {
-            if (this.boxes[i].operator === "+") {
-              console.log(+this.boxes[i].num)
+          if (this.boxes[i].num && i > 0) {
+          console.log(i)
+
+            if (this.boxes[i].operator !== "+") {
               result += +this.boxes[i].num;
-            } else if (this.boxes[i].operator === "-") {
+            } else if (this.boxes[i].operator !== "-") {
+              console.log(i)
               result -= +this.boxes[i].num;
             }
           }
         }
-        console.log(result)
+        // if (result < 0) {
+        //   return 0
+        // }
         return result;
       }
     }
@@ -210,7 +213,7 @@
     grid-template-rows: repeat(6, 1fr);
     grid-template-areas:
       "m1 m2 m3 m4 m5 m6"
-      "m20 m21 m22 result result m7"
+      "m20 m21 result result result m7"
       "m19 story-box story-box story-box story-box m8"
       "m18 story-box story-box story-box story-box m9"
       "m17 story-box story-box story-box story-box m10"
