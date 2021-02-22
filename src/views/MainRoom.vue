@@ -2,7 +2,7 @@
   <div class="row main-room min-height-screen position-relative">
     <bg :img="require('../assets/ass.jpg')" />
     <div class="col ">
-      <div class="container p-0">
+      <div class="container p-0 pb-5">
         <timer class="mt-1"/>
         <router-view></router-view>
       </div>

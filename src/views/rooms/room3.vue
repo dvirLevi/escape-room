@@ -8,7 +8,8 @@
           </router-link>
         </div>
         <div class="col-md-10">
-          <h3>השליח חייב להגיע לשטרות הכסף שגזלו שליחי משיח השקר מן היהודים. בהם יוכל לשחד את הרשעים במידה ולא יתנו לו לעבור במעברי הגבול. אבל...חייבים למיין ולהוציא את כל שטרות הרמב"ם כדי שלא ידעו שהרמב"ם הוא זה ששלח את האגרת שהרי אם יוודע הדבר הרמב"ם צפוי לעונש כבד</h3>
+          <h3>יהודי מרוקו קבלו מידע סודי בדבר אחד ממספרי הקוד לתיבה הסודית. הם החליטו לצאת לעזרת אחיהם שבתימן אך כדי שהמידע לא יחשף על ידי השלטונות הם הצפינו את הקוד במכתב תמים המתאר את חייהם בעבר ובעתיד וכך העבירו אותו לשליח...</h3>
+          <h3>מלאו ספרות בודדות מימין לשמאל התעלמו מאפסים.</h3>
         </div>
       </div>
       <div class="row">
@@ -17,7 +18,7 @@
           <img src="@/assets/ass9.png" class="jug">
         </div>
         <div class="col-md-10 order-md-1 order-0">
-          <moneyBills />
+          <gridStory />
         </div>
       </div>
     </div>
@@ -26,14 +27,14 @@
 
 <script>
   // @ is an alias to /src
-  import moneyBills from '@/components/moneyBills.vue'
+  import gridStory from '@/components/gridStory.vue'
   import checkCode from '@/components/checkCode.vue'
   // import bg from '@/components/bg.vue'
 
   export default {
-    name: 'room1',
+    name: 'room3',
     components: {
-      moneyBills,
+      gridStory,
       checkCode
     },
     data() {

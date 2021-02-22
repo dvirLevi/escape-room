@@ -21,8 +21,8 @@ export default createStore({
       },
       {
         text: "חדר 3",
-        link: "",
-        code: 3,
+        link: "/MainRoom/3",
+        code: 7,
         ifResolved: false,
         id: 3
       },
