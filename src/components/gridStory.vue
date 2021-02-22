@@ -3,8 +3,9 @@
     <div class="col">
       <div class="w-100 wrap-grid">
         <div v-for="box in boxes" :key="box.id" :style="{gridArea: box.id}" class="f-center position-relative">
+          <i v-if="box.id === 'm1'" class="las la-arrow-left position-absolute h1 top"></i>
           <input class="w-100 form-control text-center" v-model="box.num" type="text">
-          <div class="position-absolute h2 operator" :class="box.class">{{box.operator}}</div>
+          <div class="position-absolute h2 m-0 operator" :class="box.class">{{box.operator}}</div>
         </div>
         <div class="result h1 f-center m-0">
           = {{result}}

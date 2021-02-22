@@ -154,11 +154,9 @@ body {
 .g-butt {
   background-color: var(--main-color);
   color: #fff;
-  /* font-size: 18px; */
   font-weight: 500;
-  border-radius: 25px;
+  border-radius: 8px;
   border: none;
-  /* box-shadow: 0 0 20px #00000038; */
   user-select: none;
   cursor: pointer;
   transition: .2s;
