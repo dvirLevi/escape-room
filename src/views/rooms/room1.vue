@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-2 f-center-right main-color">
           <router-link to="/MainRoom">
-            <h5><i class="las la-angle-double-right"></i> חזרה לחדר הראשי</h5>
+            <h5 class="fw-bold"><i class="las la-angle-double-right"></i> חזרה לחדר הראשי</h5>
           </router-link>
         </div>
         <div class="col-md-10">
@@ -62,11 +62,11 @@
 
   @media (max-width: 767.98px) {
     .jug {
-      position: absolute;
-      width: 81px;
-      top: 0;
-      left: 27px;
-      z-index: -1;
+      position: relative;
+    width: 81px;
+    top: -45px;
+    left: -103px;
+    z-index: -1;
     }
   }
 </style>

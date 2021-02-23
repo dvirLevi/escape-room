@@ -4,11 +4,13 @@
       <div class="row">
         <div class="col-md-2 f-center-right-top main-color">
           <router-link to="/MainRoom">
-            <h5><i class="las la-angle-double-right"></i> חזרה לחדר הראשי</h5>
+            <h5 class="fw-bold"><i class="las la-angle-double-right"></i> חזרה לחדר הראשי</h5>
           </router-link>
         </div>
         <div class="col-md-10">
-          <h3>השליח חייב להגיע לשטרות הכסף שגזלו שליחי משיח השקר מן היהודים. בהם יוכל לשחד את הרשעים במידה ולא יתנו לו לעבור במעברי הגבול. אבל...חייבים למיין ולהוציא את כל שטרות הרמב"ם כדי שלא ידעו שהרמב"ם הוא זה ששלח את האגרת שהרי אם יוודע הדבר הרמב"ם צפוי לעונש כבד</h3>
+          <h3>השליח חייב להגיע לשטרות הכסף שגזלו שליחי משיח השקר מן היהודים. בהם יוכל לשחד את הרשעים במידה ולא יתנו לו
+            לעבור במעברי הגבול. אבל...חייבים למיין ולהוציא את כל שטרות הרמב"ם כדי שלא ידעו שהרמב"ם הוא זה ששלח את האגרת
+            שהרי אם יוודע הדבר הרמב"ם צפוי לעונש כבד</h3>
         </div>
       </div>
       <div class="row">
@@ -62,11 +64,10 @@
 
   @media (max-width: 767.98px) {
     .jug {
-      position: absolute;
-      /* width: 81px; */
-      top: 0;
-      left: 27px;
-      z-index: -1;
+     position: relative;
+    top: -45px;
+    left: -60px;
+    z-index: -1;
     }
   }
 </style>
