@@ -23,7 +23,7 @@
               <div class="w-100 ps-3">
                 <aInput class="mt-4" v-model="name" placeholder="שם שחקן" />
               </div>
-              <button class="g-butt bg-gradient mt-5 h5 p-2 w-50 " type="submit">התחלה</button>
+              <button class="g-butt bg-gradient mt-3 h5 p-2 w-50 " type="submit">התחלה</button>
             </form>
           </div>
           <div class="col-md-9 text-center f-center-column pt-5 pb-5 position-relative">

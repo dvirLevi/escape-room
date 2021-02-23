@@ -6,7 +6,7 @@
       </div>
       <div class="f-center w-100 mt-5 mb-5 pb-md-5 pb-0">
         <img class="shuffle-bill" v-for="bill in shuffleBills" :key="bill.id" :src="bill.img"
-          :style="{transform: `rotate(${getRandNum(48, 140)}deg)`}" @click="findBills(bill.id)" draggable="false">
+          :style="{transform: `rotate(${getRandNum(0, 360)}deg)`}" @click="findBills(bill.id)" draggable="false">
       </div>
     </div>
   </div>

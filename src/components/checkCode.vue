@@ -2,7 +2,7 @@
   <div class="w-100 f-center-right">
     <template v-if="!dataRoom.ifResolved">
       <aInput class="mt-4" v-model="code" placeholder="בדיקת צופן" :required="false" />
-      <div class="g-butt bg-gradient mt-3 h4 p-2 ps-4 pe-4" @click="checkCode">בדוק</div>
+      <div class="g-butt bg-gradient mt-3 h5 p-2 ps-3 pe-3" @click="checkCode">בדוק</div>
     </template>
     <template v-else>
       <h4 class="mt-md-0 mt-3">הצופן של חדר מס' {{dataRoom.id}} הוא <span class="main-color fw-bold">{{dataRoom.code}}</span></h4>
