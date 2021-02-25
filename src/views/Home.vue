@@ -14,8 +14,8 @@
           <div class="col-md-3 position-relative mt-md-0 mt-5">
             <img src="@/assets/ass1.png" class="el lock-el">
             <form class="pb-5 pr-4 pl-4" @submit.prevent="pushName">
-              <h3 class="font-weight-bolder">הוראות</h3>
-              <ul class="ps-0 font-weight-bolder">
+              <h3 class="fw-bold">הוראות</h3>
+              <ul class="ps-0">
                 <li>חדר הבריחה מתאים כמשחק תחרותי לקבוצות וכאתגר לשחקן יחידי</li>
                 <li>למשחק מרובה משתתפים כל שחקן/קבוצה יחזיק/ו מכשיר שבו יוכל/ו לשחק</li>
                 <li>מי שיגיע לסיום ראשון הוא המנצח!</li>

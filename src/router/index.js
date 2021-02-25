@@ -40,6 +40,11 @@ const routes = [
         name: '3',
         component: () => import('../views/rooms/room3.vue'),
       },
+      {
+        path: '4',
+        name: '4',
+        component: () => import('../views/rooms/room4.vue'),
+      },
       
       // {
       //   path: 'posts',
