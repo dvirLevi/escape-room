@@ -84,7 +84,7 @@
 
   .page-el {
     width: 200px;
-    top: 0%;
+    top: 16%;
     right: 10%;
   }
 
@@ -145,7 +145,7 @@
 
     .page-el {
       width: 90px;
-      top: 10%;
+      top: 34%;
       /* right: 10%; */
     }
 
