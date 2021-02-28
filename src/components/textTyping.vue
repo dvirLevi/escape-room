@@ -14,7 +14,7 @@
       text: String,
       speed: {
         type: Number,
-        default: 70
+        default: 90
       }
     },
     data() {
@@ -27,7 +27,7 @@
     mounted() {
      this.setInterval = setInterval(() => {
         this.typing()
-      }, 50)
+      }, this.speed)
     },
     methods: {
       typing() {

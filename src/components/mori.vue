@@ -17,13 +17,15 @@
           (=מחפשים כבוד)</h4>
       </div>
       <div class="w-100">
-        <div class="w-100 f-center"></div>
+        <div class="w-100 f-center-right mt-3">
+          <div class="h5 mb-0 p-md-3 p-1 pt-3 pb-3 text-center ans" v-for="(ans, index) in correctAnswers" :key="ans.id">{{index+1}}. {{ans.ans}}</div>
+        </div>
         <div class="w-100 f-center-right mt-3">
           <!-- <div class="w-75"> -->
-            <input class="form-control" v-model="text" type="text">
+          <input class="form-control" v-model="textInput" type="text">
           <!-- </div>
           <div class="w-25 pe-2"> -->
-            <button class="g-butt bg-gradient h6 me-2 p-2 m-0" type="submit">בדיקה</button>
+          <button class="g-butt bg-gradient h6 me-2 p-2 m-0" @click="checkAns" type="submit">בדיקה</button>
           <!-- </div> -->
         </div>
       </div>
@@ -44,155 +46,48 @@
     },
     data() {
       return {
-        boxes: [{
-            num: "",
-            operator: "+",
-            class: "left",
-            id: "m1"
+        textInput: "",
+        answers: [{
+            ans: "מורה",
+            id: 1
           },
           {
-            num: "",
-            operator: "-",
-            class: "left",
-            id: "m2"
+            ans: "דיין",
+            id: 2
           },
           {
-            num: "",
-            operator: "+",
-            class: "left",
-            id: "m3"
+            ans: "דורש",
+            id: 3
           },
           {
-            num: "",
-            operator: "-",
-            class: "left",
-            id: "m4"
+            ans: "שוחט",
+            id: 4
           },
           {
-            num: "",
-            operator: "+",
-            class: "left",
-            id: "m5"
+            ans: "בודק",
+            id: 5
           },
           {
-            num: "",
-            operator: "-",
-            class: "bottom",
-            id: "m6"
+            ans: "חזן",
+            id: 6
           },
           {
-            num: "",
-            operator: "+",
-            class: "bottom",
-            id: "m7"
-          },
-          {
-            num: "",
-            operator: "-",
-            class: "bottom",
-            id: "m8"
-          },
-          {
-            num: "",
-            operator: "+",
-            class: "bottom",
-            id: "m9"
-          },
-          {
-            num: "",
-            operator: "-",
-            class: "bottom",
-            id: "m10"
-          },
-          {
-            num: "",
-            operator: "+",
-            class: "right",
-            id: "m11"
-          },
-          {
-            num: "",
-            operator: "-",
-            class: "right",
-            id: "m12"
-          },
-          {
-            num: "",
-            operator: "+",
-            class: "right",
-            id: "m13"
-          },
-          {
-            num: "",
-            operator: "-",
-            class: "right",
-            id: "m14"
-          },
-          {
-            num: "",
-            operator: "+",
-            class: "right",
-            id: "m15"
-          },
-          {
-            num: "",
-            operator: "-",
-            class: "top",
-            id: "m16"
-          },
-          {
-            num: "",
-            operator: "+",
-            class: "top",
-            id: "m17"
-          },
-          {
-            num: "",
-            operator: "-",
-            class: "top",
-            id: "m18"
-          },
-          {
-            num: "",
-            operator: "+",
-            class: "top",
-            id: "m19"
-          },
-          {
-            num: "",
-            operator: "-",
-            class: "left",
-            id: "m20"
-          },
-          {
-            num: "",
-            operator: "+",
-            class: "left",
-            id: "m21"
-          },
-          // {
-          //   num: "",
-          //   operator: "-",
-          //   class: "left",
-          //   id: "m22"
-          // },
-
-        ]
+            ans: "שמש",
+            id: 7
+          }
+        ],
+        correctAnswers: []
       }
     },
-    computed: {
-      result() {
-        let result = +this.boxes[0].num;
-        for (let i in this.boxes) {
-          if (this.boxes[i].num && i > 0) {
-            if (this.boxes[i].operator !== "+") {
-              result += +this.boxes[i].num;
-            } else if (this.boxes[i].operator !== "-") {
-              result -= +this.boxes[i].num;
-            }
+    methods: {
+      checkAns() {
+        for (let i in this.answers) {
+          if (this.answers[i].ans === this.textInput) {
+            this.correctAnswers.push(this.answers[i]);
+            this.answers.splice(i, 1);
+            this.textInput = "";
           }
         }
-        return result;
       }
     }
 
@@ -216,11 +111,20 @@
     width: 250px;
   }
 
+  .ans {
+    width: 24%;
+    margin-left: 1%;
+    background-color: var(--main-color);
+    color: #fff;
+    border-radius: 8px;
+    border: solid 2px rgba(0, 0, 0, 0);
+  }
+
 
 
   @media (max-width: 767.98px) {
-     input {
-    width: 150px;
-  }
+    input {
+      width: 150px;
+    }
   }
 </style>
