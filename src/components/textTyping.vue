@@ -14,7 +14,7 @@
       text: String,
       speed: {
         type: Number,
-        default: 90
+        default: 60
       }
     },
     data() {

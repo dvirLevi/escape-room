@@ -17,8 +17,8 @@
           (=מחפשים כבוד)</h4>
       </div>
       <div class="w-100">
-        <div class="w-100 f-center-right mt-3">
-          <div class="h5 mb-0 p-md-3 p-1 pt-3 pb-3 text-center ans" v-for="(ans, index) in correctAnswers" :key="ans.id">{{index+1}}. {{ans.ans}}</div>
+        <div class="w-100 f-center-right ">
+          <div class="h5 mb-0 p-md-3 p-1 mt-3 pt-3 pb-3 text-center ans" v-for="(ans, index) in correctAnswers" :key="ans.id">{{index+1}}. {{ans.ans}}</div>
         </div>
         <div class="w-100 f-center-right mt-3">
           <!-- <div class="w-75"> -->
