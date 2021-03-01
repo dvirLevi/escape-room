@@ -1,5 +1,6 @@
 <template>
   <div class="row main-room min-height-screen position-relative">
+    <audio ref="audio" loop src="https://www.zapsplat.com/wp-content/uploads/2015/music-one/music_orlamusic_Epic%20010.mp3?_=3"></audio>
     <bg :img="require('../assets/ass.jpg')" />
     <div class="col ">
       <div class="container p-0 pb-5">
@@ -29,9 +30,9 @@
         // name: ""
       }
     },
-    // beforeUnmount () {
-    //  alert('You are trying to leave.');
-    // }
+    mounted() {
+      this.$refs.audio.play();
+    }
 
   }
 </script>
