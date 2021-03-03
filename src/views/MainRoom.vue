@@ -1,6 +1,7 @@
 <template>
   <div class="row main-room min-height-screen position-relative">
-    <audio ref="audio" loop src="https://www.zapsplat.com/wp-content/uploads/2015/music-one/music_orlamusic_Epic%20010.mp3?_=3"></audio>
+    <autoAudio src="https://www.zapsplat.com/wp-content/uploads/2015/music-one/music_zapsplat_deep_investigation_126.mp3?_=4" />
+    <!-- <audio ref="audio" loop src="https://www.zapsplat.com/wp-content/uploads/2015/music-one/music_zapsplat_deep_investigation_126.mp3?_=4"></audio> -->
     <bg :img="require('../assets/ass.jpg')" />
     <div class="col ">
       <div class="container p-0 pb-5">
@@ -17,23 +18,15 @@
   // import aInput from '@/components/aInput.vue'
   import bg from '@/components/bg.vue'
   import timer from '@/components/timer.vue'
+  import autoAudio from '@/components/autoAudio.vue'
 
   export default {
     name: 'MainRoom',
     components: {
-      // aInput,
+      autoAudio,
       bg,
       timer
     },
-    data() {
-      return {
-        // name: ""
-      }
-    },
-    mounted() {
-      this.$refs.audio.play();
-    }
-
   }
 </script>
 

@@ -1,11 +1,17 @@
 <template>
   <div class="w-100 f-center-right">
-    <template v-if="!dataRoom.ifResolved">
-      <aInput class="mt-4" v-model="code" placeholder="בדיקת צופן" :required="false" />
-      <div class="g-butt bg-gradient mt-3 h5 p-2 ps-3 pe-3" @click="checkCode">בדוק</div>
+    <template v-if="!dataRoom.ifCheck">
+      <h4 class="mt-md-0 mt-3">לאחר סיום המשימה תוכל לבדוק כאן את הצופן</h4>
     </template>
     <template v-else>
-      <h4 class="mt-md-0 mt-3">הצופן של חדר מס' {{dataRoom.id}} הוא <span class="main-color fw-bold">{{dataRoom.code}}</span></h4>
+      <template v-if="!dataRoom.ifResolved">
+        <aInput class="mt-4" v-model="code" placeholder="בדיקת צופן" :required="false" />
+        <div class="g-butt bg-gradient mt-3 h5 p-2 ps-3 pe-3" @click="checkCode">בדוק</div>
+      </template>
+      <template v-else>
+        <h4 class="mt-md-0 mt-3">הצופן של חדר מס' {{dataRoom.id}} הוא <span
+            class="main-color fw-bold">{{dataRoom.code}}</span></h4>
+      </template>
     </template>
   </div>
 </template>

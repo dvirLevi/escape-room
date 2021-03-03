@@ -1,6 +1,6 @@
 <template>
   <div class="row min-height-screen position-relative">
-    <audio ref="audio" loop src="https://www.zapsplat.com/wp-content/uploads/2015/music-one/music_orlamusic_Epic%20003.mp3?_=4"></audio>
+    <autoAudio src="https://www.zapsplat.com/wp-content/uploads/2015/music-one/music_orlamusic_Epic%20004.mp3?_=5" />
     <bg :img="require('../assets/ass.jpg')" />
     <div class="col ">
       <div class="container p-0">
@@ -29,10 +29,12 @@
   // import aInput from '@/components/aInput.vue'
   import bg from '@/components/bg.vue'
   import textTyping from '@/components/textTyping.vue'
+  import autoAudio from '@/components/autoAudio.vue'
 
   export default {
     name: 'Story',
     components: {
+      autoAudio,
       textTyping,
       bg
     },
@@ -44,10 +46,7 @@
 עוזרי משיח השקר גנבו את האיגרת והצפינו אותה בתיבה נעולה עליך לחלץ את האיגרת מהתיבה על ידי גלוי הקוד הסודי בו היא נעולה ולהעביר את האגרת מהרמב"ם לתימן הרחוקה במהירות האפשרית - לפני שהדבר יוודע והאגרת תושמד.
 בכל אחת מן הדלתות שעל המסך תוכל להגיע לחידה שבפתירתה תקבל רמז לחלק מהצופן שיסייע בהמשך לחשוף את הקוד הסודי בשלימותו.`,
       }
-    },
-    mounted() {
-      this.$refs.audio.play();
-    },
+    }
   }
 </script>
 

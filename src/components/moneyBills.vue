@@ -2,7 +2,8 @@
   <div class="row">
     <div class="col f-center">
       <div class="f-center w-100 mt-3 mb-md-5 mb-0 pe-md-5">
-        <img class="select-bill" v-for="bill in selectBills" :key="bill.id" :src="bill.img" @click="removeBills(bill.id)" draggable="false">
+        <img class="select-bill" v-for="bill in selectBills" :key="bill.id" :src="bill.img"
+          @click="removeBills(bill.id)" draggable="false">
       </div>
       <div class="f-center w-100 mt-5 mb-5 pb-md-5 pb-0">
         <img class="shuffle-bill" v-for="bill in shuffleBills" :key="bill.id" :src="bill.img"
@@ -125,119 +126,97 @@
           {
             img: require('@/assets/moneyBills/ass2.jpg'),
             ifSelect: false,
-            ifCorrect: true,
+            ifCorrect: false,
             id: 16
           },
           {
             img: require('@/assets/moneyBills/ass2.jpg'),
             ifSelect: false,
-            ifCorrect: true,
+            ifCorrect: false,
             id: 17
           },
           {
             img: require('@/assets/moneyBills/ass2.jpg'),
             ifSelect: false,
-            ifCorrect: true,
+            ifCorrect: false,
             id: 18
           },
           {
             img: require('@/assets/moneyBills/ass2.jpg'),
             ifSelect: false,
-            ifCorrect: true,
+            ifCorrect: false,
             id: 19
           },
           {
             img: require('@/assets/moneyBills/ass2.jpg'),
             ifSelect: false,
-            ifCorrect: true,
+            ifCorrect: false,
             id: 20
           },
           {
             img: require('@/assets/moneyBills/ass2.jpg'),
             ifSelect: false,
-            ifCorrect: true,
+            ifCorrect: false,
             id: 21
           },
           {
             img: require('@/assets/moneyBills/ass2.jpg'),
             ifSelect: false,
-            ifCorrect: true,
+            ifCorrect: false,
             id: 22
           },
           {
             img: require('@/assets/moneyBills/ass2.jpg'),
             ifSelect: false,
-            ifCorrect: true,
+            ifCorrect: false,
             id: 23
           },
           {
             img: require('@/assets/moneyBills/ass3.jpg'),
             ifSelect: false,
-            ifCorrect: true,
+            ifCorrect: false,
             id: 24
           },
           {
             img: require('@/assets/moneyBills/ass3.jpg'),
             ifSelect: false,
-            ifCorrect: true,
+            ifCorrect: false,
             id: 25
           },
           {
             img: require('@/assets/moneyBills/ass3.jpg'),
             ifSelect: false,
-            ifCorrect: true,
+            ifCorrect: false,
             id: 26
           },
           {
             img: require('@/assets/moneyBills/ass3.jpg'),
             ifSelect: false,
-            ifCorrect: true,
+            ifCorrect: false,
             id: 27
           },
           {
             img: require('@/assets/moneyBills/ass3.jpg'),
             ifSelect: false,
-            ifCorrect: true,
+            ifCorrect: false,
             id: 28
           },
           {
             img: require('@/assets/moneyBills/ass3.jpg'),
             ifSelect: false,
-            ifCorrect: true,
+            ifCorrect: false,
             id: 29
           },
           {
             img: require('@/assets/moneyBills/ass3.jpg'),
             ifSelect: false,
-            ifCorrect: true,
+            ifCorrect: false,
             id: 30
           }
         ]
       }
     },
-    mounted() {
-      // if (!this.ifShuffle) {
-      //   this.parts = shuffle(this.parts);
-      // }
-    },
     methods: {
-      endDrag(e) {
-        let dragEl = this.dragID;
-        let dropEl = e;
-        this.replaseObjElements(dragEl, dropEl, this.parts);
-      },
-      replaseObjElements(id1, id2, arr) {
-        let index1 = arr.findIndex((el) => {
-          return el.id === id1;
-        })
-        let index2 = arr.findIndex((el) => {
-          return el.id === id2;
-        })
-        let el1 = arr[index1];
-        let el2 = arr[index2];
-        arr[index1] = el2;
-        arr[index2] = el1;
-      },
       getRandNum(min, max) {
         return getRandNum(min, max)
       },
@@ -247,6 +226,9 @@
             el.ifSelect = true;
           }
         })
+        if(this.ifEndGame) {
+          this.$emit('end-game');  
+        }
       },
       removeBills(id) {
         this.bills.forEach((el) => {
@@ -254,6 +236,9 @@
             el.ifSelect = false;
           }
         })
+        if(this.ifEndGame) {
+          this.$emit('end-game');  
+        }
       }
     },
     computed: {
@@ -266,6 +251,18 @@
         return this.bills.filter((el) => {
           return el.ifSelect
         })
+      },
+      ifEndGame() {
+        let check = true;
+        for (let i in this.selectBills) {
+          if (this.selectBills[i].ifCorrect && this.selectBills.length === 15) {
+           check = true;
+          } else {
+            check = false;
+            break;
+          }
+        }
+        return check;
       }
     }
 
@@ -313,6 +310,6 @@
       /* margin-left: -7.5%; */
       margin-left: -3.75%;
       margin-right: -3.75%;
-  }
+    }
   }
 </style>

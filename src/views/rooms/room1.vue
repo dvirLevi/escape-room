@@ -17,7 +17,7 @@
           <img src="@/assets/ass8.png" class="jug">
         </div>
         <div class="col-md-10 order-md-1 order-0">
-          <puzzle :ifShuffle="correntRoom.ifResolved" />
+          <puzzle :ifShuffle="correntRoom.ifResolved" @end-game="$store.commit('endTask', correntRoom.id)" />
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col f-center">
-      <div class="f-center puzzle">
+      <div class="f-center puzzle p-1 border-r">
         <div class="wrap-part" v-for="part in parts" :key="part.id" :style="{width: widthParts + '%'}">
           <part :part="part" @drag-el="dragID = $event" @drop-el="endDrag" />
         </div>
@@ -103,6 +103,9 @@
         let dragEl = this.dragID;
         let dropEl = e;
         this.replaseObjElements(dragEl, dropEl, this.parts);
+        if(this.ifEndGame) {
+          this.$emit('end-game');  
+        }
       },
       replaseObjElements(id1, id2, arr) {
         let index1 = arr.findIndex((el) => {
@@ -116,6 +119,20 @@
         arr[index1] = el2;
         arr[index2] = el1;
       }
+    },
+    computed: {
+      ifEndGame() {
+        let n = 1;
+        let check = true;
+        for (let i in this.parts) {
+          if (this.parts[i].id === n) {
+            n++
+          } else {
+            check = false;
+          }
+        }
+        return check;
+      }
     }
 
   }
@@ -124,6 +141,8 @@
 <style scoped>
   .puzzle {
     width: 100%;
+    border: solid 3px var(--main-color);
+
   }
 
   .wrap-part {
