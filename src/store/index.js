@@ -39,8 +39,8 @@ export default createStore({
       },
       {
         text: "חדר 5",
-        link: "",
-        code: 3,
+        link: "/MainRoom/5",
+        code: 4,
         ifCheck: false,
         ifResolved: false,
         id: 5

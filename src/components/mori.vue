@@ -18,7 +18,8 @@
       </div>
       <div class="w-100">
         <div class="w-100 f-center-right ">
-          <div class="h5 mb-0 p-md-3 p-1 mt-3 pt-3 pb-3 text-center ans" v-for="(ans, index) in correctAnswers" :key="ans.id">{{index+1}}. {{ans.ans}}</div>
+          <div class="h5 mb-0 p-md-3 p-1 mt-3 pt-3 pb-3 text-center ans" v-for="(ans, index) in correctAnswers"
+            :key="ans.id">{{index+1}}. {{ans.ans}}</div>
         </div>
         <div class="w-100 f-center-right mt-3">
           <!-- <div class="w-75"> -->
@@ -87,6 +88,10 @@
             this.answers.splice(i, 1);
             this.textInput = "";
           }
+
+        }
+        if (this.correctAnswers.length === 7) {
+          this.$emit('end-game');
         }
       }
     }

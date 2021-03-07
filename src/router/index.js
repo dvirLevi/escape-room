@@ -45,7 +45,11 @@ const routes = [
         name: '4',
         component: () => import('../views/rooms/room4.vue'),
       },
-      
+      {
+        path: '5',
+        name: '5',
+        component: () => import('../views/rooms/room5.vue'),
+      },
       // {
       //   path: 'posts',
       //   component: UserPosts

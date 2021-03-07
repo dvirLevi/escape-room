@@ -24,7 +24,7 @@
           <img src="@/assets/ass12.jpg" class="jug border-r">
         </div>
         <div class="col-md-10 order-md-1 order-0">
-          <mori />
+          <mori @end-game="$store.commit('endTask', correntRoom.id)" />
         </div>
       </div>
     </div>
