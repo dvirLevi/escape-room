@@ -98,6 +98,7 @@
           }
         }
         if(!ifCorrect) {
+          this.textInput = "";
           Swal.fire({
             title: 'תפקיד המורי שהזנת שגוי',
             text: 'נסה שוב',
