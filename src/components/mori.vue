@@ -26,7 +26,7 @@
           <input class="form-control" v-model="textInput" type="text">
           <!-- </div>
           <div class="w-25 pe-2"> -->
-          <button class="g-butt bg-gradient h6 me-2 p-2 m-0" @click="checkAns" type="submit">בדיקה</button>
+          <button class="g-butt bg-gradient h6 me-2 p-2 m-0" @click="checkAns" type="submit">בדיקת תפקיד</button>
           <!-- </div> -->
         </div>
       </div>
@@ -39,6 +39,7 @@
   // import part from '@/components/puzzle/part.vue'
   // import shuffle from '../helpers/shuffle'
   // import getRandNum from '../helpers/getRandNum'
+  import Swal from 'sweetalert2'
 
   export default {
     name: 'mori',
@@ -82,13 +83,27 @@
     },
     methods: {
       checkAns() {
+        let ifCorrect = false;
         for (let i in this.answers) {
           if (this.answers[i].ans === this.textInput) {
             this.correctAnswers.push(this.answers[i]);
             this.answers.splice(i, 1);
             this.textInput = "";
+            ifCorrect = true;
+             Swal.fire({
+            title: 'יפה מאוד',
+            timer: 1200,
+            icon: 'success',
+          })
           }
-
+        }
+        if(!ifCorrect) {
+          Swal.fire({
+            title: 'תפקיד המורי שהזנת שגוי',
+            text: 'נסה שוב',
+            timer: 1200,
+            icon: 'error',
+          })
         }
         if (this.correctAnswers.length === 7) {
           this.$emit('end-game');
