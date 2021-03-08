@@ -1,13 +1,22 @@
 <template>
   <div class="row">
     <div class="col f-center">
+      <div class="f-center-top w-100 mt-3">
+        <div class="w-75">
+          <h5>בערימה נמצאים גם שטרות מזוייפים לכן עליך למיין רק את השטרות האמיתיים שמראיהם כהשטר משמאל. במידה ויבחר שטר
+            שגוי הערימה תתערבב מחדש.</h5>
+        </div>
+        <div class="w-25">
+          <img class="w-100" src="@/assets/moneyBills/ass1.jpg">
+        </div>
+      </div>
       <div class="f-center w-100 mt-3 mb-md-5 mb-0 pe-md-5">
-        <img class="select-bill" v-for="bill in selectBills" :key="bill.id" :src="bill.img"
-          @click="removeBills(bill.id)" draggable="false">
+        <img class="select-bill" v-for="bill in selectBills" :key="bill.id" :src="bill.img" draggable="false">
       </div>
       <div class="f-center w-100 mt-5 mb-5 pb-md-5 pb-0">
         <img class="shuffle-bill" v-for="bill in shuffleBills" :key="bill.id" :src="bill.img"
-          :style="{transform: `rotate(${getRandNum(0, 360)}deg)`}" @click="findBills(bill.id)" draggable="false">
+          :style="{transform: `rotate(${getRandNum(0, 360)}deg)`}" @click="findBills(bill.id, bill.ifCorrect)"
+          draggable="false">
       </div>
     </div>
   </div>
@@ -124,25 +133,25 @@
             id: 15
           },
           {
-            img: require('@/assets/moneyBills/ass2.jpg'),
+            img: require('@/assets/moneyBills/ass4.jpg'),
             ifSelect: false,
             ifCorrect: false,
             id: 16
           },
           {
-            img: require('@/assets/moneyBills/ass2.jpg'),
+            img: require('@/assets/moneyBills/ass4.jpg'),
             ifSelect: false,
             ifCorrect: false,
             id: 17
           },
           {
-            img: require('@/assets/moneyBills/ass2.jpg'),
+            img: require('@/assets/moneyBills/ass4.jpg'),
             ifSelect: false,
             ifCorrect: false,
             id: 18
           },
           {
-            img: require('@/assets/moneyBills/ass2.jpg'),
+            img: require('@/assets/moneyBills/ass4.jpg'),
             ifSelect: false,
             ifCorrect: false,
             id: 19
@@ -172,19 +181,19 @@
             id: 23
           },
           {
-            img: require('@/assets/moneyBills/ass3.jpg'),
+            img: require('@/assets/moneyBills/ass4.jpg'),
             ifSelect: false,
             ifCorrect: false,
             id: 24
           },
           {
-            img: require('@/assets/moneyBills/ass3.jpg'),
+            img: require('@/assets/moneyBills/ass4.jpg'),
             ifSelect: false,
             ifCorrect: false,
             id: 25
           },
           {
-            img: require('@/assets/moneyBills/ass3.jpg'),
+            img: require('@/assets/moneyBills/ass4.jpg'),
             ifSelect: false,
             ifCorrect: false,
             id: 26
@@ -220,26 +229,33 @@
       getRandNum(min, max) {
         return getRandNum(min, max)
       },
-      findBills(id) {
-        this.bills.forEach((el) => {
-          if (el.id === id) {
-            el.ifSelect = true;
-          }
-        })
-        if(this.ifEndGame) {
-          this.$emit('end-game');  
+      findBills(id, ifCorrect) {
+        if (ifCorrect) {
+          this.bills.forEach((el) => {
+            if (el.id === id) {
+              el.ifSelect = true;
+            }
+          })
+        } else {
+          this.bills.forEach((el) => {
+            el.ifSelect = false;
+          })
+        }
+
+        if (this.ifEndGame) {
+          this.$emit('end-game');
         }
       },
-      removeBills(id) {
-        this.bills.forEach((el) => {
-          if (el.id === id) {
-            el.ifSelect = false;
-          }
-        })
-        if(this.ifEndGame) {
-          this.$emit('end-game');  
-        }
-      }
+      // removeBills(id) {
+      //   this.bills.forEach((el) => {
+      //     if (el.id === id) {
+      //       el.ifSelect = false;
+      //     }
+      //   })
+      //   if (this.ifEndGame) {
+      //     this.$emit('end-game');
+      //   }
+      // }
     },
     computed: {
       shuffleBills() {
@@ -253,16 +269,10 @@
         })
       },
       ifEndGame() {
-        let check = true;
-        for (let i in this.selectBills) {
-          if (this.selectBills[i].ifCorrect && this.selectBills.length === 15) {
-           check = true;
-          } else {
-            check = false;
-            break;
-          }
+        if (this.selectBills.length === 15) {
+          return true;
         }
-        return check;
+        return false;
       }
     }
 

@@ -8,7 +8,7 @@
     props: {
       src: String,
       maxVol: {
-        default: 1,
+        default: 0.6,
         type: Number
       },
       speedOfIncrement: {
