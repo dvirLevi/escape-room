@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col f-center">
-      <div class="f-center-top w-100 mt-3">
+      <div class="f-center-top w-100">
         <div class="w-75">
           <h5>בערימה נמצאים גם שטרות מזוייפים לכן עליך למיין רק את השטרות האמיתיים שמראיהם כהשטר משמאל. במידה ויבחר שטר
             שגוי הערימה תתערבב מחדש.</h5>

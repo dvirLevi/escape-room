@@ -18,7 +18,7 @@
           <img src="@/assets/ass9.png" class="jug">
         </div>
         <div class="col-md-10 order-md-1 order-0">
-          <gridStory />
+          <gridStory @end-game="$store.commit('endTask', correntRoom.id)" />
         </div>
       </div>
     </div>

@@ -8,7 +8,11 @@
           <div class="position-absolute h2 m-0 operator" :class="box.class">{{box.operator}}</div>
         </div>
         <div class="result h1 f-center m-0">
-         - 10 = <template v-if="result - 10 < 0">0</template> <template v-else>{{result - 10}}</template>
+          <template v-if="result - 10 < 0">0</template>
+          <template v-else>
+            <h2><span v-for="(letter, index) in result.toString().split('')" :key="index"
+                :class="{'border-ans': index === 1}">{{letter}}</span></h2>
+          </template>
         </div>
         <div class="story-box">
           יהדות מרוקו היא הקהילה היהודית הגדולה בארצות ערב, ובעבר הייתה הקהילה היהודית הגדולה בארצות האסלאם.
@@ -189,7 +193,19 @@
             }
           }
         }
+        if(this.ifEndGame) {
+          this.$emit('end-game');
+        }
         return result;
+      },
+      ifEndGame() {
+        let check = true;
+        for (let i in this.boxes) {
+          if (this.boxes[i].num === "") {
+            check = false;
+          }
+        }
+        return check;
       }
     }
 
@@ -250,6 +266,11 @@
 
   .right {
     right: 0;
+  }
+
+  .border-ans {
+    border: solid 1px var(--main-color);
+    border-radius: 3px;
   }
 
 
