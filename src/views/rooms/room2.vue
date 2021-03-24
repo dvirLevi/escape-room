@@ -1,47 +1,25 @@
 <template>
-  <div class="row mt-3">
-    <div class="col">
-      <div class="row">
-        <div class="col-md-2 f-center-right-top main-color">
-          <router-link to="/MainRoom">
-            <h5 class="fw-bold"><i class="las la-angle-double-right"></i> חזרה לחדר הראשי</h5>
-          </router-link>
-        </div>
-        <div class="col-md-10">
-          <h3>השליח חייב להגיע לשטרות הכסף שגזלו שליחי משיח השקר מן היהודים. בהם יוכל לשחד את הרשעים במידה ולא יתנו לו
+ <roomSlots :correntRoom="correntRoom" :img="require('@/assets/ass9.png')">
+    <template v-slot:inst>
+      <h3>השליח חייב להגיע לשטרות הכסף שגזלו שליחי משיח השקר מן היהודים. בהם יוכל לשחד את הרשעים במידה ולא יתנו לו
             לעבור במעברי הגבול. אבל...חייבים למיין ולהוציא את כל שטרות הרמב"ם כדי שלא ידעו שהרמב"ם הוא זה ששלח את האגרת
             שהרי אם יוודע הדבר הרמב"ם צפוי לעונש כבד</h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-2 order-md-0 order-1 f-center-top position-relative">
-          <checkCode :dataRoom="correntRoom" />
-          <img src="@/assets/ass9.png" class="jug">
-        </div>
-        <div class="col-md-10 order-md-1 order-0">
-          <moneyBills @end-game="$store.commit('endTask', correntRoom.id)" />
-        </div>
-      </div>
-    </div>
-  </div>
+    </template>
+    <template v-slot:task>
+      <moneyBills @end-game="$store.commit('endTask', correntRoom.id)" />
+    </template>
+  </roomSlots>
 </template>
 
 <script>
   // @ is an alias to /src
   import moneyBills from '@/components/moneyBills.vue'
-  import checkCode from '@/components/checkCode.vue'
   // import bg from '@/components/bg.vue'
 
   export default {
     name: 'room1',
     components: {
-      moneyBills,
-      checkCode
-    },
-    data() {
-      return {
-
-      }
+      moneyBills
     },
     computed: {
       correntRoom() {
@@ -54,20 +32,9 @@
 </script>
 
 <style scoped>
-  .jug {
-    width: 185px;
-    margin-top: 30px;
-    /* top: -101px; */
-    /* left: -109px; */
-    transform: rotate(-5deg);
-  }
+ 
 
   @media (max-width: 767.98px) {
-    .jug {
-     position: relative;
-    top: -45px;
-    left: -60px;
-    z-index: -1;
-    }
+  
   }
 </style>

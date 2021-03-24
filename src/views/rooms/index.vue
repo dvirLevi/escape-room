@@ -1,6 +1,7 @@
 <template>
   <div class="row position-relative">
-    <div class="row">
+    <div class="col">
+      <div class="row">
       <div class="col f-center">
         <h3 class="text-center">כנסו לחדרים פתרו את החידות ומצאו ספרה שתהיה חלק מהצופן שיפתח את התיבה שבה מוצפנת האיגרת</h3>
       </div>
@@ -11,6 +12,14 @@
         <h4 class="mt-md-4 fw-bold">{{room.text}}</h4>
         <h2 class="w-100 text-center fw-bold main-color" v-if="room.ifResolved">{{room.code}}</h2>
       </router-link>
+    </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col f-center">
+        <div class="cave img-contain c-p">
+        <!-- <img class="w-100" src="@/assets/ass14.png" alt=""> -->
+      </div>
+      </div>
     </div>
     </div>
   </div>
@@ -49,6 +58,11 @@
     height: 280px;
   }
 
+  .cave {
+    width: 50%;
+    padding-top: 30%;
+    background-image: url('../../assets/ass14.png')
+  }
 
   @media (max-width: 767.98px) {
     .door {
