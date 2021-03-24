@@ -56,16 +56,17 @@
 </script>
 
 <style scoped>
-  .jug {
+  img {
     width: 143px;
     margin-top: 30px;
     /* top: -101px; */
     /* left: -109px; */
     transform: rotate(-11deg);
+    border-radius: 8px;
   }
 
   @media (max-width: 767.98px) {
-    .jug {
+    img {
       position: relative;
       width: 81px;
       top: -45px;

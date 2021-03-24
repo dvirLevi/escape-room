@@ -28,7 +28,7 @@
     },
     mounted() {
       this.$refs.audio.volume = this.volume;
-      this.$refs.audio.play();
+      // this.$refs.audio.play();
       this.incrementVolume()
     },
     methods: {

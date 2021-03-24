@@ -17,7 +17,8 @@
     <div class="row mt-5">
       <div class="col f-center">
         <div class="cave img-contain c-p">
-        <!-- <img class="w-100" src="@/assets/ass14.png" alt=""> -->
+        <img class="fence" src="@/assets/ass15.png" alt="">
+        <img class="treasure-box" src="@/assets/ass16.png" alt="">
       </div>
       </div>
     </div>
@@ -61,12 +62,28 @@
   .cave {
     width: 50%;
     padding-top: 30%;
-    background-image: url('../../assets/ass14.png')
+    background-image: url('../../assets/ass14.png');
+    position: relative;
+  }
+
+  .fence {
+    position: absolute;
+    top: 32%;
+    right: 19%;
+    width: 55%;
+    z-index: 1;
+  }
+
+  .treasure-box {
+    position: absolute;
+    top: 56%;
+    right: 33%;
+    width: 27%;
+    z-index: 0;
   }
 
   @media (max-width: 767.98px) {
     .door {
-    background-image: url('../../assets/ass7.png');
     width: 100%;
     height: 180px;
   }
@@ -82,6 +99,11 @@
 
    h2 {
     margin-top: 50px;
+  }
+
+  .cave {
+    width: 75%;
+    padding-top: 45%;
   }
   }
 </style>
