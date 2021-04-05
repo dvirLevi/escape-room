@@ -193,19 +193,24 @@
             }
           }
         }
-        if(this.ifEndGame) {
-          this.$emit('end-game');
-        }
         return result;
       },
       ifEndGame() {
         let check = true;
         for (let i in this.boxes) {
-          if (this.boxes[i].num === "") {
+          console.log(this.result)
+          if (this.boxes[i].num === ""  || +this.result !== 17) {
             check = false;
           }
         }
         return check;
+      }
+    },
+    watch: {
+      result: function() {
+         if(this.ifEndGame) {
+          this.$emit('end-game');
+        }
       }
     }
 

@@ -9,10 +9,10 @@
             <!-- <img src="@/assets/ass11.png" class="el secret-el"> -->
             <h1 class="position-relative">שלום {{$store.state.name}}, נבחרת להיות שליח למשימה סודית! <img
                 src="@/assets/ass11.png" class="el secret-el"></h1>
-            <textTyping class="text-typing p-3 m-0" :text="text" fontFamily="Miriam Libre" color="#fff"
+            <textTyping class="text-typing p-3 mb-3" :text="text" fontFamily="Miriam Libre" color="#fff"
               @end-typing="showButt = true" />
             <template v-if="showButt">
-              <button class="g-butt bg-gradient mt-3 h5 p-2 ps-3 pe-3" @click="$router.push('/MainRoom')">קדימה
+              <button class="g-butt bg-gradient h5 p-2 ps-3 pe-3" @click="$router.push('/MainRoom')">קדימה
                 למשימה!</button>
               <img src="@/assets/ass6.png" class="el journey-el">
             </template>

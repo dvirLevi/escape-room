@@ -1,5 +1,5 @@
 <template>
-  <div class="w-100 f-center-right">
+  <div ref="checkCode" class="w-100 f-center-right">
     <template v-if="!dataRoom.ifCheck">
       <h4 class="mt-md-0 mt-3">לאחר סיום המשימה תוכל לבדוק כאן את הצופן</h4>
     </template>
@@ -53,6 +53,27 @@
             icon: 'error',
           })
         }
+      }
+    },
+    computed: {
+      ifCheck() {
+        return this.dataRoom.ifCheck;
+      }
+    },
+    watch: {
+      ifCheck: function () {
+        this.$refs.checkCode.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+          inline: "nearest"
+        });
+        setTimeout(() => {
+          Swal.fire({
+            title: 'סיימת את המשימה. עכשיו נותר לך למצוא את הצופן ולבדוק אותו בשדה הטקסט',
+            timer: 6000,
+            icon: 'success',
+          })
+        }, 300)
       }
     }
   }

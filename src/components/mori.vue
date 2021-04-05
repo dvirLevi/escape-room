@@ -2,9 +2,10 @@
   <div class="row">
     <div class="col">
       <div class="w-100 wrap-text p-3 img-cover">
+        <h4>העיר המצערה (=הקטנה) הזאת לה רב גדול בארצות האלה יקראו להרב "מארי",</h4>
         <h2 class="p-3">.(תטעומ םתסנרפ=) םתסנרפו םהייח יכרצ רעצמב ...הלא לכמו ,שמשו ןזח םג ,קדובהו טחושה אוה שרודהו
           ןיידה אוה הרומה
-          אוה ,"יראמ" ברהל וארקי הלאה תוצראב לודג בר הל תאזה (הנטקה=) הרעצמה ריעה</h2>
+          אוה</h2>
         <h4 class="fw-bold">כדאי לקרוא גם את המשך המכתב:</h4>
         <h4>על כן גם המארי מסובל תחת עול המלאכה והעבודה אם נקלה אם נכבד. הרב הזה מארי יוסף בן סעיד מלא תורה יראה וחכמה
           ורוח דעת. בקי במקרא וביאוריו עד להפליא. בקי בתלמוד ברמב"ם ועד אחרונים כאחד המורים הגדולים בארצותינו וידיו רב
@@ -21,13 +22,9 @@
           <div class="h5 mb-0 p-md-3 p-1 mt-3 pt-3 pb-3 text-center ans" v-for="(ans, index) in correctAnswers"
             :key="ans.id">{{index+1}}. {{ans.ans}}</div>
         </div>
-        <div class="w-100 f-center-right mt-3">
-          <!-- <div class="w-75"> -->
+        <div class="w-100 f-center-right mt-3" v-if="answers.length">
           <input class="form-control" v-model="textInput" type="text">
-          <!-- </div>
-          <div class="w-25 pe-2"> -->
           <button class="g-butt bg-gradient h6 me-2 p-2 m-0" @click="checkAns" type="submit">בדיקת תפקיד</button>
-          <!-- </div> -->
         </div>
       </div>
     </div>
