@@ -1,0 +1,60 @@
+<template>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="w-100 f-center sentence p-2">
+        <div class="w-75 border-start"><h6>כֹּה אָמַר כֹּרֶשׁ מֶלֶךְ פָּרַס כֹּל מַמְלְכוֹת הָאָרֶץ נָתַן לִי ה' אֱלֹהֵי הַשָּׁמָיִם
+          וְהוּא פָקַד עָלַי לִבְנוֹת לוֹ בַיִת בִּירוּשָׁלַ‍ִם אֲשֶׁר בִּיהוּדָה. מִי בָכֶם מִכָּל עַמּוֹ יְהִי
+          אֱלֹהָיו עִמּוֹ וְיַעַל לִירוּשָׁלַ‍ִם אֲשֶׁר בִּיהוּדָה וְיִבֶן אֶת בֵּית ה' אֱלֹהֵי יִשְׂרָאֵל הוּא
+          הָאֱלֹהִים אֲשֶׁר בִּירוּשָׁלָ‍ִם.</h6></div>
+        <div class="w-25 f-center-around">
+           <h3 class="m-0">4</h3>
+           <i class="las la-arrow-right h4 m-0"></i>
+           <div class="square">
+           </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+
+    </div>
+  </div>
+</template>
+
+<script>
+  // @ is an alias to /src
+  export default {
+    name: 'arrangeSentences',
+    data() {
+      return {
+
+      }
+    },
+    methods: {
+
+    },
+    computed: {
+
+    },
+  }
+</script>
+
+<style scoped>
+  .sentence {
+    border: solid 2px var(--main-color);
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 2px 3px 10px #3d3d3d;
+  }
+
+  .sentence h6 {
+    font-size: 13px;
+  }
+
+  .square {
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+  }
+
+  @media (max-width: 767.98px) {}
+</style>

@@ -73,10 +73,6 @@
 </script>
 
 <style scoped>
-  .find-in {
-    /* background-image: url("../assets/ass13.jpg"); */
-    /* padding-top: 70%; */
-  }
 
   .circle {
     position: absolute;

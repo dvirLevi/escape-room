@@ -47,7 +47,6 @@
   }
 
   h2 {
-    font-family: 'Miriam Libre', sans-serif;
     font-weight: 400;
     font-size: 60px;
   }

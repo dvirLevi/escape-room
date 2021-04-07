@@ -32,10 +32,10 @@
 
 <style scoped>
   /* @import url('https://fonts.googleapis.com/css2?family=Miriam+Libre:wght@400;700&display=swap'); */
-.main-room {
+/* .main-room {
     font-family: 'Miriam Libre', sans-serif;
 
-}
+} */
   h1 {
     font-weight: 800;
     font-size: 60px;

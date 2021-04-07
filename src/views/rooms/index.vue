@@ -43,11 +43,7 @@
 </script>
 
 <style scoped>
-  h3 {
-    font-family: 'Miriam Libre', sans-serif;
-    font-weight: 800;
-  }
-
+  
   h2 {
     margin-top: 100px;
     text-shadow: 1px 2px 4px #000000;
@@ -94,7 +90,7 @@
 
   h4 {
     font-size: 17px;
-    margin-top: 30px;
+    margin-top: 22px;
   }
 
    h2 {

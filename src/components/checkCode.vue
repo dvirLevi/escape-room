@@ -5,7 +5,7 @@
     </template>
     <template v-else>
       <template v-if="!dataRoom.ifResolved">
-        <aInput class="mt-1" v-model="code" placeholder="בדיקת צופן" :required="false" />
+        <aInput class="mt-md-0 mt-3" v-model="code" placeholder="בדיקת צופן" :required="false" />
         <div class="g-butt bg-gradient mt-3 h5 p-2 ps-3 pe-3" @click="checkCode">בדוק</div>
       </template>
       <template v-else>
