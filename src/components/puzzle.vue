@@ -2,9 +2,10 @@
   <div class="row">
     <div class="col f-center">
       <div class="f-center puzzle p-1 border-r">
-        <div class="wrap-part" v-for="part in parts" :key="part.id" :style="{width: widthParts + '%'}">
-          <part :part="part" @drag-el="dragID = $event" @drop-el="endDrag" />
-        </div>
+        <dragDropWrap itemsClass="wrap-part" :itemsStyle="{width: widthParts + '%'}" :items="parts" v-slot:default="slotProps" >
+          <div class="part img-contain" :style="{backgroundImage: `url(${slotProps.item.img})`}">
+          </div>
+      </dragDropWrap>
       </div>
     </div>
   </div>
@@ -12,12 +13,15 @@
 
 <script>
   // @ is an alias to /src
-  import part from '@/components/puzzle/part.vue'
+  // import part from '@/components/puzzle/part.vue'
   import shuffle from '../helpers/shuffle'
+  import dragDropWrap from '@/components/dragDropWrap.vue'
+
   export default {
     name: 'puzzle',
     components: {
-      part
+      // part,
+      dragDropWrap
     },
     props: {
       widthParts: {
@@ -28,8 +32,6 @@
     },
     data() {
       return {
-        dragID: 0,
-        // dropID: 0,
         parts: [{
             img: require('@/assets/puzzle/ass1.jpg'),
             id: 1
@@ -99,26 +101,11 @@
       }
     },
     methods: {
-      endDrag(e) {
-        let dragEl = this.dragID;
-        let dropEl = e;
-        this.replaseObjElements(dragEl, dropEl, this.parts);
+      endGame() {
         if(this.ifEndGame) {
           this.$emit('end-game');  
         }
       },
-      replaseObjElements(id1, id2, arr) {
-        let index1 = arr.findIndex((el) => {
-          return el.id === id1;
-        })
-        let index2 = arr.findIndex((el) => {
-          return el.id === id2;
-        })
-        let el1 = arr[index1];
-        let el2 = arr[index2];
-        arr[index1] = el2;
-        arr[index2] = el1;
-      }
     },
     computed: {
       ifEndGame() {
@@ -138,7 +125,7 @@
   }
 </script>
 
-<style scoped>
+<style>
   .puzzle {
     width: 100%;
     border: solid 3px var(--main-color);
@@ -147,6 +134,12 @@
 
   .wrap-part {
     padding: 1px;
+  }
+
+  .part {
+    width: 100%;
+    padding-top: 100%;
+    cursor: grab;
   }
 
 

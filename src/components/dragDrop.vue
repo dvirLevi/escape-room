@@ -12,6 +12,7 @@
     props: {
       id: Number,
       elDrop: String,
+      item: Object
     },
     data() {
       return {
@@ -117,7 +118,7 @@
 in parant of
 <dragDrop /> component
 
-<dragDrop class="w-100 f-center sentence p-2 mt-2" v-for="item in sentences" :key="item.id" :id="item.id" :elDrop="elDrop"
+<dragDrop class="w-100 f-center sentence p-2 mt-2" v-for="item in items" :key="item.id" :id="item.id" :elDrop="elDrop"
          @pass-drag-index="dragId = $event" @end-drop="endDrop" @drop-momile="elDrop = $event">
   your html content
 </dragDrop>

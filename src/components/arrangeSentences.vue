@@ -1,18 +1,17 @@
 <template>
   <div class="row">
     <div class="col-md-4">
-      <dragDrop class="w-100 f-center sentence p-2 mt-2" v-for="item in sentences" :key="item.id" :id="item.id" :elDrop="elDrop"
-         @pass-drag-index="dragId = $event" @end-drop="endDrop" @drop-momile="elDrop = $event">
-        <div class="w-75 border-start">
-          <h6>{{item.text}}</h6>
-        </div>
-        <div class="w-25 f-center-around">
-          <h3 class="m-0">{{item.num}}</h3>
-          <i :class="item.arrow" class="las la-arrow-right h4 m-0"></i>
-          <div class="square">
+      <dragDropWrap itemsClass="w-100 f-center sentence p-2 mt-2" :items="sentences" v-slot:default="slotProps">
+          <div class="w-75 border-start">
+            <h6>{{slotProps.item.text}}</h6>
           </div>
-        </div>
-      </dragDrop>
+          <div class="w-25 f-center-around">
+            <h3 class="m-0">{{slotProps.item.num}}</h3>
+            <i :class="slotProps.item.arrow" class="las la-arrow-right h4 m-0"></i>
+            <div class="square">
+            </div>
+          </div>
+      </dragDropWrap>
     </div>
     <div class="col-md-8">
 
@@ -22,18 +21,16 @@
 
 <script>
   // @ is an alias to /src
-  import dragDrop from '@/components/dragDrop.vue'
+  import dragDropWrap from '@/components/dragDropWrap.vue'
 
 
   export default {
     name: 'arrangeSentences',
     components: {
-      dragDrop
+      dragDropWrap
     },
     data() {
       return {
-        dragId: null,
-        elDrop: null,
         sentences: [{
             text: `כֹּה אָמַר כֹּרֶשׁ מֶלֶךְ פָּרַס כֹּל מַמְלְכוֹת הָאָרֶץ נָתַן לִי ה' אֱלֹהֵי הַשָּׁמָיִם
           וְהוּא פָקַד עָלַי לִבְנוֹת לוֹ בַיִת בִּירוּשָׁלַ‍ִם אֲשֶׁר בִּיהוּדָה. מִי בָכֶם מִכָּל עַמּוֹ יְהִי
@@ -72,32 +69,11 @@
           },
         ]
       }
-    },
-    methods: {
-      endDrop(dropId) {
-        const replaseObjElements = (dragId, dropId, arr)=> {
-        let index1 = arr.findIndex((el) => {
-          return el.id === dragId;
-        })
-        let index2 = arr.findIndex((el) => {
-          return el.id === dropId;
-        })
-        let dragEl = arr[index1];
-        let dropEl = arr[index2];
-        arr[index1] = dropEl;
-        arr[index2] = dragEl;
-      }
-      replaseObjElements(this.dragId, dropId, this.sentences);
-      },
-      
-    },
-    computed: {
-
-    },
+    }
   }
 </script>
 
-<style scoped>
+<style>
   .sentence {
     border: solid 2px var(--main-color);
     border-radius: 20px;
