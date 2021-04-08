@@ -1,5 +1,6 @@
 <template>
-  <div :id="'drag' + id" :class="{'opacity': el_prime}" @mousedown="clone" @mouseover="drop" @touchstart="clone" @touchmove="drop" >
+  <div :id="'drag' + id" :class="{'opacity': el_prime}" @mousedown="clone" @mouseover="drop" @touchstart="clone"
+    @touchmove="drop">
     <slot></slot>
   </div>
 </template>
@@ -45,14 +46,16 @@
             body.onmouseup = null;
           }
 
-       
-el.addEventListener("touchmove", (e)=> {
-    e.preventDefault(); 
-}
-, {passive: false});
+
+          el.addEventListener("touchmove", (e) => {
+            e.preventDefault();
+          }, {
+            passive: false
+          });
 
           body.ontouchmove = (e) => {
-            console.log(e)
+            // console.log(e.changedTouches[0].)
+            // console.log(e.changedTouches[0].Touch.clientY)
             this.drag(e)
           }
 
@@ -65,14 +68,21 @@ el.addEventListener("touchmove", (e)=> {
         }
       },
       drag(e) {
-        this.el_prime.style.left = e.clientX - this.rect.width / 2 + "px";
-        this.el_prime.style.top = e.clientY - this.rect.height / 2 + "px";
+        if (e.type === 'mousemove') {
+          this.el_prime.style.left = e.clientX - this.rect.width / 2 + "px";
+          this.el_prime.style.top = e.clientY - this.rect.height / 2 + "px";
+        } else if (e.type === 'touchmove') {
+          this.el_prime.style.left = e.changedTouches[0].clientX - this.rect.width / 2 + "px";
+          this.el_prime.style.top = e.changedTouches[0].clientY - this.rect.height / 2 + "px";
+        }
       },
       drop() {
         const activeDragEl = document.getElementById('activeDrag');
-        if (activeDragEl && !this.el_prime) {
+        console.log(this.id)
+
+        if (activeDragEl) {
           this.$emit('end-drop', this.id)
-          console.log('drop')
+          // console.log('drop')
         }
       }
     },
@@ -91,46 +101,48 @@ el.addEventListener("touchmove", (e)=> {
 </style>
 
 
-in parant of <dragDrop /> component
+in parant of
+<dragDrop /> component
 
-<dragDrop class="w-100 f-center sentence p-2 mt-2" v-for="item in items" :key="item.id" :id="item.id" @pass-drag-index="dragId = $event" @end-drop="endDrop">
-        your html content
+<dragDrop class="w-100 f-center sentence p-2 mt-2" v-for="item in items" :key="item.id" :id="item.id"
+  @pass-drag-index="dragId = $event" @end-drop="endDrop">
+  your html content
 </dragDrop>
 
 
 data() {
-      return {
-        dragId: null,
-        items: [{
-            content: `asd`,
-            id: 1
-          },
-          {
-            content: `asd`,
-            id: 2
-          },
-          {
-            content: `asd`,
-            id: 3
-          },
-       
-        ]
-      }
-    },
-    methods: {
-      endDrop(dropId) {
-        const replaseObjElements = (dragId, dropId, arr)=> {
-        let index1 = arr.findIndex((el) => {
-          return el.id === dragId;
-        })
-        let index2 = arr.findIndex((el) => {
-          return el.id === dropId;
-        })
-        let dragEl = arr[index1];
-        let dropEl = arr[index2];
-        arr[index1] = dropEl;
-        arr[index2] = dragEl;
-      }
-      replaseObjElements(this.dragId, dropId, this.items);
-      },
-    }
+return {
+dragId: null,
+items: [{
+content: `asd`,
+id: 1
+},
+{
+content: `asd`,
+id: 2
+},
+{
+content: `asd`,
+id: 3
+},
+
+]
+}
+},
+methods: {
+endDrop(dropId) {
+const replaseObjElements = (dragId, dropId, arr)=> {
+let index1 = arr.findIndex((el) => {
+return el.id === dragId;
+})
+let index2 = arr.findIndex((el) => {
+return el.id === dropId;
+})
+let dragEl = arr[index1];
+let dropEl = arr[index2];
+arr[index1] = dropEl;
+arr[index2] = dragEl;
+}
+replaseObjElements(this.dragId, dropId, this.items);
+},
+}
