@@ -45,10 +45,14 @@
           }
 
           body.ontouchmove = (e) => {
+            e.preventDefault()
+            e.stopPropagation()
             this.drag(e)
           }
 
-          body.ontouchend = () => {
+          body.ontouchend = (e) => {
+            e.preventDefault()
+            e.stopPropagation()
             this.el_prime.remove();
             this.el_prime = null;
             body.onmousemove = null;
@@ -121,6 +125,6 @@ data() {
         arr[index1] = dropEl;
         arr[index2] = dragEl;
       }
-      replaseObjElements(this.dragId, dropId, this.sentences);
+      replaseObjElements(this.dragId, dropId, this.items);
       },
     }
