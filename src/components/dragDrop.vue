@@ -45,13 +45,13 @@
           }
 
           body.ontouchmove = (e) => {
-            e.preventDefault()
+            // e.preventDefault()
             e.stopPropagation()
             this.drag(e)
           }
 
           body.ontouchend = (e) => {
-            e.preventDefault()
+            // e.preventDefault()
             e.stopPropagation()
             this.el_prime.remove();
             this.el_prime = null;
