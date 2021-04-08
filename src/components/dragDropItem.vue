@@ -26,14 +26,8 @@
         this.el_prime = el.cloneNode(true);
         const parantEl = el.parentElement;
         parantEl.appendChild(this.el_prime);
-        this.rect = el.getBoundingClientRect()
-        if (e.type === 'mousedown') {
-          this.el_prime.style.left = e.clientX - this.rect.width / 2 + "px";
-          this.el_prime.style.top = e.clientY - this.rect.height / 2 + "px";
-        } else if (e.type === 'touchstart') {
-          this.el_prime.style.left = e.touches[0].clientX - this.rect.width / 2 + "px";
-          this.el_prime.style.top = e.touches[0].clientY - this.rect.height / 2 + "px";
-        }
+        this.rect = el.getBoundingClientRect();
+        this.follow(e);
         this.el_prime.id = 'activeDrag';
         this.el_prime.style.position = 'fixed';
         this.el_prime.style.setProperty('width', this.rect.width + "px", 'important');
@@ -75,13 +69,7 @@
         }
       },
       drag(e) {
-        if (e.type === 'mousemove') {
-          this.el_prime.style.left = e.clientX - this.rect.width / 2 + "px";
-          this.el_prime.style.top = e.clientY - this.rect.height / 2 + "px";
-        } else if (e.type === 'touchmove') {
-          this.el_prime.style.left = e.touches[0].clientX - this.rect.width / 2 + "px";
-          this.el_prime.style.top = e.touches[0].clientY - this.rect.height / 2 + "px";
-        }
+        this.follow(e)
       },
       drop() {
         const activeDragEl = document.getElementById('activeDrag');
@@ -93,6 +81,15 @@
         let touch = e.touches[0];
         let checkbox = document.elementFromPoint(touch.clientX, touch.clientY);
         this.$emit('drop-momile', checkbox.id);
+      },
+      follow(e) {
+if (e.type === 'mousemove' || e.type === 'mousedown') {
+          this.el_prime.style.left = e.clientX - this.rect.width / 2 + "px";
+          this.el_prime.style.top = e.clientY - this.rect.height / 2 + "px";
+        } else if (e.type === 'touchmove' || e.type === 'touchstart') {
+          this.el_prime.style.left = e.touches[0].clientX - this.rect.width / 2 + "px";
+          this.el_prime.style.top = e.touches[0].clientY - this.rect.height / 2 + "px";
+        }
       }
     },
     watch: {
