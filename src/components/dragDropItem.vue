@@ -27,14 +27,20 @@
         const parantEl = el.parentElement;
         parantEl.appendChild(this.el_prime);
         this.rect = el.getBoundingClientRect()
+        if (e.type === 'mousedown') {
+          this.el_prime.style.left = e.clientX - this.rect.width / 2 + "px";
+          this.el_prime.style.top = e.clientY - this.rect.height / 2 + "px";
+        } else if (e.type === 'touchstart') {
+          this.el_prime.style.left = e.touches[0].clientX - this.rect.width / 2 + "px";
+          this.el_prime.style.top = e.touches[0].clientY - this.rect.height / 2 + "px";
+        }
         this.el_prime.id = 'activeDrag';
         this.el_prime.style.position = 'fixed';
-        this.el_prime.style.left = e.clientX - this.rect.width / 2 + "px";
-        this.el_prime.style.top = e.clientY - this.rect.height / 2 + "px";
         this.el_prime.style.setProperty('width', this.rect.width + "px", 'important');
         this.el_prime.style.setProperty('height', this.rect.height + "px", 'important');
         this.el_prime.style.setProperty('box-shadow', '2px 3px 20px #3d3d3d');
         this.el_prime.style.setProperty('pointer-events', 'none', 'important');
+
         this.$emit('pass-drag-index', this.id)
         const body = document.body;
         if (this.el_prime) {
@@ -119,7 +125,7 @@ in parant of
 <dragDrop /> component
 
 <dragDrop class="w-100 f-center sentence p-2 mt-2" v-for="item in items" :key="item.id" :id="item.id" :elDrop="elDrop"
-         @pass-drag-index="dragId = $event" @end-drop="endDrop" @drop-momile="elDrop = $event">
+  @pass-drag-index="dragId = $event" @end-drop="endDrop" @drop-momile="elDrop = $event">
   your html content
 </dragDrop>
 
