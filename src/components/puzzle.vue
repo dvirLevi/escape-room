@@ -2,10 +2,10 @@
   <div class="row">
     <div class="col f-center">
       <div class="f-center puzzle p-1 border-r">
-        <dragDropWrap itemsClass="wrap-part" :itemsStyle="{width: widthParts + '%'}" :items="parts" v-slot:default="slotProps" >
+        <dragDrop itemsClass="wrap-part" :itemsStyle="{width: widthParts + '%'}" :items="parts" v-slot:default="slotProps" >
           <div class="part img-contain" :style="{backgroundImage: `url(${slotProps.item.img})`}">
           </div>
-      </dragDropWrap>
+      </dragDrop>
       </div>
     </div>
   </div>
@@ -15,13 +15,13 @@
   // @ is an alias to /src
   // import part from '@/components/puzzle/part.vue'
   import shuffle from '../helpers/shuffle'
-  import dragDropWrap from '@/components/dragDropWrap.vue'
+  import dragDrop from '@/components/dragDrop.vue'
 
   export default {
     name: 'puzzle',
     components: {
       // part,
-      dragDropWrap
+      dragDrop
     },
     props: {
       widthParts: {

@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col-md-4">
-      <dragDropWrap itemsClass="w-100 f-center sentence p-2 mt-2" :items="sentences" v-slot:default="slotProps">
+      <dragDrop itemsClass="w-100 f-center sentence p-2 mt-2" :items="sentences" v-slot:default="slotProps">
           <div class="w-75 border-start">
             <h6>{{slotProps.item.text}}</h6>
           </div>
@@ -11,7 +11,7 @@
             <div class="square">
             </div>
           </div>
-      </dragDropWrap>
+      </dragDrop>
     </div>
     <div class="col-md-8">
 
@@ -21,13 +21,13 @@
 
 <script>
   // @ is an alias to /src
-  import dragDropWrap from '@/components/dragDropWrap.vue'
+  import dragDrop from '@/components/dragDrop.vue'
 
 
   export default {
     name: 'arrangeSentences',
     components: {
-      dragDropWrap
+      dragDrop
     },
     data() {
       return {
