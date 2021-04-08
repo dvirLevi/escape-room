@@ -44,15 +44,17 @@
             body.onmousemove = null;
           }
 
+       
+el.addEventListener("touchmove", (e)=> {
+    e.preventDefault(); 
+}
+, {passive: false});
+
           body.ontouchmove = (e) => {
-            // e.preventDefault()
-            e.stopPropagation()
             this.drag(e)
           }
 
-          body.ontouchend = (e) => {
-            // e.preventDefault()
-            e.stopPropagation()
+          body.ontouchend = () => {
             this.el_prime.remove();
             this.el_prime = null;
             body.onmousemove = null;
