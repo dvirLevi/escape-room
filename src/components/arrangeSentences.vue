@@ -1,7 +1,8 @@
 <template>
   <div class="row">
     <div class="col-md-4">
-      <dragDrop class="w-100 f-center sentence p-2 mt-2" v-for="item in sentences" :key="item.id" :id="item.id">
+      <dragDrop class="w-100 f-center sentence p-2 mt-2" v-for="item in sentences" :key="item.id" :id="item.id"
+         @pass-drag-index="dragId = $event" @end-drop="endDrop">
         <div class="w-75 border-start">
           <h6>{{item.text}}</h6>
         </div>
@@ -23,7 +24,7 @@
   // @ is an alias to /src
   import dragDrop from '@/components/dragDrop.vue'
 
-  
+
   export default {
     name: 'arrangeSentences',
     components: {
@@ -31,6 +32,11 @@
     },
     data() {
       return {
+        // for dnd
+        dragId: null,
+
+
+
         sentences: [{
             text: `כֹּה אָמַר כֹּרֶשׁ מֶלֶךְ פָּרַס כֹּל מַמְלְכוֹת הָאָרֶץ נָתַן לִי ה' אֱלֹהֵי הַשָּׁמָיִם
           וְהוּא פָקַד עָלַי לִבְנוֹת לוֹ בַיִת בִּירוּשָׁלַ‍ִם אֲשֶׁר בִּיהוּדָה. מִי בָכֶם מִכָּל עַמּוֹ יְהִי
@@ -71,7 +77,22 @@
       }
     },
     methods: {
-
+      endDrop(dropId) {
+        const replaseObjElements = (dragId, dropId, arr)=> {
+        let index1 = arr.findIndex((el) => {
+          return el.id === dragId;
+        })
+        let index2 = arr.findIndex((el) => {
+          return el.id === dropId;
+        })
+        let dragEl = arr[index1];
+        let dropEl = arr[index2];
+        arr[index1] = dropEl;
+        arr[index2] = dragEl;
+      }
+      replaseObjElements(this.dragId, dropId, this.sentences);
+      },
+      
     },
     computed: {
 
