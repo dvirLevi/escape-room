@@ -1,8 +1,8 @@
 <template>
   <div class="row">
     <div class="col-md-4">
-      <dragDrop class="w-100 f-center sentence p-2 mt-2" v-for="item in sentences" :key="item.id" :id="item.id"
-         @pass-drag-index="dragId = $event" @end-drop="endDrop">
+      <dragDrop class="w-100 f-center sentence p-2 mt-2" v-for="item in sentences" :key="item.id" :id="item.id" :elDrop="elDrop"
+         @pass-drag-index="dragId = $event" @end-drop="endDrop" @drop-momile="elDrop = $event">
         <div class="w-75 border-start">
           <h6>{{item.text}}</h6>
         </div>
@@ -33,6 +33,7 @@
     data() {
       return {
         dragId: null,
+        elDrop: null,
         sentences: [{
             text: `כֹּה אָמַר כֹּרֶשׁ מֶלֶךְ פָּרַס כֹּל מַמְלְכוֹת הָאָרֶץ נָתַן לִי ה' אֱלֹהֵי הַשָּׁמָיִם
           וְהוּא פָקַד עָלַי לִבְנוֹת לוֹ בַיִת בִּירוּשָׁלַ‍ִם אֲשֶׁר בִּיהוּדָה. מִי בָכֶם מִכָּל עַמּוֹ יְהִי

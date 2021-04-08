@@ -1,6 +1,6 @@
 <template>
-  <div :id="'drag' + id" :class="{'opacity': el_prime}" @mousedown="clone" @mouseover="drop" @touchstart="clone"
-    @touchmove="drop">
+  <div :id="'drag' + id" class="drag-drop" :class="{'opacity': el_prime}" @mousedown="clone" @mouseover="drop"
+    @touchstart="clone">
     <slot></slot>
   </div>
 </template>
@@ -11,6 +11,7 @@
     name: 'dragDrop',
     props: {
       id: Number,
+      elDrop: String,
     },
     data() {
       return {
@@ -54,9 +55,8 @@
           });
 
           body.ontouchmove = (e) => {
-            // console.log(e.changedTouches[0].)
-            // console.log(e.changedTouches[0].Touch.clientY)
-            this.drag(e)
+            this.drag(e);
+            this.dropMomile(e)
           }
 
           body.ontouchend = () => {
@@ -72,27 +72,40 @@
           this.el_prime.style.left = e.clientX - this.rect.width / 2 + "px";
           this.el_prime.style.top = e.clientY - this.rect.height / 2 + "px";
         } else if (e.type === 'touchmove') {
-          this.el_prime.style.left = e.changedTouches[0].clientX - this.rect.width / 2 + "px";
-          this.el_prime.style.top = e.changedTouches[0].clientY - this.rect.height / 2 + "px";
+          this.el_prime.style.left = e.touches[0].clientX - this.rect.width / 2 + "px";
+          this.el_prime.style.top = e.touches[0].clientY - this.rect.height / 2 + "px";
         }
       },
       drop() {
         const activeDragEl = document.getElementById('activeDrag');
-        console.log(this.id)
-
-        if (activeDragEl) {
-          this.$emit('end-drop', this.id)
-          // console.log('drop')
+        if (activeDragEl && !this.el_prime) {
+          this.$emit('end-drop', this.id);
         }
+      },
+      dropMomile(e) {
+        let touch = e.touches[0];
+        let checkbox = document.elementFromPoint(touch.clientX, touch.clientY);
+        this.$emit('drop-momile', checkbox.id);
       }
     },
-    computed: {
-
-    },
+    watch: {
+      elDrop: function () {
+        if (this.elDrop === 'drag' + this.id) {
+          const activeDragEl = document.getElementById('activeDrag');
+          if (activeDragEl && !this.el_prime) {
+            this.$emit('end-drop', this.id);
+          }
+        }
+      }
+    }
   }
 </script>
 
-<style scoped>
+<style>
+  .drag-drop * {
+    pointer-events: none;
+  }
+
   .opacity {
     opacity: 0.5;
   }
@@ -104,8 +117,8 @@
 in parant of
 <dragDrop /> component
 
-<dragDrop class="w-100 f-center sentence p-2 mt-2" v-for="item in items" :key="item.id" :id="item.id"
-  @pass-drag-index="dragId = $event" @end-drop="endDrop">
+<dragDrop class="w-100 f-center sentence p-2 mt-2" v-for="item in sentences" :key="item.id" :id="item.id" :elDrop="elDrop"
+         @pass-drag-index="dragId = $event" @end-drop="endDrop" @drop-momile="elDrop = $event">
   your html content
 </dragDrop>
 
@@ -113,6 +126,7 @@ in parant of
 data() {
 return {
 dragId: null,
+elDrop: null,
 items: [{
 content: `asd`,
 id: 1
