@@ -42,6 +42,7 @@
             this.el_prime.remove();
             this.el_prime = null;
             body.onmousemove = null;
+            body.onmouseup = null;
           }
 
        
@@ -51,13 +52,15 @@ el.addEventListener("touchmove", (e)=> {
 , {passive: false});
 
           body.ontouchmove = (e) => {
+            console.log(e)
             this.drag(e)
           }
 
           body.ontouchend = () => {
             this.el_prime.remove();
             this.el_prime = null;
-            body.onmousemove = null;
+            body.ontouchmove = null;
+            body.ontouchend = null;
           }
         }
       },
@@ -69,6 +72,7 @@ el.addEventListener("touchmove", (e)=> {
         const activeDragEl = document.getElementById('activeDrag');
         if (activeDragEl && !this.el_prime) {
           this.$emit('end-drop', this.id)
+          console.log('drop')
         }
       }
     },
