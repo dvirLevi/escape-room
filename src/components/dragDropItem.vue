@@ -22,53 +22,73 @@
     },
     methods: {
       clone(e) {
-        const el = document.getElementById('drag' + this.id);
-        this.el_prime = el.cloneNode(true);
-        const parantEl = el.parentElement;
-        parantEl.appendChild(this.el_prime);
-        this.rect = el.getBoundingClientRect();
-        this.follow(e);
-        this.el_prime.id = 'activeDrag';
-        this.el_prime.style.position = 'fixed';
-        this.el_prime.style.setProperty('width', this.rect.width + "px", 'important');
-        this.el_prime.style.setProperty('height', this.rect.height + "px", 'important');
-        this.el_prime.style.setProperty('box-shadow', '2px 3px 20px #3d3d3d');
-        this.el_prime.style.setProperty('pointer-events', 'none', 'important');
-
-        this.$emit('pass-drag-index', this.id)
-        const body = document.body;
-        if (this.el_prime) {
-          body.onmousemove = (e) => {
-            this.drag(e)
-          }
-          body.onmouseup = () => {
-            this.el_prime.remove();
-            this.el_prime = null;
-            body.onmousemove = null;
-            body.onmouseup = null;
-          }
+        if (!this.el_prime) {
+          const el = document.getElementById('drag' + this.id);
+          this.el_prime = el.cloneNode(true);
+          const parantEl = el.parentElement;
+          parantEl.appendChild(this.el_prime);
+          this.rect = el.getBoundingClientRect();
+          this.el_prime.id = 'activeDrag';
+          this.el_prime.style.position = 'fixed';
+          this.el_prime.style.setProperty('width', this.rect.width + "px", 'important');
+          this.el_prime.style.setProperty('height', this.rect.height + "px", 'important');
+          this.el_prime.style.setProperty('box-shadow', '2px 3px 20px #3d3d3d');
+          this.el_prime.style.setProperty('pointer-events', 'none', 'important');
+          this.el_prime.style.setProperty('margin', '0px', 'important');
+          this.el_prime.style.left = this.rect.left + "px";
+          this.el_prime.style.top = this.rect.top + "px";
+          setTimeout(() => {
+            this.el_prime.style.setProperty('transition', '.2s');
+            this.follow(e);
+          }, 3)
 
 
-          el.addEventListener("touchmove", (e) => {
-            e.preventDefault();
-          }, {
-            passive: false
-          });
+          this.$emit('pass-drag-index', this.id)
+          const body = document.body;
+          if (this.el_prime) {
+            const removeEl_prime = () => {
+              this.el_prime.ontransitionend = () => {
+                if (this.el_prime) {
+                  this.el_prime.remove();
+                  this.el_prime = null;
+                }
+              }
+              this.el_prime.style.setProperty('transition', '.2s');
+              this.rect = el.getBoundingClientRect();
+              this.el_prime.style.left = this.rect.left + "px";
+              this.el_prime.style.top = this.rect.top + "px";
+              body.onmousemove = null;
+              body.onmouseup = null;
+              body.ontouchend = null;
+            }
 
-          body.ontouchmove = (e) => {
-            this.drag(e);
-            this.dropMomile(e)
-          }
+            body.onmousemove = (e) => {
+              this.drag(e)
+            }
+            body.onmouseup = () => {
+              removeEl_prime()
+            }
 
-          body.ontouchend = () => {
-            this.el_prime.remove();
-            this.el_prime = null;
-            body.ontouchmove = null;
-            body.ontouchend = null;
+
+            el.addEventListener("touchmove", (e) => {
+              e.preventDefault();
+            }, {
+              passive: false
+            });
+
+            body.ontouchmove = (e) => {
+              this.drag(e);
+              this.dropMomile(e)
+            }
+
+            body.ontouchend = () => {
+              removeEl_prime()
+            }
           }
         }
       },
       drag(e) {
+        this.el_prime.style.setProperty('transition', 'none');
         this.follow(e)
       },
       drop() {
@@ -83,7 +103,7 @@
         this.$emit('drop-momile', checkbox.id);
       },
       follow(e) {
-if (e.type === 'mousemove' || e.type === 'mousedown') {
+        if (e.type === 'mousemove' || e.type === 'mousedown') {
           this.el_prime.style.left = e.clientX - this.rect.width / 2 + "px";
           this.el_prime.style.top = e.clientY - this.rect.height / 2 + "px";
         } else if (e.type === 'touchmove' || e.type === 'touchstart') {
@@ -106,6 +126,9 @@ if (e.type === 'mousemove' || e.type === 'mousedown') {
 </script>
 
 <style>
+  /* .drag-drop  {
+   transition: 2s;
+  } */
   .drag-drop * {
     pointer-events: none;
   }
