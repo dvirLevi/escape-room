@@ -13,8 +13,19 @@
           </div>
       </dragDrop>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-8 pt-2">
+       <div class="w-100 f-center">
+         <div class="w-50 f-center">
+           <div class="square-table" v-for="item in 25" :key="item">
 
+           </div>
+         </div>
+         <div class="w-50 f-center">
+           <div class="square-table" v-for="item in 25" :key="item">
+
+           </div>
+         </div>
+       </div>
     </div>
   </div>
 </template>
@@ -89,6 +100,13 @@
     width: 20px;
     height: 20px;
     background-color: #000;
+  }
+
+  .square-table {
+    width: 20%;
+    padding-top: 20%;
+    background-color: #000;
+    border: solid 1px rgb(255, 255, 255);
   }
 
   @media (max-width: 767.98px) {}
