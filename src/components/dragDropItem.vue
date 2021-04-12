@@ -1,5 +1,5 @@
 <template>
-  <div :id="'drag' + id" class="drag-drop" :class="{'opacity': el_prime}" @mousedown="clone" @mouseover="drop"
+  <div :id="'drag' + id" class="drag-drop" :class="el_prime? placeDragClass : ''" @mousedown="clone" @mouseover="drop"
     @touchstart="clone">
     <slot></slot>
   </div>
@@ -12,7 +12,16 @@
     props: {
       id: Number,
       elDrop: String,
-      item: Object
+      item: Object,
+      placeDragClass: {
+        default: 'p-drag-el',
+        type: String
+      },
+      dragClass: {
+        default: 'drag-el',
+        type: String
+      }
+
     },
     data() {
       return {
@@ -29,10 +38,11 @@
           parantEl.appendChild(this.el_prime);
           this.rect = el.getBoundingClientRect();
           this.el_prime.id = 'activeDrag';
+          this.el_prime.classList.add(this.dragClass);
           this.el_prime.style.position = 'fixed';
           this.el_prime.style.setProperty('width', this.rect.width + "px", 'important');
           this.el_prime.style.setProperty('height', this.rect.height + "px", 'important');
-          this.el_prime.style.setProperty('box-shadow', '2px 3px 20px #3d3d3d');
+          // this.el_prime.style.setProperty('box-shadow', '2px 3px 20px #3d3d3d');
           this.el_prime.style.setProperty('pointer-events', 'none', 'important');
           this.el_prime.style.setProperty('margin', '0px', 'important');
           this.el_prime.style.left = this.rect.left + "px";
@@ -126,64 +136,17 @@
 </script>
 
 <style>
-  /* .drag-drop  {
-   transition: 2s;
-  } */
   .drag-drop * {
     pointer-events: none;
   }
 
-  .opacity {
+  .p-drag-el {
     opacity: 0.5;
+  }
+
+  .drag-el {
+    box-shadow: 2px 3px 20px #000000 !important;
   }
 
   @media (max-width: 767.98px) {}
 </style>
-
-
-in parant of
-<dragDrop /> component
-
-<dragDrop class="w-100 f-center sentence p-2 mt-2" v-for="item in items" :key="item.id" :id="item.id" :elDrop="elDrop"
-  @pass-drag-index="dragId = $event" @end-drop="endDrop" @drop-momile="elDrop = $event">
-  your html content
-</dragDrop>
-
-
-data() {
-return {
-dragId: null,
-elDrop: null,
-items: [{
-content: `asd`,
-id: 1
-},
-{
-content: `asd`,
-id: 2
-},
-{
-content: `asd`,
-id: 3
-},
-
-]
-}
-},
-methods: {
-endDrop(dropId) {
-const replaseObjElements = (dragId, dropId, arr)=> {
-let index1 = arr.findIndex((el) => {
-return el.id === dragId;
-})
-let index2 = arr.findIndex((el) => {
-return el.id === dropId;
-})
-let dragEl = arr[index1];
-let dropEl = arr[index2];
-arr[index1] = dropEl;
-arr[index2] = dragEl;
-}
-replaseObjElements(this.dragId, dropId, this.items);
-},
-}
