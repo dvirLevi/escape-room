@@ -369,9 +369,8 @@
 // window.addEventListener('deviceorientation', (e)=>{
 //   alert(e.alpha)
 // });
-screen.addEventListener("orientationchange", function () {
-  alert("The orientation of the screen is: " + screen.orientation);
-});
+alert("The orientation of the screen is: " + screen.orientation.type);
+
 // window.addEventListener('deviceorientation', this.fullScreen());
     },
     methods: {
