@@ -366,7 +366,9 @@
 
     },
     mounted() {
-
+window.addEventListener('deviceorientation', ()=>{
+  alert()
+});
     },
     methods: {
       fullScreen() {
