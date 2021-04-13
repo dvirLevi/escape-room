@@ -3,7 +3,7 @@ const rotateScreen = {
   ifMobile: window.innerWidth > 767 ? false : true,
   horizontal() {
     if (this.ifMobile) {
-      if (this.ifSetStyle) {
+      if (!this.ifSetStyle) {
         let styles = `
     :not(:root):fullscreen::backdrop {
       background: rgb(255, 255, 255) !important;
