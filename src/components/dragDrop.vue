@@ -1,6 +1,6 @@
 <template>
   <dragDropItem :class="itemsClass" :placeDragClass="placeDragClass" :dragClass="dragClass" :style="itemsStyle" v-for="item in items" :item="item" :key="item.id" :id="item.id" :elDrop="elDrop" @pass-drag-index="dragId = $event"
-    @end-drop="endDrop" @drop-momile="elDrop = $event" >
+    @end-drop="endDrop" @drop-momile="elDrop = $event" @if-drop="ifDrop = $event" :ifDrop="ifDrop" >
     <slot :item="item"></slot>
   </dragDropItem>
 </template>
@@ -34,6 +34,7 @@
         // items: [],
         dragId: null,
         elDrop: null,
+        ifDrop: true
       }
     },
     // mounted() {

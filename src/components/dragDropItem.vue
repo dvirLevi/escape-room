@@ -20,7 +20,8 @@
       dragClass: {
         default: 'drag-el',
         type: String
-      }
+      },
+      ifDrop: Boolean
 
     },
     data() {
@@ -61,8 +62,10 @@
                 if (this.el_prime) {
                   this.el_prime.remove();
                   this.el_prime = null;
+                  this.$emit('if-drop', true)
                 }
               }
+              this.$emit('if-drop', false)
               this.el_prime.style.setProperty('transition', '.2s');
               this.rect = el.getBoundingClientRect();
               this.el_prime.style.left = this.rect.left + "px";
@@ -103,7 +106,7 @@
       },
       drop() {
         const activeDragEl = document.getElementById('activeDrag');
-        if (activeDragEl && !this.el_prime) {
+        if (activeDragEl && !this.el_prime && this.ifDrop) {
           this.$emit('end-drop', this.id);
         }
       },
