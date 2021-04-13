@@ -375,10 +375,11 @@ window.addEventListener('deviceorientation', this.fullScreen());
     },
     methods: {
       fullScreen() {
+        let body = document.body;
         if (document.documentElement.requestFullscreen)
-          document.querySelector("#container").requestFullscreen();
+          body.requestFullscreen();
         else if (document.documentElement.webkitRequestFullScreen)
-          document.querySelector("#container").webkitRequestFullScreen();
+          body.webkitRequestFullScreen();
 
         screen.orientation.lock("landscape-primary")
           // .then(function () {

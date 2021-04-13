@@ -5,6 +5,11 @@ body {
   user-select: none;
 }
 
+body:fullscreen {
+	width: 100%;
+	overflow: auto;
+}
+
 .el {
     position: absolute;
     opacity: 0.6;
@@ -12,10 +17,7 @@ body {
   }
 
 
-  #container:fullscreen {
-	width: 100%;
-	overflow: auto;
-}
+
 
 /* prefix for Chrome & Safari */
 /* #container:-webkit-full-screen {
