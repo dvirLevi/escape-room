@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div id="container" class="container-fluid">
     <toolBar />
     <!-- <div class="container p-0"> -->
       <router-view />

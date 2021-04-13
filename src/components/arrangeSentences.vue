@@ -363,7 +363,15 @@
           }
         ]
       }
-    }
+     
+    },
+     mounted() {
+        if(document.querySelector("#container").requestFullscreen)
+	document.querySelector("#container").requestFullscreen();
+else if(document.querySelector("#container").webkitRequestFullScreen)
+  document.querySelector("#container").webkitRequestFullScreen();
+  screen.orientation.lock('landscape-primary')
+      }
   }
 </script>
 
