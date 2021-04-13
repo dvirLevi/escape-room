@@ -3,8 +3,10 @@
 html,
 body {
   user-select: none;
-  background-color: #fff;
+}
 
+body {
+  background-color: #fff !important;
 }
 
 body:fullscreen {
