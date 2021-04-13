@@ -366,9 +366,9 @@
 
     },
     mounted() {
-window.addEventListener('deviceorientation', (e)=>{
-  alert(e.alpha)
-});
+// window.addEventListener('deviceorientation', (e)=>{
+//   alert(e.alpha)
+// });
     },
     methods: {
       fullScreen() {
