@@ -5,13 +5,10 @@ body {
   user-select: none;
 }
 
-body {
-  background-color: #fff !important;
-}
-
 body:fullscreen {
 	width: 100%;
   overflow: auto;
+  background-color: #fff !important;
 }
 
 .el {
