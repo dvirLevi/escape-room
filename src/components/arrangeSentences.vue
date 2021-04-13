@@ -83,7 +83,7 @@
 <script>
   // @ is an alias to /src
   import dragDrop from '@/components/dragDrop.vue'
-import rotateScreen from '../helpers/rotateScreen'
+  import rotateScreen from '../helpers/rotateScreen'
 
   export default {
     name: 'arrangeSentences',
@@ -366,12 +366,12 @@ import rotateScreen from '../helpers/rotateScreen'
 
     },
     mounted() {
-// window.addEventListener('deviceorientation', (e)=>{
-//   alert(e.alpha)
-// });
-// alert("The orientation of the screen is: " + screen.orientation.type);
-
-window.addEventListener('deviceorientation', rotateScreen.horizontal());
+      window.addEventListener('deviceorientation', rotateScreen.horizontal(), {
+        once: true
+      });
+    }, 
+    unmounted() {
+      rotateScreen.vertical()
     }
   }
 </script>

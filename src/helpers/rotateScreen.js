@@ -23,8 +23,6 @@ const rotateScreen = {
       body.webkitRequestFullScreen();
     }
     screen.orientation.lock("landscape-primary")
-    screen.orientation.unlock()
-
     // .then(function () {
     //   _LOCK_BUTTON.style.display = 'none';
     //   _UNLOCK_BUTTON.style.display = 'block';
@@ -34,6 +32,7 @@ const rotateScreen = {
     // });
   },
   vertical() {
+    screen.orientation.lock("portrait-primary")
     screen.orientation.unlock()
   }
 }
