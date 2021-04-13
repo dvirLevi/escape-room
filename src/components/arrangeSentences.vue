@@ -366,8 +366,8 @@
 
     },
     mounted() {
-window.addEventListener('deviceorientation', ()=>{
-  alert()
+window.addEventListener('deviceorientation', (e)=>{
+  alert(e.alpha)
 });
     },
     methods: {
