@@ -1,6 +1,10 @@
 const rotateScreen = {
+  ifSetStyle: false,
+  ifMobile: window.innerWidth > 767 ? false : true,
   horizontal() {
-    var styles = `
+    if (this.ifMobile) {
+      if (this.ifSetStyle) {
+        let styles = `
     :not(:root):fullscreen::backdrop {
       background: rgb(255, 255, 255) !important;
     }
@@ -10,30 +14,33 @@ const rotateScreen = {
       overflow: auto;
     }
 `
-    let styleSheet = document.createElement("style")
-    styleSheet.innerText = styles
-    document.head.appendChild(styleSheet)
+        let styleSheet = document.createElement("style")
+        styleSheet.innerText = styles
+        document.head.appendChild(styleSheet)
+        this.ifSetStyle = true
+      }
 
-
-
-    let body = document.body;
-    if (document.documentElement.requestFullscreen) {
-      body.requestFullscreen();
-    } else if (document.documentElement.webkitRequestFullScreen) {
-      body.webkitRequestFullScreen();
+      let body = document.body;
+      if (document.documentElement.requestFullscreen) {
+        body.requestFullscreen();
+      } else if (document.documentElement.webkitRequestFullScreen) {
+        body.webkitRequestFullScreen();
+      }
+      screen.orientation.lock("landscape-primary")
+      // .then(function () {
+      //   _LOCK_BUTTON.style.display = 'none';
+      //   _UNLOCK_BUTTON.style.display = 'block';
+      // })
+      // .catch(function (error) {
+      //   alert(error);
+      // });
     }
-    screen.orientation.lock("landscape-primary")
-    // .then(function () {
-    //   _LOCK_BUTTON.style.display = 'none';
-    //   _UNLOCK_BUTTON.style.display = 'block';
-    // })
-    // .catch(function (error) {
-    //   alert(error);
-    // });
   },
   async vertical() {
-    await screen.orientation.lock("portrait-primary")
-    screen.orientation.unlock()
+    if (this.ifMobile) {
+      await screen.orientation.lock("portrait-primary")
+      screen.orientation.unlock()
+    }
   }
 }
 

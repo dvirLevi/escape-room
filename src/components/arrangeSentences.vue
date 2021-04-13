@@ -2,7 +2,7 @@
   <div class="row" @click="fullScreen">
     <div class="col">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-6">
           <dragDrop itemsClass="w-100 f-center sentence p-2 mt-2" :items="redSentences" v-slot:default="slotProps">
             <div class="w-75 border-start">
               <h6>{{slotProps.item.text}}</h6>
@@ -15,7 +15,7 @@
             </div>
           </dragDrop>
         </div>
-        <div class="col-md-6">
+        <div class="col-6">
           <dragDrop itemsClass="w-100 f-center sentence p-2 mt-2" :items="greenSentences" v-slot:default="slotProps">
             <div class="w-75 border-start">
               <h6>{{slotProps.item.text}}</h6>
@@ -401,5 +401,9 @@
     border: solid 1px rgb(0, 0, 0);
   }
 
-  @media (max-width: 767.98px) {}
+  @media (max-width: 767.98px) {
+     .sentence h6 {
+    font-size: 10px;
+  }
+  }
 </style>
