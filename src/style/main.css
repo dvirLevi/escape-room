@@ -5,10 +5,18 @@ body {
   user-select: none;
 }
 
+:not(:root):fullscreen::backdrop {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background: rgb(255, 255, 255) !important;
+}
+
 body:fullscreen {
 	width: 100%;
   overflow: auto;
-  background-color: #fff !important;
 }
 
 .el {
