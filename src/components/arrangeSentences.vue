@@ -83,7 +83,7 @@
 <script>
   // @ is an alias to /src
   import dragDrop from '@/components/dragDrop.vue'
-
+import rotateScreen from '../helpers/rotateScreen'
 
   export default {
     name: 'arrangeSentences',
@@ -371,25 +371,7 @@
 // });
 // alert("The orientation of the screen is: " + screen.orientation.type);
 
-window.addEventListener('deviceorientation', this.fullScreen());
-    },
-    methods: {
-      fullScreen() {
-        let body = document.body;
-        if (document.documentElement.requestFullscreen)
-          body.requestFullscreen();
-        else if (document.documentElement.webkitRequestFullScreen)
-          body.webkitRequestFullScreen();
-
-        screen.orientation.lock("landscape-primary")
-          // .then(function () {
-          //   _LOCK_BUTTON.style.display = 'none';
-          //   _UNLOCK_BUTTON.style.display = 'block';
-          // })
-          // .catch(function (error) {
-          //   alert(error);
-          // });
-      }
+window.addEventListener('deviceorientation', rotateScreen.horizontal());
     }
   }
 </script>
