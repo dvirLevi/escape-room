@@ -14,15 +14,14 @@ body {
 
   #container:fullscreen {
 	width: 100%;
-	height: 100%;
 	overflow: auto;
 }
 
 /* prefix for Chrome & Safari */
-#container:-webkit-full-screen {
+/* #container:-webkit-full-screen {
 	width: 100%;
 	overflow: auto;
-}
+} */
   
 @media (max-width: 767.98px) {
 
