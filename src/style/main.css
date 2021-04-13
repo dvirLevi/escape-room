@@ -3,12 +3,13 @@
 html,
 body {
   user-select: none;
+  background-color: #fff;
+
 }
 
 body:fullscreen {
 	width: 100%;
-  /* overflow: auto; */
-  background-color: #fff;
+  overflow: auto;
 }
 
 .el {
