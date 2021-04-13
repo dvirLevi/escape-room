@@ -31,8 +31,8 @@ const rotateScreen = {
     //   alert(error);
     // });
   },
-  vertical() {
-    screen.orientation.lock("portrait-primary")
+  async vertical() {
+    await screen.orientation.lock("portrait-primary")
     screen.orientation.unlock()
   }
 }
