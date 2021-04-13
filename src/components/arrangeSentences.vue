@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row" @click="fullScreen">
     <div class="col">
       <div class="row">
         <div class="col-md-6">
@@ -363,15 +363,28 @@
           }
         ]
       }
-     
+
     },
-     mounted() {
-        if(document.querySelector("#container").requestFullscreen)
-	document.querySelector("#container").requestFullscreen();
-else if(document.querySelector("#container").webkitRequestFullScreen)
-  document.querySelector("#container").webkitRequestFullScreen();
-  screen.orientation.lock('landscape-primary')
+    mounted() {
+
+    },
+    methods: {
+      fullScreen() {
+        if (document.documentElement.requestFullscreen)
+          document.querySelector("#container").requestFullscreen();
+        else if (document.documentElement.webkitRequestFullScreen)
+          document.querySelector("#container").webkitRequestFullScreen();
+
+        screen.orientation.lock("landscape-primary")
+          // .then(function () {
+          //   _LOCK_BUTTON.style.display = 'none';
+          //   _UNLOCK_BUTTON.style.display = 'block';
+          // })
+          // .catch(function (error) {
+          //   alert(error);
+          // });
       }
+    }
   }
 </script>
 
