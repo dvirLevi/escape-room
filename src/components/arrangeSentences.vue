@@ -83,7 +83,6 @@
 </template>
 
 <script>
-  // @ is an alias to /src
   import dragDrop from '@/components/dragDrop.vue'
   import shuffle from '../helpers/shuffle'
 
