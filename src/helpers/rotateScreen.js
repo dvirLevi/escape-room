@@ -34,20 +34,6 @@ const rotateScreen = {
       // .catch(function (error) {
       //   alert(error);
       // });
-      window.addEventListener('deviceorientation', ()=> {
-        const orientation = screen.orientation;
-        console.log(orientation.type)
-        if(orientation.type !== 'landscape-primary') {
-         setTimeout(()=> {
-          if (document.documentElement.requestFullscreen) {
-            body.requestFullscreen();
-          } else if (document.documentElement.webkitRequestFullScreen) {
-            body.webkitRequestFullScreen();
-          }
-          screen.orientation.lock("landscape-primary")
-         }, 1000)
-        }
-      }, true);
     }
   },
    vertical() {

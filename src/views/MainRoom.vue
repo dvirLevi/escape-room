@@ -6,6 +6,7 @@
     <div class="col ">
       <div class="container p-0 pb-5">
         <timer class="mt-1"/>
+        <fullScreen />
         <router-view></router-view>
       </div>
     </div>
@@ -19,13 +20,15 @@
   import bg from '@/components/bg.vue'
   import timer from '@/components/timer.vue'
   import autoAudio from '@/components/autoAudio.vue'
+  import fullScreen from '@/components/fullScreen.vue'
 
   export default {
     name: 'MainRoom',
     components: {
       autoAudio,
       bg,
-      timer
+      timer,
+      fullScreen
     },
   }
 </script>

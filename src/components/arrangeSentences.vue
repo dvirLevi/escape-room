@@ -1,5 +1,5 @@
 <template>
-  <div class="row" @click="fullScreen">
+  <div class="row">
     <div class="col">
       <div class="row">
         <div class="col-6">
@@ -83,7 +83,6 @@
 <script>
   // @ is an alias to /src
   import dragDrop from '@/components/dragDrop.vue'
-  import rotateScreen from '../helpers/rotateScreen'
 
   export default {
     name: 'arrangeSentences',
@@ -363,18 +362,6 @@
           }
         ]
       }
-
-    },
-    mounted() {
-      // window.addEventListener("deviceorientation", (e)=> {
-        console.log(screen.orientation)
-      // }, true);
-      window.addEventListener('deviceorientation', rotateScreen.horizontal(), {
-        once: true
-      });
-    }, 
-    unmounted() {
-      rotateScreen.vertical()
     }
   }
 </script>
