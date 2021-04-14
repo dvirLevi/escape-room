@@ -38,13 +38,14 @@ const rotateScreen = {
         const orientation = screen.orientation;
         console.log(orientation.type)
         if(orientation.type !== 'landscape-primary') {
-          screen.orientation.unlock()
+         setTimeout(()=> {
           if (document.documentElement.requestFullscreen) {
             body.requestFullscreen();
           } else if (document.documentElement.webkitRequestFullScreen) {
             body.webkitRequestFullScreen();
           }
           screen.orientation.lock("landscape-primary")
+         }, 1000)
         }
       }, true);
     }
