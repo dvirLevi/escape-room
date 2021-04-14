@@ -38,6 +38,7 @@ const rotateScreen = {
         const orientation = screen.orientation;
         console.log(orientation.type)
         if(orientation.type !== 'landscape-primary') {
+          screen.orientation.unlock()
           if (document.documentElement.requestFullscreen) {
             body.requestFullscreen();
           } else if (document.documentElement.webkitRequestFullScreen) {
