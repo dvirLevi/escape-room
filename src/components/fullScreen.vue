@@ -55,6 +55,7 @@
             this.isFullScreen = true;
           } else {
             screen.orientation.lock("portrait-primary")
+            this.isFullScreen = false;
             //  .then(function () {
             //   screen.orientation.unlock()
             // })
