@@ -5,6 +5,7 @@ import {
 export default createStore({
   state: {
     name: "",
+    ifMuted: false,
     rooms: [{
         text: "חדר 1",
         link: "/MainRoom/1",

@@ -1,7 +1,7 @@
 <template>
   <div class="row min-height-screen position-relative">
-    <autoAudio src="https://www.zapsplat.com/wp-content/uploads/2015/music-one/music_orlamusic_Epic%20004.mp3?_=5" />
-    <bg :img="require('../assets/ass.jpg')" />
+    <autoAudio src="https://www.zapsplat.com/wp-content/uploads/2015/music-one/music_orlamusic_Epic%20004.mp3?_=5" :ifMuted="$store.state.ifMuted" />
+    <!-- <bg :img="require('../assets/ass.jpg')" /> -->
     <div class="col ">
       <div class="container p-0">
         <div class="row mt-5">
@@ -27,7 +27,7 @@
 <script>
   // @ is an alias to /src
   // import aInput from '@/components/aInput.vue'
-  import bg from '@/components/bg.vue'
+  // import bg from '@/components/bg.vue'
   import textTyping from '@/components/textTyping.vue'
   import autoAudio from '@/components/autoAudio.vue'
 
@@ -36,7 +36,7 @@
     components: {
       autoAudio,
       textTyping,
-      bg
+      // bg
     },
     data() {
       return {

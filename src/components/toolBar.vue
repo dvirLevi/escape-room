@@ -8,7 +8,7 @@
               <img class="w-100" src="../assets/logo.png" alt="">
             </router-link>
 
-            <!-- <socialIcons /> -->
+            <buttonsPlace />
           </div>
         </div>
       </div>
@@ -18,12 +18,12 @@
 
 <script>
   // @ is an alias to /src
-  // import socialIcons from '@/components/socialIcons.vue'
+  import buttonsPlace from '@/components/buttonsPlace.vue'
 
   export default {
     name: "toolBar",
     components: {
-      // socialIcons
+      buttonsPlace
     },
     data() {
       return {};
@@ -33,15 +33,17 @@
 
 <style scoped>
   .row-nav {
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 1px 4px 20px #0000001f;
+    /* box-shadow: 1px 4px 20px #0000001f; */
   }
 
   .logo {
     width: 160px;
+    background-color: rgba(255, 255, 255, 0.712);
+    border-radius: 8px;
   }
 
   @media (max-width: 767.98px) {

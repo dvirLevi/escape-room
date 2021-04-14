@@ -1,6 +1,6 @@
 <template>
   <div class="row min-height-screen f-center position-relative">
-    <bg :img="require('../assets/ass.jpg')" />
+    <!-- <bg :img="require('../assets/ass.jpg')" /> -->
 
     <!-- <div class="wrap-bg position-relative w-100">
 
@@ -44,13 +44,13 @@
 <script>
   // @ is an alias to /src
   import aInput from '@/components/aInput.vue'
-  import bg from '@/components/bg.vue'
+  // import bg from '@/components/bg.vue'
 
   export default {
     name: 'Home',
     components: {
       aInput,
-      bg
+      // bg
     },
     data() {
       return {

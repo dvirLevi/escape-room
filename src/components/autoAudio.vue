@@ -19,6 +19,7 @@
         default: 0.1,
         type: Number
       },
+      ifMuted: Boolean
     },
     data() {
       return {
@@ -27,9 +28,11 @@
       }
     },
     mounted() {
-      this.$refs.audio.volume = this.volume;
-      // this.$refs.audio.play();
-      this.incrementVolume()
+      if (!this.ifMuted) {
+        this.$refs.audio.volume = this.volume;
+        this.$refs.audio.play();
+        this.incrementVolume()
+      }
     },
     methods: {
       incrementVolume() {
@@ -41,6 +44,11 @@
             this.$refs.audio.volume = this.volume;
           }
         }, 500)
+      }
+    },
+    watch: {
+      ifMuted: function () {
+        this.$refs.audio.muted = this.ifMuted;
       }
     }
 

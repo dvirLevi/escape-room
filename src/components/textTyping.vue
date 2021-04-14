@@ -1,16 +1,18 @@
 <template>
   <p>
-    <audio ref="audio" loop src="../audio/typewriter.mp3"></audio>
+    <!-- <audio ref="audio" loop src="../audio/typewriter.mp3"></audio> -->
+     <autoAudio src="../audio/typewriter.mp3" v-if="ifSound" :ifMuted="$store.state.ifMuted" />
     {{typeText}} <span></span>
   </p>
 </template>
 
 <script>
   // @ is an alias to /src
-  // import aInput from '@/components/aInput.vue'
+  import autoAudio from '@/components/autoAudio.vue'
 
   export default {
     name: 'textTyping',
+    components: {autoAudio},
     props: {
       text: String,
       speed: {
@@ -22,11 +24,12 @@
       return {
         setInterval: null,
         typeText: "",
-        textIndex: 0
+        textIndex: 0,
+        ifSound: true
       }
     },
     mounted() {
-      this.$refs.audio.play();
+      // this.$refs.audio.play();
       this.setInterval = setInterval(() => {
         this.typing()
       }, this.speed)
@@ -36,7 +39,8 @@
         this.typeText += this.text[this.textIndex];
         if (this.textIndex === this.text.length - 1) {
           clearInterval(this.setInterval);
-          this.$refs.audio.pause();
+          // this.$refs.audio.pause();
+          this.ifSound = false;
           this.$emit('end-typing');
         }
         this.textIndex++;

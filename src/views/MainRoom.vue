@@ -1,12 +1,13 @@
 <template>
   <div class="row main-room min-height-screen position-relative">
-    <autoAudio src="https://www.zapsplat.com/wp-content/uploads/2015/music-one/music_zapsplat_deep_investigation_126.mp3?_=4" />
+    <autoAudio
+      src="https://www.zapsplat.com/wp-content/uploads/2015/music-one/music_zapsplat_deep_investigation_126.mp3?_=4"
+      :ifMuted="$store.state.ifMuted" />
     <!-- <audio ref="audio" loop src="https://www.zapsplat.com/wp-content/uploads/2015/music-one/music_zapsplat_deep_investigation_126.mp3?_=4"></audio> -->
-    <bg :img="require('../assets/ass.jpg')" />
+    <!-- <bg :img="require('../assets/ass.jpg')" /> -->
     <div class="col ">
       <div class="container p-0 pb-5">
-        <timer class="mt-1"/>
-        <fullScreen />
+        <timer class="mt-1" />
         <router-view></router-view>
       </div>
     </div>
@@ -17,25 +18,23 @@
 <script>
   // @ is an alias to /src
   // import aInput from '@/components/aInput.vue'
-  import bg from '@/components/bg.vue'
+  // import bg from '@/components/bg.vue'
   import timer from '@/components/timer.vue'
   import autoAudio from '@/components/autoAudio.vue'
-  import fullScreen from '@/components/fullScreen.vue'
 
   export default {
     name: 'MainRoom',
     components: {
       autoAudio,
-      bg,
-      timer,
-      fullScreen
+      // bg,
+      timer
     },
   }
 </script>
 
 <style scoped>
   /* @import url('https://fonts.googleapis.com/css2?family=Miriam+Libre:wght@400;700&display=swap'); */
-/* .main-room {
+  /* .main-room {
     font-family: 'Miriam Libre', sans-serif;
 
 } */
@@ -84,9 +83,9 @@
       right: 32%;
     }
 
-     .col-4 {
-    /* background-image: url('../assets/ass7.png'); */
-    height: 200px;
-  }
+    .col-4 {
+      /* background-image: url('../assets/ass7.png'); */
+      height: 200px;
+    }
   }
 </style>

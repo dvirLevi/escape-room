@@ -1,15 +1,20 @@
 <template>
-  <div class="row" @click="fullScreen">
-    fghjfghfgh
-  </div>
+  <wrapIcons v-if="ifMobile">
+    <span class="material-icons-outlined" >
+      screen_rotation
+    </span>
+  </wrapIcons>
 </template>
 
 <script>
   // @ is an alias to /src
+  import wrapIcons from '@/components/wrapIcons.vue'
 
   export default {
     name: 'fullScreen',
-    components: {},
+    components: {
+      wrapIcons
+    },
     data() {
       return {
         isFullScreen: false,
@@ -56,12 +61,6 @@
           } else {
             screen.orientation.lock("portrait-primary")
             this.isFullScreen = false;
-            //  .then(function () {
-            //   screen.orientation.unlock()
-            // })
-            // .catch(function (error) {
-            //   alert(error);
-            // });
           }
         }
       }
@@ -70,33 +69,6 @@
 </script>
 
 <style>
-  .sentence {
-    border: solid 2px var(--main-color);
-    border-radius: 20px;
-    background-color: #fff;
-    box-shadow: 2px 3px 10px #3d3d3d;
-  }
-
-  .sentence h6 {
-    font-size: 13px;
-  }
-
-  .square {
-    width: 20px;
-    height: 20px;
-    background-color: #000;
-  }
-
-  .square-table {
-    width: 20%;
-    padding-top: 20%;
-    background-color: #000;
-    border: solid 1px rgb(0, 0, 0);
-  }
-
-  @media (max-width: 767.98px) {
-    .sentence h6 {
-      font-size: 10px;
-    }
-  }
+  
+  @media (max-width: 767.98px) {}
 </style>
