@@ -1,5 +1,5 @@
 <template>
-  <wrapIcons v-if="ifMobile">
+  <wrapIcons v-if="ifMobile" @click="fullScreen">
     <span class="material-icons-outlined" >
       screen_rotation
     </span>
