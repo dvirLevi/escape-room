@@ -52,6 +52,7 @@
             // .catch(function (error) {
             //   alert(error);
             // });
+            this.isFullScreen = true;
           } else {
             screen.orientation.lock("portrait-primary")
             //  .then(function () {
