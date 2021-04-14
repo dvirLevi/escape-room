@@ -38,6 +38,11 @@ const rotateScreen = {
         const orientation = screen.orientation;
         console.log(orientation.type)
         if(orientation.type !== 'landscape-primary') {
+          if (document.documentElement.requestFullscreen) {
+            body.requestFullscreen();
+          } else if (document.documentElement.webkitRequestFullScreen) {
+            body.webkitRequestFullScreen();
+          }
           screen.orientation.lock("landscape-primary")
         }
       }, true);
@@ -46,12 +51,12 @@ const rotateScreen = {
    vertical() {
     if (this.ifMobile) {
        screen.orientation.lock("portrait-primary")
-       .then(function () {
-        screen.orientation.unlock()
-      })
-      .catch(function (error) {
-        alert(error);
-      });
+      //  .then(function () {
+      //   screen.orientation.unlock()
+      // })
+      // .catch(function (error) {
+      //   alert(error);
+      // });
     }
   }
 }
