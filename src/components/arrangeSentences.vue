@@ -366,6 +366,9 @@
 
     },
     mounted() {
+      // window.addEventListener("deviceorientation", (e)=> {
+        console.log(screen.orientation)
+      // }, true);
       window.addEventListener('deviceorientation', rotateScreen.horizontal(), {
         once: true
       });

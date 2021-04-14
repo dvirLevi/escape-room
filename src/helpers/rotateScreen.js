@@ -34,12 +34,24 @@ const rotateScreen = {
       // .catch(function (error) {
       //   alert(error);
       // });
+      window.addEventListener('deviceorientation', ()=> {
+        const orientation = screen.orientation;
+        console.log(orientation.type)
+        if(orientation.type !== 'landscape-primary') {
+          screen.orientation.lock("landscape-primary")
+        }
+      }, true);
     }
   },
-  async vertical() {
+   vertical() {
     if (this.ifMobile) {
-      await screen.orientation.lock("portrait-primary")
-      screen.orientation.unlock()
+       screen.orientation.lock("portrait-primary")
+       .then(function () {
+        screen.orientation.unlock()
+      })
+      .catch(function (error) {
+        alert(error);
+      });
     }
   }
 }
