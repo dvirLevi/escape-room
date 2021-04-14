@@ -4,7 +4,10 @@
       <div class="row">
         <div class="col-md-2 f-right-top main-color">
           <router-link to="/MainRoom">
-            <h5 class="fw-bold mt-1"><i class="las la-angle-double-right"></i>חזרה לחדר הראשי</h5>
+            <h4 class="fw-bold mt-1 f-center">
+              <span class="material-icons-outlined">
+                double_arrow
+              </span>חזרה לחדר הראשי</h4>
           </router-link>
         </div>
         <div class="col-md-10">

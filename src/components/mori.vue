@@ -1,7 +1,17 @@
 <template>
   <div class="row">
     <div class="col">
-      <div class="w-100 wrap-text p-3 img-cover">
+      <div class="w-100">
+        <div class="w-100 f-center-right ">
+          <div class="h5 mb-0 p-md-3 p-1 mt-3 pt-3 pb-3 text-center ans" v-for="(ans, index) in correctAnswers"
+            :key="ans.id">{{index+1}}. {{ans.ans}}</div>
+        </div>
+        <div class="w-100 f-center-right mt-3" v-if="answers.length">
+          <input class="form-control" v-model="textInput" type="text">
+          <button class="g-butt bg-gradient h6 me-2 p-2 m-0" @click="checkAns" type="submit">בדיקת תפקיד</button>
+        </div>
+      </div>
+      <div class="w-100 wrap-text p-3 img-cover mt-3">
         <h4>העיר המצערה (=הקטנה) הזאת לה רב גדול בארצות האלה יקראו להרב "מארי",</h4>
         <h2 class="p-3">.(תטעומ םתסנרפ=) םתסנרפו םהייח יכרצ רעצמב ...הלא לכמו ,שמשו ןזח םג ,קדובהו טחושה אוה שרודהו
           ןיידה אוה הרומה
@@ -17,16 +27,7 @@
           מלאכתך!... מכאב לב ומשבר רוח עניתיו: אשריך מארי יוסף שפחמי אתה (מתפרנס מהכנת פחם) ואוי... למתנהגים ברבנות
           (=מחפשים כבוד)</h4>
       </div>
-      <div class="w-100">
-        <div class="w-100 f-center-right ">
-          <div class="h5 mb-0 p-md-3 p-1 mt-3 pt-3 pb-3 text-center ans" v-for="(ans, index) in correctAnswers"
-            :key="ans.id">{{index+1}}. {{ans.ans}}</div>
-        </div>
-        <div class="w-100 f-center-right mt-3" v-if="answers.length">
-          <input class="form-control" v-model="textInput" type="text">
-          <button class="g-butt bg-gradient h6 me-2 p-2 m-0" @click="checkAns" type="submit">בדיקת תפקיד</button>
-        </div>
-      </div>
+      
     </div>
   </div>
 </template>

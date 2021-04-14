@@ -1,5 +1,5 @@
 <template>
-  <div ref="checkCode" class="w-100 f-center-right">
+  <div ref="checkCode" class="w-100 wrap-check img-contain f-center-right">
     <template v-if="!dataRoom.ifCheck">
       <h4 class="mt-md-0 mt-3">לאחר סיום המשימה תוכל לבדוק כאן את הצופן</h4>
     </template>
@@ -80,5 +80,12 @@
 </script>
 
 <style scoped>
+.wrap-check {
+  background-image: url('../assets/ass17.png')
+}
+
+h4 {
+  font-weight: 700;
+}
   @media (max-width: 767.98px) {}
 </style>

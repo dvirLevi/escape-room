@@ -33,13 +33,15 @@
         <div class="col">
           <div class="w-100 f-center">
             <div class="w-50 f-center">
-              <div class="square-table" v-for="item in redSquare" :key="item.id" @click="item.ifSelect = !item.ifSelect"
+              <div class="square-table" v-for="item in redSquare" :key="item.id"
+                @click="item.id !== 4? item.ifSelect = !item.ifSelect: null"
                 :style="{backgroundColor: item.ifSelect? 'red':'#fff'}">
 
               </div>
             </div>
             <div class="w-50 f-center">
-              <div class="square-table" v-for="item in greenSquare" :key="item" @click="item.ifSelect = !item.ifSelect"
+              <div class="square-table" v-for="item in greenSquare" :key="item"
+                @click="item.id !== 4? item.ifSelect = !item.ifSelect: null"
                 :style="{backgroundColor: item.ifSelect? 'green':'#fff'}">
 
               </div>
@@ -83,6 +85,7 @@
 <script>
   // @ is an alias to /src
   import dragDrop from '@/components/dragDrop.vue'
+  import shuffle from '../helpers/shuffle'
 
   export default {
     name: 'arrangeSentences',
@@ -161,42 +164,52 @@
         ],
         redSquare: [{
             ifSelect: false,
+            ifCorrect: false,
             id: 1
           },
           {
             ifSelect: false,
+            ifCorrect: true,
             id: 2
           },
           {
             ifSelect: false,
+            ifCorrect: true,
             id: 3
           },
           {
             ifSelect: true,
+            ifCorrect: true,
             id: 4
           },
           {
             ifSelect: false,
+            ifCorrect: false,
             id: 5
           },
           {
             ifSelect: false,
+            ifCorrect: false,
             id: 6
           },
           {
             ifSelect: false,
+            ifCorrect: true,
             id: 7
           },
           {
             ifSelect: false,
+            ifCorrect: false,
             id: 8
           },
           {
             ifSelect: false,
+            ifCorrect: true,
             id: 9
           },
           {
             ifSelect: false,
+            ifCorrect: false,
             id: 10
           },
           {
@@ -205,99 +218,123 @@
           },
           {
             ifSelect: false,
+            ifCorrect: true,
             id: 12
           },
           {
             ifSelect: false,
+            ifCorrect: false,
             id: 13
           },
           {
             ifSelect: false,
+            ifCorrect: true,
             id: 14
           },
           {
             ifSelect: false,
+            ifCorrect: false,
             id: 15
           },
           {
             ifSelect: false,
+            ifCorrect: false,
             id: 16
           },
           {
             ifSelect: false,
+            ifCorrect: true,
             id: 17
           },
           {
             ifSelect: false,
+            ifCorrect: false,
             id: 18
           },
           {
             ifSelect: false,
+            ifCorrect: true,
             id: 19
           },
           {
             ifSelect: false,
+            ifCorrect: false,
             id: 20
           },
           {
             ifSelect: false,
+            ifCorrect: false,
             id: 21
           },
           {
             ifSelect: false,
+            ifCorrect: true,
             id: 22
           },
           {
             ifSelect: false,
+            ifCorrect: true,
             id: 23
           },
           {
             ifSelect: false,
+            ifCorrect: true,
             id: 24
           },
           {
             ifSelect: false,
+            ifCorrect: false,
             id: 25
           }
         ],
         greenSquare: [{
             ifSelect: false,
+            ifCorrect: false,
             id: 1
           },
           {
             ifSelect: false,
+            ifCorrect: true,
             id: 2
           },
           {
             ifSelect: false,
+            ifCorrect: true,
             id: 3
           },
           {
             ifSelect: true,
+            ifCorrect: true,
             id: 4
           },
           {
             ifSelect: false,
+            ifCorrect: false,
             id: 5
           },
           {
             ifSelect: false,
+            ifCorrect: false,
             id: 6
           },
           {
             ifSelect: false,
+            ifCorrect: true,
             id: 7
           },
           {
             ifSelect: false,
+            ifCorrect: false,
             id: 8
           },
           {
             ifSelect: false,
+            ifCorrect: false,
             id: 9
           },
           {
             ifSelect: false,
+            ifCorrect: false,
             id: 10
           },
           {
@@ -306,61 +343,104 @@
           },
           {
             ifSelect: false,
+            ifCorrect: true,
             id: 12
           },
           {
             ifSelect: false,
+            ifCorrect: true,
             id: 13
           },
           {
             ifSelect: false,
+            ifCorrect: true,
             id: 14
           },
           {
             ifSelect: false,
+            ifCorrect: false,
             id: 15
           },
           {
             ifSelect: false,
+            ifCorrect: false,
             id: 16
           },
           {
             ifSelect: false,
+            ifCorrect: false,
             id: 17
           },
           {
             ifSelect: false,
+            ifCorrect: false,
             id: 18
           },
           {
             ifSelect: false,
+            ifCorrect: true,
             id: 19
           },
           {
             ifSelect: false,
+            ifCorrect: false,
             id: 20
           },
           {
             ifSelect: false,
+            ifCorrect: false,
             id: 21
           },
           {
             ifSelect: false,
+            ifCorrect: true,
             id: 22
           },
           {
             ifSelect: false,
+            ifCorrect: true,
             id: 23
           },
           {
             ifSelect: false,
+            ifCorrect: true,
             id: 24
           },
           {
             ifSelect: false,
+            ifCorrect: false,
             id: 25
           }
         ]
+      }
+    },
+    mounted() {
+      this.redSentences = shuffle(this.redSentences)
+      this.greenSentences = shuffle(this.greenSentences)
+    },
+    computed: {
+      ifEndGame() {
+        let check = true;
+        for (let i in this.redSquare) {
+          if (this.redSquare[i].ifCorrect && !this.redSquare[i].ifSelect || !this.redSquare[i].ifCorrect && this
+            .redSquare[i].ifSelect) {
+            check = false;
+          }
+        }
+        for (let i in this.greenSquare) {
+          if (this.greenSquare[i].ifCorrect && !this.greenSquare[i].ifSelect || !this.greenSquare[i].ifCorrect && this
+            .greenSquare[i].ifSelect) {
+            check = false;
+          }
+        }
+        return check;
+      }
+    },
+    watch: {
+      ifEndGame: function (ifEndGame) {
+        if (ifEndGame) {
+          this.$emit('end-game');
+        }
       }
     }
   }
@@ -392,8 +472,8 @@
   }
 
   @media (max-width: 767.98px) {
-     .sentence h6 {
-    font-size: 10px;
-  }
+    .sentence h6 {
+      font-size: 10px;
+    }
   }
 </style>
