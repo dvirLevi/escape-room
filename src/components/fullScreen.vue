@@ -29,7 +29,7 @@
             if (!this.ifSetStyle) {
               let styles = `
     :not(:root):fullscreen::backdrop {
-      background: rgb(255, 255, 255) !important;
+      background: #ffffff00 !important;
     }
     
     body:fullscreen {
