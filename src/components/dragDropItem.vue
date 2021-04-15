@@ -72,6 +72,7 @@
               this.el_prime.style.top = this.rect.top + "px";
               body.onmousemove = null;
               body.onmouseup = null;
+              body.ontouchmove = null;
               body.ontouchend = null;
             }
 
