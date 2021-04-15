@@ -90,6 +90,7 @@
             });
 
             body.ontouchmove = (e) => {
+              console.log(e)
               this.drag(e);
               this.dropMomile(e)
             }
