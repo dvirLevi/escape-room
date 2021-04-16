@@ -14,7 +14,7 @@
       </router-link>
     </div>
     </div>
-    <div class="row mt-5">
+    <div class="row mt-5 pb-5">
       <div class="col f-center">
         <div class="cave img-contain c-p">
         <img class="fence" src="@/assets/ass15.png" alt="">

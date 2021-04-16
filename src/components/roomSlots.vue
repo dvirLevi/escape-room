@@ -60,7 +60,7 @@
 
 <style scoped>
   img {
-    width: 143px;
+    width: 65%;
     margin-top: 30px;
     /* top: -101px; */
     /* left: -109px; */
@@ -71,7 +71,7 @@
   @media (max-width: 767.98px) {
     img {
       position: relative;
-      width: 81px;
+      width: 15%;
       top: -45px;
       left: -103px;
       z-index: -1;

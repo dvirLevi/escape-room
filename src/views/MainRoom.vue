@@ -6,7 +6,7 @@
     <!-- <audio ref="audio" loop src="https://www.zapsplat.com/wp-content/uploads/2015/music-one/music_zapsplat_deep_investigation_126.mp3?_=4"></audio> -->
     <!-- <bg :img="require('../assets/ass.jpg')" /> -->
     <div class="col ">
-      <div class="container p-0 pb-5">
+      <div class="container p-0 pb-md-5">
         <timer class="mt-1" />
         <router-view></router-view>
       </div>

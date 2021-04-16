@@ -81,7 +81,8 @@
 
 <style scoped>
 .wrap-check {
-  background-image: url('../assets/ass17.png')
+  background-image: url('../assets/ass17.png');
+  min-height: 100px;
 }
 
 h4 {

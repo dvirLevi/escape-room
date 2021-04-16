@@ -151,6 +151,11 @@ body {
   pointer-events: none;
 }
 
+.p-e-p {
+  pointer-events: painted;
+}
+
+
 .c-p {
   cursor: pointer;
 }

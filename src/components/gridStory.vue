@@ -2,13 +2,14 @@
   <div class="row">
     <div class="col">
       <div class="w-100 wrap-grid">
-        <div v-for="box in boxes" :key="box.id" :style="{gridArea: box.id}" class="f-center position-relative">
+        <div v-for="(box, index) in boxes" :key="box.id" :style="{gridArea: box.id}" class="f-center position-relative">
           <i v-if="box.id === 'm1'" class="las la-arrow-left position-absolute h1 top p-e-n"></i>
-          <input class="w-100 form-control text-center" v-model="box.num" type="number">
+          <input :id="'input' + index" class="w-100 form-control text-center" v-model="box.num"
+            @input="nextInput('input' + (index+1))" type="text" maxlength="1">
           <div class="position-absolute h2 m-0 operator" :class="box.class">{{box.operator}}</div>
         </div>
         <div class="result h1 f-center m-0">
-          <template v-if="result - 10 < 0">0</template>
+          <template v-if="result < 0">0</template>
           <template v-else>
             <h2><span v-for="(letter, index) in result.toString().split('')" :key="index"
                 :class="{'border-ans': index === 1}">{{letter}}</span></h2>
@@ -181,6 +182,12 @@
         ]
       }
     },
+    methods: {
+      nextInput(inputId) {
+        let elInput = document.getElementById(inputId);
+        elInput.focus()
+      }
+    },
     computed: {
       result() {
         let result = +this.boxes[0].num;
@@ -198,8 +205,7 @@
       ifEndGame() {
         let check = true;
         for (let i in this.boxes) {
-          console.log(this.result)
-          if (this.boxes[i].num === ""  || +this.result !== 17) {
+          if (this.boxes[i].num === "" || +this.result !== 17) {
             check = false;
           }
         }
@@ -207,8 +213,8 @@
       }
     },
     watch: {
-      result: function() {
-         if(this.ifEndGame) {
+      result: function () {
+        if (this.ifEndGame) {
           this.$emit('end-game');
         }
       }

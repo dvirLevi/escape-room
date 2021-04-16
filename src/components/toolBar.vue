@@ -1,14 +1,14 @@
 <template>
-  <nav class="row row-nav">
+  <nav class="row row-nav p-e-n">
     <div class="col">
       <div class="container">
         <div class="row pt-1 pb-1">
           <div class="col p-0 f-center-between">
-            <router-link tag="div" to="/" class="logo">
+            <router-link tag="div" to="/" class="logo p-e-p">
               <img class="w-100" src="../assets/logo.png" alt="">
             </router-link>
 
-            <buttonsPlace />
+            <buttonsPlace class="p-e-p" />
           </div>
         </div>
       </div>
