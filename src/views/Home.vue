@@ -57,6 +57,9 @@
         name: ""
       }
     },
+    mounted() {
+      this.name = this.$store.state.name;
+    },
     methods: {
       pushName() {
         this.$store.commit('pushName', this.name);
@@ -71,7 +74,7 @@
   /* @import url('https://fonts.googleapis.com/css2?family=Miriam+Libre:wght@400;700&display=swap'); */
 
   .lock-el {
-      width: 29%;
+    width: 29%;
     top: 65%;
     right: 56%;
   }

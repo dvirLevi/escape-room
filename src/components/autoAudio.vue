@@ -50,6 +50,9 @@
       ifMuted: function () {
         this.$refs.audio.muted = this.ifMuted;
       }
+    },
+    unmounted() {
+      clearInterval(this.setInterval);
     }
 
   }

@@ -1,11 +1,12 @@
 <template>
   <div class="w-100 wrap" :style="{color: color}">
-    <div class="m-lab" :style="{fontSize: ifFocus? labBSize + 'px' : labFSize + 'px', top: ifFocus? -labBSize + 'px' : labFSize - 10 + 'px' }">
+    <div class="m-lab"
+      :style="{fontSize: ifFocus? labBSize + 'px' : labFSize + 'px', top: ifFocus? -labBSize + 'px' : labFSize - 10 + 'px' }">
       {{placeholder}}
     </div>
-    <input @focus="ifFocus = true" :style="{borderBottom: `solid ${color} 2px`, color: color}" @blur="checkFocus"
-      :value="modelValue" @input="emitText" :required="required" :type="type" :pattern="pattern" :minlength="minlength"
-      :maxlength="maxlength">
+    <input ref="input" @focus="ifFocus = true" :style="{borderBottom: `solid ${color} 2px`, color: color}"
+      @blur="checkFocus" :value="modelValue" @input="emitText" :required="required" :type="type" :pattern="pattern"
+      :minlength="minlength" :maxlength="maxlength">
   </div>
 </template>
 
@@ -46,9 +47,12 @@
         text: ""
       }
     },
+    mounted() {
+      this.$refs.input.focus()
+    },
     methods: {
       checkFocus() {
-        if (!this.text) {
+        if (!this.modelValue) {
           this.ifFocus = false
         }
       },
