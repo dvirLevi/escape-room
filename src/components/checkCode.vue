@@ -10,7 +10,7 @@
       </template>
       <template v-else>
         <h4 class="mt-md-0 mt-3">הצופן של חדר מס' {{dataRoom.id}} הוא <span
-            class="main-color fw-bold">{{dataRoom.code}}</span></h4>
+            class="main-color fw-bolder h3">{{dataRoom.code}}</span></h4>
       </template>
     </template>
   </div>

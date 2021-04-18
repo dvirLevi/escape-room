@@ -129,17 +129,7 @@ const GgridStory = {
       id: "m21"
     },
   ]
-  }),
-  // mutations: { 
-  //   shuffle(state) {
-  //     if (!state.ifShuffle) {
-  //       state.parts = shuffle(state.parts);
-  //       state.ifShuffle = true;
-  //     }
-  //   }
-  //  },
-  // actions: { ... },
-  // getters: { ... }
+  })
 }
 
 export default GgridStory

@@ -49,6 +49,13 @@
     text-shadow: 1px 2px 4px #000000;
   }
 
+  h4 {
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 4px;
+    border-radius: 3px;
+  }
+
   .door {
     background-image: url('../../assets/ass7.png');
     width: 50%;
@@ -89,7 +96,7 @@
   }
 
   h4 {
-    font-size: 17px;
+    font-size: 13px;
     margin-top: 22px;
   }
 

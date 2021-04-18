@@ -4,6 +4,9 @@ import {
 import Gpuzzle from './modules/Gpuzzle'
 import GmoneyBills from './modules/GmoneyBills'
 import GgridStory from './modules/GgridStory'
+import Gmori from './modules/Gmori'
+import GfindInImg from './modules/GfindInImg'
+import GarrangeSentences from './modules/GarrangeSentences'
 
 export default createStore({
   state: {
@@ -82,6 +85,9 @@ export default createStore({
   modules: {
     Gpuzzle,
     GmoneyBills,
-    GgridStory
+    GgridStory,
+    Gmori,
+    GfindInImg,
+    GarrangeSentences
   }
 })

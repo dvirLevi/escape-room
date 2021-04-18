@@ -72,9 +72,7 @@ const Gpuzzle = {
         state.ifShuffle = true;
       }
     }
-   },
-  // actions: { ... },
-  // getters: { ... }
+   }
 }
 
 export default Gpuzzle

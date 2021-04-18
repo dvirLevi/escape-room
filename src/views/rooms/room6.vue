@@ -7,7 +7,7 @@
        <h5>3. אם סידרתם נכון וצבעתם נכון תקבלו את הקוד מיהדות פרס!!!</h5>
     </template>
     <template v-slot:task>
-      <arrangeSentences @end-game="$store.commit('endTask', correntRoom.id)" />
+      <arrangeSentences :ifFreeze="correntRoom.ifCheck" @end-game="$store.commit('endTask', correntRoom.id)" />
     </template>
   </roomSlots>
 </template>

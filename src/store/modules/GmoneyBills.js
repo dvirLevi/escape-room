@@ -2,7 +2,6 @@
 
 const GmoneyBills = {
   state: () => ({
-    // ifShuffle: false,
     bills: [{
       img: require('@/assets/moneyBills/ass1.jpg'),
       ifSelect: false,
@@ -184,17 +183,7 @@ const GmoneyBills = {
       id: 30
     }
   ]
-  }),
-  // mutations: { 
-  //   shuffle(state) {
-  //     if (!state.ifShuffle) {
-  //       state.parts = shuffle(state.parts);
-  //       state.ifShuffle = true;
-  //     }
-  //   }
-  //  },
-  // actions: { ... },
-  // getters: { ... }
+  })
 }
 
 export default GmoneyBills
