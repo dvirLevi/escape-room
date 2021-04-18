@@ -21,18 +21,23 @@
         default: 'drag-el',
         type: String
       },
-      ifDrop: Boolean
+      ifDrop: Boolean,
+      freeze: {
+        default: false,
+        type: Boolean
+      }
 
     },
     data() {
       return {
         rect: null,
-        el_prime: null
+        el_prime: null,
+        asd: false
       }
     },
     methods: {
       clone(e) {
-        if (!this.el_prime) {
+        if (!this.el_prime && !this.freeze) {
           const el = document.getElementById('drag' + this.id);
           this.el_prime = el.cloneNode(true);
           const parantEl = el.parentElement;

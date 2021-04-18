@@ -6,7 +6,7 @@
       <h3>מלאו ספרות בודדות מימין לשמאל התעלמו מאפסים.</h3>
     </template>
     <template v-slot:task>
-      <gridStory @end-game="$store.commit('endTask', correntRoom.id)" />
+      <gridStory @end-game="$store.commit('endTask', correntRoom.id)" :ifFreeze="correntRoom.ifCheck" />
     </template>
   </roomSlots>
 </template>

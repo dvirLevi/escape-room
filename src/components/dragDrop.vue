@@ -1,6 +1,6 @@
 <template>
   <dragDropItem :class="itemsClass" :placeDragClass="placeDragClass" :dragClass="dragClass" :style="itemsStyle" v-for="item in items" :item="item" :key="item.id" :id="item.id" :elDrop="elDrop" @pass-drag-index="dragId = $event"
-    @end-drop="endDrop" @drop-momile="elDrop = $event" @if-drop="ifDrop = $event" :ifDrop="ifDrop" >
+    @end-drop="endDrop" @drop-momile="elDrop = $event" @if-drop="ifDrop = $event" :ifDrop="ifDrop" :freeze="freeze" >
     <slot :item="item"></slot>
   </dragDropItem>
 </template>
@@ -26,6 +26,10 @@
       dragClass: {
         default: 'drag-el',
         type: String
+      },
+      freeze: {
+        default: false,
+        type: Boolean
       }
     },
     emits: ['end-drop'],

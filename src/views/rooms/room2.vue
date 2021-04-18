@@ -6,7 +6,7 @@
             שהרי אם יוודע הדבר הרמב"ם צפוי לעונש כבד</h3>
     </template>
     <template v-slot:task>
-      <moneyBills @end-game="$store.commit('endTask', correntRoom.id)" />
+      <moneyBills :ifFreeze="correntRoom.ifCheck" @end-game="$store.commit('endTask', correntRoom.id)" />
     </template>
   </roomSlots>
 </template>

@@ -61,32 +61,35 @@
       }
     },
     watch: {
-      ifCheck: function () {
-        this.$refs.checkCode.scrollIntoView({
-          behavior: "smooth",
-          block: "center",
-          inline: "nearest"
-        });
-        setTimeout(() => {
-          Swal.fire({
-            title: 'סיימת את המשימה. עכשיו נותר לך למצוא את הצופן ולבדוק אותו בשדה הטקסט',
-            timer: 6000,
-            icon: 'success',
-          })
-        }, 300)
+      ifCheck: function (ifCheck) {
+        if (ifCheck) {
+          this.$refs.checkCode.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "nearest"
+          });
+          setTimeout(() => {
+            Swal.fire({
+              title: 'סיימת את המשימה. עכשיו נותר לך למצוא את הצופן ולבדוק אותו בשדה הטקסט',
+              timer: 6000,
+              icon: 'success',
+            })
+          }, 300)
+        }
       }
     }
   }
 </script>
 
 <style scoped>
-.wrap-check {
-  background-image: url('../assets/ass17.png');
-  min-height: 100px;
-}
+  .wrap-check {
+    background-image: url('../assets/ass17.png');
+    min-height: 100px;
+  }
 
-h4 {
-  font-weight: 700;
-}
+  h4 {
+    font-weight: 700;
+  }
+
   @media (max-width: 767.98px) {}
 </style>

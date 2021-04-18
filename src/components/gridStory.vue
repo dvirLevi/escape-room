@@ -5,7 +5,7 @@
         <div v-for="(box, index) in boxes" :key="box.id" :style="{gridArea: box.id}" class="f-center position-relative">
           <i v-if="box.id === 'm1'" class="las la-arrow-left position-absolute h1 top p-e-n"></i>
           <input :id="'input' + index" class="w-100 form-control text-center" v-model="box.num"
-            @input="nextInput('input' + (index+1))" type="text" maxlength="1">
+            @input="nextInput(index)" type="number" maxlength="1" :disabled="ifFreeze">
           <div class="position-absolute h2 m-0 operator" :class="box.class">{{box.operator}}</div>
         </div>
         <div class="result h1 f-center m-0">
@@ -44,151 +44,26 @@
     components: {
       // part
     },
-    data() {
-      return {
-        boxes: [{
-            num: "",
-            operator: "+",
-            class: "left",
-            id: "m1"
-          },
-          {
-            num: "",
-            operator: "-",
-            class: "left",
-            id: "m2"
-          },
-          {
-            num: "",
-            operator: "+",
-            class: "left",
-            id: "m3"
-          },
-          {
-            num: "",
-            operator: "-",
-            class: "left",
-            id: "m4"
-          },
-          {
-            num: "",
-            operator: "+",
-            class: "left",
-            id: "m5"
-          },
-          {
-            num: "",
-            operator: "-",
-            class: "bottom",
-            id: "m6"
-          },
-          {
-            num: "",
-            operator: "+",
-            class: "bottom",
-            id: "m7"
-          },
-          {
-            num: "",
-            operator: "-",
-            class: "bottom",
-            id: "m8"
-          },
-          {
-            num: "",
-            operator: "+",
-            class: "bottom",
-            id: "m9"
-          },
-          {
-            num: "",
-            operator: "-",
-            class: "bottom",
-            id: "m10"
-          },
-          {
-            num: "",
-            operator: "+",
-            class: "right",
-            id: "m11"
-          },
-          {
-            num: "",
-            operator: "-",
-            class: "right",
-            id: "m12"
-          },
-          {
-            num: "",
-            operator: "+",
-            class: "right",
-            id: "m13"
-          },
-          {
-            num: "",
-            operator: "-",
-            class: "right",
-            id: "m14"
-          },
-          {
-            num: "",
-            operator: "+",
-            class: "right",
-            id: "m15"
-          },
-          {
-            num: "",
-            operator: "-",
-            class: "top",
-            id: "m16"
-          },
-          {
-            num: "",
-            operator: "+",
-            class: "top",
-            id: "m17"
-          },
-          {
-            num: "",
-            operator: "-",
-            class: "top",
-            id: "m18"
-          },
-          {
-            num: "",
-            operator: "+",
-            class: "top",
-            id: "m19"
-          },
-          {
-            num: "",
-            operator: "-",
-            class: "left",
-            id: "m20"
-          },
-          {
-            num: "",
-            operator: "+",
-            class: "left",
-            id: "m21"
-          },
-          // {
-          //   num: "",
-          //   operator: "-",
-          //   class: "left",
-          //   id: "m22"
-          // },
-
-        ]
-      }
+    props: {
+      ifFreeze: Boolean
     },
+    // data() {
+    //   return {
+
+    //   }
+    // },
     methods: {
-      nextInput(inputId) {
-        let elInput = document.getElementById(inputId);
-        elInput.focus()
+      nextInput(index) {
+        if (index < this.boxes.length - 1) {
+          let elInput = document.getElementById('input' + (index + 1));
+          elInput.focus()
+        }
       }
     },
     computed: {
+      boxes() {
+        return this.$store.state.GgridStory.boxes;
+      },
       result() {
         let result = +this.boxes[0].num;
         for (let i in this.boxes) {

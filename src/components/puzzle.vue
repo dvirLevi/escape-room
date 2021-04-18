@@ -2,10 +2,11 @@
   <div class="row">
     <div class="col f-center">
       <div class="f-center puzzle p-1 border-r">
-        <dragDrop @end-drop="endGame" itemsClass="wrap-part" :itemsStyle="{width: widthParts + '%'}" :items="parts" v-slot:default="slotProps" >
+        <dragDrop @end-drop="endGame" itemsClass="wrap-part" :itemsStyle="{width: widthParts + '%'}" :items="parts"
+          v-slot:default="slotProps" :freeze="ifFreeze">
           <div class="part img-contain" :style="{backgroundImage: `url(${slotProps.item.img})`}">
           </div>
-      </dragDrop>
+        </dragDrop>
       </div>
     </div>
   </div>
@@ -14,7 +15,7 @@
 <script>
   // @ is an alias to /src
   // import part from '@/components/puzzle/part.vue'
-  import shuffle from '../helpers/shuffle'
+  // import Gpuzzle from '../helpers/Gpuzzle'
   import dragDrop from '@/components/dragDrop.vue'
 
   export default {
@@ -28,86 +29,29 @@
         default: 20,
         type: Number
       },
-      ifShuffle: Boolean
+      ifFreeze: Boolean
     },
     data() {
       return {
-        parts: [{
-            img: require('@/assets/puzzle/ass1.jpg'),
-            id: 1
-          },
-          {
-            img: require('@/assets/puzzle/ass2.jpg'),
-            id: 2
-          },
-          {
-            img: require('@/assets/puzzle/ass3.jpg'),
-            id: 3
-          },
-          {
-            img: require('@/assets/puzzle/ass4.jpg'),
-            id: 4
-          },
-          {
-            img: require('@/assets/puzzle/ass5.jpg'),
-            id: 5
-          },
-          {
-            img: require('@/assets/puzzle/ass6.jpg'),
-            id: 6
-          },
-          {
-            img: require('@/assets/puzzle/ass7.jpg'),
-            id: 7
-          },
-          {
-            img: require('@/assets/puzzle/ass8.jpg'),
-            id: 8
-          },
-          {
-            img: require('@/assets/puzzle/ass9.jpg'),
-            id: 9
-          },
-          {
-            img: require('@/assets/puzzle/ass10.jpg'),
-            id: 10
-          },
-          {
-            img: require('@/assets/puzzle/ass11.jpg'),
-            id: 11
-          },
-          {
-            img: require('@/assets/puzzle/ass12.jpg'),
-            id: 12
-          },
-          {
-            img: require('@/assets/puzzle/ass13.jpg'),
-            id: 13
-          },
-          {
-            img: require('@/assets/puzzle/ass14.jpg'),
-            id: 14
-          },
-          {
-            img: require('@/assets/puzzle/ass15.jpg'),
-            id: 15
-          },
-        ]
+        // parts: [
+      
+        // ]
       }
     },
-    mounted() {
-      if (!this.ifShuffle) {
-        this.parts = shuffle(this.parts);
-      }
+    created() {
+      this.$store.commit('shuffle');
     },
     methods: {
       endGame() {
-        if(this.ifEndGame) {
-          this.$emit('end-game');  
+        if (this.ifEndGame) {
+          this.$emit('end-game');
         }
       },
     },
     computed: {
+      parts() {
+        return this.$store.state.Gpuzzle.parts;
+      },
       ifEndGame() {
         let n = 1;
         let check = true;

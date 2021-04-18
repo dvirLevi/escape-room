@@ -8,7 +8,7 @@
         </div>
         <div class="w-100 f-center-right mt-3" v-if="answers.length">
           <input class="form-control" v-model="textInput" type="text">
-          <button class="g-butt bg-gradient h6 me-2 p-2 m-0" @click="checkAns" type="submit">בדיקת תפקיד</button>
+          <button class="g-butt bg-gradient h6 me-2 p-2 m-0" @click="checkAns" type="submit">בדיקת תפקיד המארי</button>
         </div>
       </div>
       <div class="w-100 wrap-text p-3 img-cover mt-3">

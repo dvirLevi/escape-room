@@ -4,7 +4,7 @@
       <h3>סדרו את המפה שתנחה את השליח מתימן לספרד</h3>
     </template>
     <template v-slot:task>
-      <puzzle :ifShuffle="correntRoom.ifResolved" @end-game="$store.commit('endTask', correntRoom.id)" />
+      <puzzle :ifFreeze="correntRoom.ifCheck" @end-game="$store.commit('endTask', correntRoom.id)" />
     </template>
   </roomSlots>
 </template>

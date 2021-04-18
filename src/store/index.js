@@ -1,6 +1,9 @@
 import {
   createStore
 } from 'vuex'
+import Gpuzzle from './modules/Gpuzzle'
+import GmoneyBills from './modules/GmoneyBills'
+import GgridStory from './modules/GgridStory'
 
 export default createStore({
   state: {
@@ -76,5 +79,9 @@ export default createStore({
     }
   },
   actions: {},
-  modules: {}
+  modules: {
+    Gpuzzle,
+    GmoneyBills,
+    GgridStory
+  }
 })
