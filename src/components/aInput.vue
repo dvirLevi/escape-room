@@ -48,13 +48,11 @@
       }
     },
     mounted() {
-      this.$refs.input.focus()
+      this.checkFocus()
     },
     methods: {
       checkFocus() {
-        if (!this.modelValue) {
-          this.ifFocus = false
-        }
+        !this.modelValue? this.ifFocus = false : this.ifFocus = true
       },
       emitText(e) {
         this.text = e.target.value;

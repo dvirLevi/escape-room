@@ -57,7 +57,7 @@
         name: ""
       }
     },
-    mounted() {
+    created() {
       this.name = this.$store.state.name;
     },
     methods: {
