@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col f-center">
       <div class="f-center puzzle p-1 border-r">
-        <dragDrop @end-drop="endGame" itemsClass="wrap-part" :itemsStyle="{width: widthParts + '%'}" :items="parts"
+        <dragDrop @finish="endGame" itemsClass="wrap-part" :itemsStyle="{width: widthParts + '%'}" :items="parts"
           v-slot:default="slotProps" :freeze="ifFreeze">
           <div class="part img-contain" :style="{backgroundImage: `url(${slotProps.item.img})`}">
           </div>

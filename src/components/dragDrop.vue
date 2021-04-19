@@ -1,6 +1,6 @@
 <template>
   <dragDropItem :class="itemsClass" :placeDragClass="placeDragClass" :dragClass="dragClass" :style="itemsStyle" v-for="item in items" :item="item" :key="item.id" :id="item.id" :elDrop="elDrop" @pass-drag-index="dragId = $event"
-    @end-drop="endDrop" @drop-momile="elDrop = $event" @if-drop="ifDrop = $event" :ifDrop="ifDrop" :freeze="freeze" >
+    @end-drop="endDrop" @drop-momile="elDrop = $event" @if-drop="ifDrop = $event" :ifDrop="ifDrop" :freeze="freeze" @finish="$emit('finish', items)" >
     <slot :item="item"></slot>
   </dragDropItem>
 </template>
@@ -32,7 +32,7 @@
         type: Boolean
       }
     },
-    emits: ['end-drop'],
+    emits: ['finish'],
     data() {
       return {
         // items: [],
@@ -59,7 +59,7 @@
           arr[index2] = dragEl;
         }
         replaseObjElements(this.dragId, dropId, this.items);
-        this.$emit('end-drop', this.items)
+        // this.$emit('end-drop', this.items)
       },
 
     },

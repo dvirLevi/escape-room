@@ -50,7 +50,7 @@
   }
 
   h4 {
-    background-color: var(--main-color);
+    background-color: #6f4a32;
     color: #fff;
     padding: 4px;
     border-radius: 3px;

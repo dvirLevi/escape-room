@@ -72,6 +72,7 @@ export default createStore({
           el.ifCheck = true;
         }
       })
+      
     },
     completeRoom(state, id) {
       state.rooms.forEach((el) => {

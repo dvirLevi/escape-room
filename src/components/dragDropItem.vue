@@ -79,6 +79,7 @@
               body.onmouseup = null;
               body.ontouchmove = null;
               body.ontouchend = null;
+              this.$emit('finish')
             }
 
             body.onmousemove = (e) => {
@@ -119,7 +120,9 @@
       dropMomile(e) {
         let touch = e.touches[0];
         let checkbox = document.elementFromPoint(touch.clientX, touch.clientY);
-        this.$emit('drop-momile', checkbox.id);
+        if (checkbox.id) {
+          if (checkbox.id.slice(0, 4) === 'drag') this.$emit('drop-momile', checkbox.id);
+        }
       },
       follow(e) {
         if (e.type === 'mousemove' || e.type === 'mousedown') {
