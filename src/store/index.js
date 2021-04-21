@@ -10,7 +10,9 @@ import GarrangeSentences from './modules/GarrangeSentences'
 
 export default createStore({
   state: {
-    name: "",
+    name: "משה",
+    endEscapeRoom: false,
+    endTime: {},
     ifMuted: false,
     rooms: [{
         text: "חדר 1",
@@ -60,7 +62,32 @@ export default createStore({
         ifResolved: false,
         id: 6
       }
-    ]
+    ],
+    codesCorrectOrder: [{
+      correct: 7,
+      input: ""
+    },
+    {
+      correct: 14,
+      input: ""
+    },
+    {
+      correct: 15,
+      input: ""
+    },
+    {
+      correct: 20,
+      input: ""
+    },
+    {
+      correct: 7,
+      input: ""
+    },
+    {
+      correct: 4,
+      input: ""
+    }
+  ]
   },
   mutations: {
     pushName(state, name) {
@@ -72,7 +99,6 @@ export default createStore({
           el.ifCheck = true;
         }
       })
-      
     },
     completeRoom(state, id) {
       state.rooms.forEach((el) => {
@@ -80,7 +106,13 @@ export default createStore({
           el.ifResolved = true;
         }
       })
-    }
+    },
+    endEscapeRoom(state) {
+      state.endEscapeRoom = true;
+    },
+    passEndTimer(state, secondsAndMinutes) {
+      state.endTime = secondsAndMinutes;
+    },
   },
   actions: {},
   modules: {

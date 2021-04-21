@@ -18,10 +18,16 @@
         totalSeconds: 0,
         seconds: 0,
         minutes: 0,
+        interval: null
       };
     },
     mounted() {
-      setInterval(this.setTime, 1000);
+    this.interval = setInterval(this.setTime, 1000);
+    },
+    computed: {
+      endEscapeRoom() {
+        return this.$store.state.endEscapeRoom
+      },
     },
     methods: {
       setTime() {
@@ -36,6 +42,14 @@
         } else {
           return valString;
         }
+      }
+    },
+    watch: {
+      endEscapeRoom: function(endEscapeRoom) {
+           if(endEscapeRoom) {
+             clearInterval(this.interval);
+             this.$store.commit('passEndTimer', {seconds: this.seconds, minutes: this.minutes});
+           }
       }
     }
   };

@@ -55,6 +55,12 @@ const routes = [
         name: '6',
         component: () => import('../views/rooms/room6.vue'),
       },
+      {
+        path: 'caveRoom',
+        name: 'caveRoom',
+        component: () => import('../views/rooms/caveRoom.vue'),
+      },
+      
       // {
       //   path: 'posts',
       //   component: UserPosts

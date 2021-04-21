@@ -1,5 +1,5 @@
 <template>
-  <div class="bg img-cover" :style="{backgroundImage:`url(${img})`}">
+  <div class="bg" :class="coverOrContain === 'cover'? 'img-cover': 'img-contain'" :style="{backgroundImage:`url(${img})`, opacity: opacity}">
 
   </div>
 </template>
@@ -9,9 +9,17 @@
 
   export default {
     name: 'bg',
-props:{
-  img: String
-}
+    props: {
+      img: String,
+      coverOrContain: {
+        default: 'cover',
+        type: String,
+      },
+      opacity: {
+        default: '.4',
+        type: String,
+      }
+    }
   }
 </script>
 
@@ -24,8 +32,19 @@ props:{
     top: 0;
     right: 0;
     z-index: -2;
-    opacity: .4;
   }
+
+  .img-cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+}
+
+.img-contain {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50%;
+}
 
   @media (max-width: 767.98px) {}
 </style>
