@@ -10,7 +10,7 @@ import GarrangeSentences from './modules/GarrangeSentences'
 
 export default createStore({
   state: {
-    name: "משה",
+    name: "",
     endEscapeRoom: false,
     endTime: {},
     ifMuted: false,
