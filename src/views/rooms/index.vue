@@ -20,7 +20,7 @@
         <div class="col f-center">
           <div ref="cave" class="cave img-contain">
             <img class="fence" :style="{right: fencePosition +'%'}" src="@/assets/ass15.png" alt="">
-            <img class="treasure-box c-p" @click="$router.push('/MainRoom/caveRoom')" src="@/assets/ass16.png" alt="">
+            <img class="treasure-box c-p" @click="goToCave" src="@/assets/ass16.png" alt="">
           </div>
         </div>
       </div>
@@ -60,7 +60,10 @@
           //     icon: 'success',
           //   })
           // }, 300)
-        }, 300)
+        }, 1200)
+      }, 
+      goToCave() {
+        if(this.ifAllResolved) this.$router.push('/MainRoom/caveRoom')
       }
     },
     computed: {

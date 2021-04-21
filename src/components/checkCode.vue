@@ -40,7 +40,7 @@
           Swal.fire({
             title: 'יפה מאוד!',
             text: "הצלחת למצוא את הצופן של חדר מס'" + this.dataRoom.id,
-            timer: 3000,
+            timer: 900,
             icon: 'success',
           })
           this.$router.push('/mainRoom/')
