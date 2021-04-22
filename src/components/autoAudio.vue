@@ -1,5 +1,5 @@
 <template>
-  <audio ref="audio" :loop="ifLoop" :src="src"></audio>
+  <audio ref="audio" :loop="ifLoop" :src="src" @ended="$emit('end-audio')"></audio>
 </template>
 
 <script>
@@ -47,7 +47,7 @@
             this.volume += this.increment;
             this.$refs.audio.volume = this.volume;
           }
-        }, 500)
+        }, this.speedOfIncrement)
       }
     },
     watch: {

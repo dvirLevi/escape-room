@@ -1,5 +1,6 @@
 <template>
   <div ref="checkCode" class="w-100 wrap-check img-contain f-center-right">
+    <autoAudio v-if="play" :src="srcAudio" :ifLoop="false" :maxVol="1" :increment="1" :speedOfIncrement="0" :ifMuted="$store.state.ifMuted" @end-audio="play = false" />
     <template v-if="!dataRoom.ifCheck">
       <h4 class="mt-md-0 mt-3">לאחר סיום המשימה תוכל לבדוק כאן את הצופן</h4>
     </template>
@@ -19,23 +20,29 @@
 <script>
   // @ is an alias to /src
   import aInput from '@/components/aInput.vue'
+  import autoAudio from '@/components/autoAudio.vue'
   import Swal from 'sweetalert2'
 
   export default {
     name: 'checkCode',
     components: {
-      aInput
+      aInput,
+      autoAudio
     },
     props: {
       dataRoom: Object
     },
     data() {
       return {
-        code: ""
+        code: "",
+        play: false,
+        srcAudio: null
       }
     },
     methods: {
       checkCode() {
+        this.srcAudio = "https://pic.pikbest.com/00/53/31/85I888piCuC7.mp3";
+          this.play = true;
         if (+this.code === this.dataRoom.code) {
           Swal.fire({
             title: 'יפה מאוד!',
@@ -43,8 +50,11 @@
             timer: 900,
             icon: 'success',
           })
-          this.$router.push('/mainRoom/')
+          
           this.$store.commit('completeRoom', this.dataRoom.id)
+          setTimeout(() => {
+            this.$router.push('/mainRoom/')
+          }, 3000)
         } else {
           Swal.fire({
             title: 'קוד שגוי',
@@ -63,6 +73,8 @@
     watch: {
       ifCheck: function (ifCheck) {
         if (ifCheck) {
+          this.srcAudio = "https://pic.pikbest.com/00/57/98/17d888piCa2V.mp3";
+          this.play = true;
           this.$refs.checkCode.scrollIntoView({
             behavior: "smooth",
             block: "center",
