@@ -279,5 +279,9 @@
     .wrap-scroll h4 {
       font-size: 3.7vw;
     }
+
+    .wrap-scroll h2 {
+font-size: 20px;
+    }
   }
 </style>

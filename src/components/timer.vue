@@ -22,7 +22,7 @@
       };
     },
     mounted() {
-    this.interval = setInterval(this.setTime, 1000);
+      this.interval = setInterval(this.setTime, 1000);
     },
     computed: {
       endEscapeRoom() {
@@ -45,11 +45,14 @@
       }
     },
     watch: {
-      endEscapeRoom: function(endEscapeRoom) {
-           if(endEscapeRoom) {
-             clearInterval(this.interval);
-             this.$store.commit('passEndTimer', {seconds: this.seconds, minutes: this.minutes});
-           }
+      endEscapeRoom: function (endEscapeRoom) {
+        if (endEscapeRoom) {
+          clearInterval(this.interval);
+          this.$store.commit('passEndTimer', {
+            seconds: this.seconds,
+            minutes: this.minutes
+          });
+        }
       }
     }
   };

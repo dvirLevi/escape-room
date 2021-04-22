@@ -7,7 +7,7 @@
     <!-- <bg :img="require('../assets/ass.jpg')" /> -->
     <div class="col ">
       <div class="container p-0 pb-md-5">
-        <timer class="mt-1" />
+        <!-- <timer class="mt-1" /> -->
         <router-view></router-view>
       </div>
     </div>
@@ -19,7 +19,7 @@
   // @ is an alias to /src
   // import aInput from '@/components/aInput.vue'
   // import bg from '@/components/bg.vue'
-  import timer from '@/components/timer.vue'
+  // import timer from '@/components/timer.vue'
   import autoAudio from '@/components/autoAudio.vue'
 
   export default {
@@ -27,7 +27,7 @@
     components: {
       autoAudio,
       // bg,
-      timer
+      // timer
     },
   }
 </script>
