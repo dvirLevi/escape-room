@@ -1,5 +1,5 @@
 <template>
-  <audio ref="audio" loop :src="src"></audio>
+  <audio ref="audio" :loop="ifLoop" :src="src"></audio>
 </template>
 
 <script>
@@ -19,7 +19,11 @@
         default: 0.1,
         type: Number
       },
-      ifMuted: Boolean
+      ifMuted: Boolean,
+      ifLoop: {
+        default: true,
+        type: Boolean
+      }
     },
     data() {
       return {

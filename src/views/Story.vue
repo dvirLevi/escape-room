@@ -13,7 +13,7 @@
             <textTyping class="text-typing p-3 mb-3" :text="text" fontFamily="Miriam Libre" color="#fff"
               @end-typing="showButt = true" />
             <template v-if="showButt">
-              <button ref="button" class="g-butt bg-gradient h5 p-2 ps-3 pe-3" @click="$router.push('/MainRoom')">קדימה
+              <button ref="button" class="g-butt bg-gradient h2 p-2 ps-3 pe-3" @click="$router.push('/MainRoom')">קדימה
                 למשימה!</button>
               <img src="@/assets/ass6.png" class="el journey-el">
             </template>
@@ -88,7 +88,7 @@
   .journey-el {
     width: 150px;
     bottom: -5%;
-    right: 15%;
+    right: 20%;
   }
 
   .secret-el {
@@ -130,7 +130,7 @@
     .journey-el {
       width: 111px;
       bottom: -1%;
-      right: 49%;
+      right: 55%;
     }
 
     .secret-el {
