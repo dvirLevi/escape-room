@@ -32,11 +32,11 @@
       }
     },
     mounted() {
-      if (!this.ifMuted) {
-        this.$refs.audio.volume = this.volume;
-        this.$refs.audio.play();
-        this.incrementVolume()
-      }
+      // if (!this.ifMuted) {
+      this.$refs.audio.volume = this.volume;
+      this.$refs.audio.play();
+      this.incrementVolume()
+      // }
     },
     methods: {
       incrementVolume() {
@@ -45,20 +45,26 @@
             clearInterval(this.setInterval);
           } else {
             this.volume += this.increment;
-            this.$refs.audio.volume = this.volume;
+            this.$refs.audio.volume = this.actualVolume;
           }
         }, this.speedOfIncrement)
       }
     },
+    computed: {
+      actualVolume() {
+        if (this.ifMuted) return 0
+        return this.volume
+      }
+    },
     watch: {
       ifMuted: function () {
-        this.$refs.audio.muted = this.ifMuted;
+        this.$refs.audio.volume = this.actualVolume;
+
       }
     },
     unmounted() {
       clearInterval(this.setInterval);
     }
-
   }
 </script>
 
