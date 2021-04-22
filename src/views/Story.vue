@@ -1,6 +1,7 @@
 <template>
   <div class="row min-height-screen position-relative">
-    <autoAudio src="https://www.zapsplat.com/wp-content/uploads/2015/music-one/music_orlamusic_Epic%20004.mp3?_=5" :ifMuted="$store.state.ifMuted" />
+    <autoAudio src="https://www.zapsplat.com/wp-content/uploads/2015/music-one/music_orlamusic_Epic%20004.mp3?_=5"
+      :ifMuted="$store.state.ifMuted" />
     <!-- <bg :img="require('../assets/ass.jpg')" /> -->
     <div class="col ">
       <div class="container p-0">
@@ -12,7 +13,7 @@
             <textTyping class="text-typing p-3 mb-3" :text="text" fontFamily="Miriam Libre" color="#fff"
               @end-typing="showButt = true" />
             <template v-if="showButt">
-              <button class="g-butt bg-gradient h5 p-2 ps-3 pe-3" @click="$router.push('/MainRoom')">קדימה
+              <button ref="button" class="g-butt bg-gradient h5 p-2 ps-3 pe-3" @click="$router.push('/MainRoom')">קדימה
                 למשימה!</button>
               <img src="@/assets/ass6.png" class="el journey-el">
             </template>
@@ -45,6 +46,17 @@
 בכוחך להציל אותם משמד על ידי העברת אגרת חשובה שכתב להם הרמב"ם ובכוחה לסייע להם.
 עוזרי משיח השקר גנבו את האיגרת והצפינו אותה בתיבה נעולה עליך לחלץ את האיגרת מהתיבה על ידי גלוי הקוד הסודי בו היא נעולה ולהעביר את האגרת מהרמב"ם לתימן הרחוקה במהירות האפשרית - לפני שהדבר יוודע והאגרת תושמד.
 בכל אחת מן הדלתות שעל המסך תוכל להגיע לחידה שבפתירתה תקבל רמז לחלק מהצופן שיסייע בהמשך לחשוף את הקוד הסודי בשלימותו.`,
+      }
+    },
+    watch: {
+      showButt: function () {
+        setTimeout(()=> {
+          this.$refs.button.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+              inline: "nearest"
+            }, 200);
+        })
       }
     }
   }
@@ -80,9 +92,10 @@
   }
 
   .secret-el {
-    width: 204px;
-    top: -76%;
-    left: 10%;
+    width: 134px;
+    top: -66%;
+    left: -3%;
+    transform: rotate(-20deg);
     z-index: 1;
   }
 
@@ -121,10 +134,10 @@
     }
 
     .secret-el {
-      width: 152px;
-      top: -35%;
-      left: 0%;
-      z-index: 1;
+      width: 56px;
+      top: -54%;
+      right: 0%;
+      transform: rotate(20deg);
     }
   }
 </style>

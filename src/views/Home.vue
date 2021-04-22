@@ -11,9 +11,9 @@
       </div> -->
       <div class="container p-0">
         <div class="row mt-md-5 mt-0">
-          <form class="col-md-3 position-relative pt-3 pb-3 mt-md-0 mt-5" @submit.prevent="pushName">
+          <div class="col-md-4 order-md-1 order-2 position-relative pt-3 pb-3 mt-md-0 mt-5">
             <!-- <img src="@/assets/ass1.png" class="el lock-el"> -->
-            <!-- <form class="" @submit.prevent="pushName"> -->
+            <form class="p-3" @submit.prevent="pushName">
               <h3 class="fw-bold">הוראות</h3>
               <ul class="ps-0">
                 <li>חדר הבריחה מתאים כמשחק תחרותי לקבוצות וכאתגר לשחקן יחידי</li>
@@ -24,9 +24,9 @@
                 <aInput class="mt-4" v-model="name" maxlength="8" placeholder="שם שחקן" />
               </div>
               <button class="g-butt bg-gradient mt-3 h5 p-2 w-50 " type="submit">התחלה</button>
-            <!-- </form> -->
-          </form>
-          <div class="col-md-9 text-center">
+            </form>
+          </div>
+          <div class="col-md-8 order-md-2 order-1 text-center">
           <!-- <div class="col-md-9 text-center f-center-column pt-5 pb-5 position-relative"> -->
             <!-- <img src="@/assets/ass3.png" class="el building-el">
             <img src="@/assets/ass4.png" class="el page-el">
@@ -86,7 +86,7 @@
     border-radius: 8px;
   }
 
-  .building-el {
+  /* .building-el {
     width: 300px;
     bottom: 0%;
     left: 0%;
@@ -102,13 +102,10 @@
     width: 200px;
     top: 0%;
     left: 10%;
-  }
-
-  /* .col-md-9 {
-    background-color: #161616;
   } */
 
-  h1 {
+
+  /* h1 {
     font-family: 'Miriam Libre', sans-serif;
     font-weight: 800;
     font-size: 120px;
@@ -119,7 +116,7 @@
     font-family: 'Miriam Libre', sans-serif;
     font-weight: 400;
     font-size: 39px;
-  }
+  } */
 
   li {
     font-size: 23px;
@@ -133,44 +130,41 @@
      form {
     border-radius: 0px;
   }
-    h1 {
+    /* h1 {
       font-size: 65px;
     }
 
     h2 {
       font-size: 21px;
-    }
+    } */
 
-    .col-md-9 {
+    /* .col-md-8 {
       order: 1;
     }
 
-    .col-md-3 {
+    .col-md-4 {
       order: 2;
-    }
+    } */
 
     /* .lock-el {
       top: auto;
       bottom: 5%
     } */
 
-    .building-el {
+    /* .building-el {
       width: 100px;
-      /* bottom: 0%; */
       left: 5%;
     }
 
     .page-el {
       width: 90px;
       top: 34%;
-      /* right: 10%; */
     }
 
     .box-el {
       width: 90px;
-      /* top: 0%; */
-      /* left: 10%; */
-    }
+     
+    } */
 
     .logo {
     width: 100%;

@@ -1,9 +1,9 @@
 <template>
   <nav class="row row-nav p-e-n">
     <div class="col">
-      <div class="container">
+      <div class="container p-0">
         <div class="row pt-1 pb-1">
-          <div class="col p-0 f-center-between">
+          <div class="col f-center-between">
             <router-link tag="div" to="/" class="logo p-e-p">
               <img class="w-100" src="../assets/logo.png" alt="">
             </router-link>

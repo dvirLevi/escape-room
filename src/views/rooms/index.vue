@@ -117,9 +117,9 @@
 
   .treasure-box {
     position: absolute;
-    top: 56%;
+    top: 46%;
     right: 33%;
-    width: 27%;
+    width: 24%;
     z-index: 0;
   }
 
