@@ -29,7 +29,7 @@
           את האיגרת, לאחר מכן הפכו
           אותה ותגלו את הרמז האחרון לפני פענוח קוד הכספת הסודית.</h5>
       </div>
-      <div class="w-75 wrap-scroll position-relative" @click="bookInversion = !bookInversion">
+      <div ref="scroll" class="w-75 wrap-scroll position-relative" @click="bookInversion = !bookInversion">
         <template v-if="!endEscapeRoom">
           <template v-if="!bookInversion">
             <img class="w-100" src="@/assets/ass20.png" alt="">
@@ -67,17 +67,16 @@
         </template>
         <template v-else>
           <img class="w-100" src="@/assets/ass20.png" alt="">
-           <div class="wrap-text text-center">
-          <h2>יישר-כח {{name}} השליח היקר!</h2>
-          <h2>אכן הצופן הוא:</h2>
-          <h4 class="fw-bold"><span class="ms-2" v-for="code in codesCorrectOrder" :key="code.correct">{{code.correct}}</span></h4>
-          <h2>הצלחת לחלץ את האיגרת מהתיבה ובכך להציל את יהודי תימן</h2>
-          <h2>הזמן שלקח לך לסיים את המשימה הוא:</h2>
-          <h2 class="fw-bold">{{endTime.minutes}} דקות ו {{endTime.seconds}} שניות</h2>
-           </div>
+          <div class="wrap-text text-center">
+            <h2>יישר-כח {{name}} השליח היקר!</h2>
+            <h2>אכן הצופן הוא:</h2>
+            <h4 class="fw-bold"><span class="ms-2" v-for="code in codesCorrectOrder"
+                :key="code.correct">{{code.correct}}</span></h4>
+            <h2>הצלחת לחלץ את האיגרת מהתיבה ובכך להציל את יהודי תימן</h2>
+            <h2>הזמן שלקח לך לסיים את המשימה הוא:</h2>
+            <h2 class="fw-bold">{{endTime.minutes}} דקות ו {{endTime.seconds}} שניות</h2>
+          </div>
         </template>
-
-
       </div>
     </div>
   </div>
@@ -104,7 +103,16 @@
     },
     methods: {
       checkIfCorrectOrder() {
-        if (this.ifCorrectOrder) this.$store.commit('endEscapeRoom')
+        if (this.ifCorrectOrder) {
+          this.$store.commit('endEscapeRoom')
+          setTimeout(() => {
+            this.$refs.scroll.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+              inline: "nearest"
+            });
+          }, 2000)
+        }
       }
     },
     computed: {
@@ -281,7 +289,7 @@
     }
 
     .wrap-scroll h2 {
-font-size: 20px;
+      font-size: 20px;
     }
   }
 </style>

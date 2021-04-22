@@ -11,9 +11,9 @@
       </div> -->
       <div class="container p-0">
         <div class="row mt-md-5 mt-0">
-          <div class="col-md-3 position-relative mt-md-0 mt-5">
-            <img src="@/assets/ass1.png" class="el lock-el">
-            <form class="pb-5 pr-4 pl-4" @submit.prevent="pushName">
+          <form class="col-md-3 position-relative pt-3 pb-3 mt-md-0 mt-5" @submit.prevent="pushName">
+            <!-- <img src="@/assets/ass1.png" class="el lock-el"> -->
+            <!-- <form class="" @submit.prevent="pushName"> -->
               <h3 class="fw-bold">הוראות</h3>
               <ul class="ps-0">
                 <li>חדר הבריחה מתאים כמשחק תחרותי לקבוצות וכאתגר לשחקן יחידי</li>
@@ -24,15 +24,16 @@
                 <aInput class="mt-4" v-model="name" maxlength="8" placeholder="שם שחקן" />
               </div>
               <button class="g-butt bg-gradient mt-3 h5 p-2 w-50 " type="submit">התחלה</button>
-            </form>
-          </div>
-          <div class="col-md-9 text-center f-center-column pt-5 pb-5 position-relative">
-            <img src="@/assets/ass3.png" class="el building-el">
+            <!-- </form> -->
+          </form>
+          <div class="col-md-9 text-center">
+          <!-- <div class="col-md-9 text-center f-center-column pt-5 pb-5 position-relative"> -->
+            <!-- <img src="@/assets/ass3.png" class="el building-el">
             <img src="@/assets/ass4.png" class="el page-el">
             <img src="@/assets/ass5.png" class="el box-el">
             <h1 class="m-0">חדר בריחה</h1>
-            <h2>מרכז מורשת הרמב"ם ועדות ישראל</h2>
-            <img class="w-25" src="@/assets/ass2.png" alt="">
+            <h2>מרכז מורשת הרמב"ם ועדות ישראל</h2> -->
+            <img class="logo" src="@/assets/ass23.png" alt="">
           </div>
         </div>
       </div>
@@ -73,10 +74,16 @@
 <style scoped>
   /* @import url('https://fonts.googleapis.com/css2?family=Miriam+Libre:wght@400;700&display=swap'); */
 
-  .lock-el {
+  /* .lock-el {
     width: 29%;
     top: 65%;
     right: 56%;
+  } */
+
+  form {
+          background-color: #ffffff8f;
+    box-shadow: 1px 1px 12px #0000003b;
+    border-radius: 8px;
   }
 
   .building-el {
@@ -118,7 +125,14 @@
     font-size: 23px;
   }
 
+  .logo {
+    width: 75%;
+  }
+
   @media (max-width: 767.98px) {
+     form {
+    border-radius: 0px;
+  }
     h1 {
       font-size: 65px;
     }
@@ -135,10 +149,10 @@
       order: 2;
     }
 
-    .lock-el {
+    /* .lock-el {
       top: auto;
       bottom: 5%
-    }
+    } */
 
     .building-el {
       width: 100px;
@@ -157,5 +171,9 @@
       /* top: 0%; */
       /* left: 10%; */
     }
+
+    .logo {
+    width: 100%;
+  }
   }
 </style>
