@@ -50,12 +50,12 @@
     },
     watch: {
       showButt: function () {
-        setTimeout(()=> {
+        setTimeout(() => {
           this.$refs.button.scrollIntoView({
-              behavior: "smooth",
-              block: "center",
-              inline: "nearest"
-            }, 200);
+            behavior: "smooth",
+            block: "center",
+            inline: "nearest"
+          }, 200);
         })
       }
     }
@@ -92,11 +92,14 @@
   }
 
   .secret-el {
-    width: 134px;
-    top: -66%;
-    left: -3%;
-    transform: rotate(-20deg);
-    z-index: 1;
+     width: 14%;
+    top: -107%;
+    right: -3%;
+    transform: rotate( 
+20deg
+ );
+    opacity: 0.4;
+    z-index: 0;
   }
 
   .text-typing {
@@ -134,9 +137,9 @@
     }
 
     .secret-el {
-      width: 56px;
-      top: -54%;
-      right: 0%;
+      width: 38%;
+      top: 37%;
+      right: -4%;
       transform: rotate(20deg);
     }
   }

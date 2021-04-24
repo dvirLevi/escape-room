@@ -123,7 +123,7 @@
   }
 
   .logo {
-    width: 75%;
+    width: 100%;
   }
 
   @media (max-width: 767.98px) {
@@ -166,8 +166,8 @@
      
     } */
 
-    .logo {
+    /* .logo {
     width: 100%;
-  }
+  } */
   }
 </style>
