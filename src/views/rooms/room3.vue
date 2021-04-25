@@ -1,5 +1,5 @@
 <template>
-  <roomSlots :correntRoom="correntRoom" :img="require('@/assets/ass9.png')">
+  <roomSlots :correntRoom="correntRoom" :img="require('@/assets/ass26.png')">
     <template v-slot:inst>
       <h3>יהודי מרוקו קבלו מידע סודי בדבר אחד ממספרי הקוד לתיבה הסודית. הם החליטו לצאת לעזרת אחיהם שבתימן אך כדי שהמידע
         לא יחשף על ידי השלטונות הם הצפינו את הקוד במכתב תמים המתאר את חייהם בעבר ובעתיד וכך העבירו אותו לשליח...</h3>

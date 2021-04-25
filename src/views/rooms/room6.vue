@@ -1,5 +1,5 @@
 <template>
-  <roomSlots :correntRoom="correntRoom" :img="require('@/assets/ass12.jpg')">
+  <roomSlots :correntRoom="correntRoom" :img="require('@/assets/ass24.jpg')">
     <template v-slot:inst>
       <h4>לפניכם מקורות מידע מן ההיסטוריה של יהודי פרס.</h4>
        <h5>1. סדרו אותם לפי סדר כרונולוגי (סדר התרחשות).</h5>

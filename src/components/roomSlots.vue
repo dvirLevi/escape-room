@@ -68,7 +68,7 @@
   img {
     /* width: 65%; */
     /* margin-top: 30px; */
-    transform: rotate(-11deg);
+    /* transform: rotate(-11deg); */
     border-radius: 8px;
   }
 

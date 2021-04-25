@@ -1,5 +1,5 @@
 <template>
-  <roomSlots :correntRoom="correntRoom" :img="require('@/assets/ass12.jpg')">
+  <roomSlots :correntRoom="correntRoom" :img="require('@/assets/ass25.png')">
     <template v-slot:inst>
       <h3>קהילת בני המנשה החליטו לשתף פעולה עם השליח לתימן אך מחשש להתנכלות זרים הוחלט שרק חובשי הכובעים השחורים יגלו את
         הקוד למנעול הנכון. כמה כאלה יש בקהל (כובעים ממש לא כובע גרב)? מצאו אותם ולחצו על הכובע שלהם</h3>

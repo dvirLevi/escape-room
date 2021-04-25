@@ -1,4 +1,7 @@
-import { createApp } from 'vue'
+import {
+    createApp
+} from 'vue'
+import VueGtag from "vue-gtag-next";
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -9,5 +12,12 @@ import roomSlots from '@/components/roomSlots.vue'
 const app = createApp(App);
 
 app.component('roomSlots', roomSlots);
+
+app.use(VueGtag, {
+    property: {
+        id: "G-73VKYBNZY2"
+    }
+});
+
 
 app.use(store).use(router).mount('#app');
