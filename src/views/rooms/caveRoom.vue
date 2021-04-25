@@ -75,7 +75,7 @@
             <h2>הצלחת לחלץ את האיגרת מהתיבה ובכך להציל את יהודי תימן</h2>
             <h2>הזמן שלקח לך לסיים את המשימה הוא:</h2>
             <h2 class="fw-bold">{{endTime.minutes}} דקות ו {{endTime.seconds}} שניות</h2>
-            <autoAudio src="https://assets.mixkit.co/sfx/preview/mixkit-clapping-male-crowd-439.mp3" :ifLoop="false" :ifMuted="$store.state.ifMuted" />
+            <autoAudio src="../audio/victory.mp3" :ifLoop="false" :ifMuted="$store.state.ifMuted" />
           </div>
         </template>
       </div>

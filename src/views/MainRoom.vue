@@ -1,7 +1,7 @@
 <template>
   <div class="row main-room min-height-screen position-relative">
     <autoAudio
-      src="https://www.zapsplat.com/wp-content/uploads/2015/music-one/music_zapsplat_deep_investigation_126.mp3?_=4"
+      src="../audio/main-room.mp3"
       :ifMuted="$store.state.ifMuted" />
     <!-- <audio ref="audio" loop src="https://www.zapsplat.com/wp-content/uploads/2015/music-one/music_zapsplat_deep_investigation_126.mp3?_=4"></audio> -->
     <!-- <bg :img="require('../assets/ass.jpg')" /> -->

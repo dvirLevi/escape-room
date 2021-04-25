@@ -6,6 +6,11 @@
       <timer v-if="name" />
       <router-view />
     <!-- </div> -->
+      <footer class="row mt-3">
+        <div class="col f-center">
+          <h4 class="m-2 fw-light"><a href="https://www.appslife.co.il/" target="_blanc">נבנה ופותח בAppsLife</a></h4>
+        </div>
+      </footer>
   </div>
 </template>
 
@@ -31,6 +36,10 @@
 </script>
 
 <style scoped>
+footer {
+  background-color: var(--main-text-color);
+  color: #fff;
+}
 /* .container-fluid {
 background-image: url('./assets/ass.jpg');
 } */

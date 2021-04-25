@@ -1,6 +1,6 @@
 <template>
   <div class="row min-height-screen position-relative">
-    <autoAudio src="https://www.zapsplat.com/wp-content/uploads/2015/music-one/music_orlamusic_Epic%20004.mp3?_=5"
+    <autoAudio src="../audio/story.mp3"
       :ifMuted="$store.state.ifMuted" />
     <!-- <bg :img="require('../assets/ass.jpg')" /> -->
     <div class="col ">

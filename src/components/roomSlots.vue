@@ -4,10 +4,10 @@
       <div class="row">
         <div class="col-md-2 f-right-top main-color">
           <router-link to="/MainRoom">
-            <h4 class="fw-bold mt-1 f-center">
+            <h5 class="fw-bold mt-1 f-center g-butt p-2">
               <span class="material-icons-outlined">
                 double_arrow
-              </span>חזרה לחדר הראשי</h4>
+              </span>חזרה לחדר הראשי</h5>
           </router-link>
         </div>
         <div class="col-md-10">
@@ -16,9 +16,15 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2 order-md-0 order-1 f-center-top position-relative">
-          <checkCode :dataRoom="correntRoom" />
-          <img :src="img" class="jug">
+        <div class="col-md-2 order-md-0 order-1">
+          <div class="row">
+            <div class="col-md-12 col-9">
+              <checkCode :dataRoom="correntRoom" />
+            </div>
+            <div class="col-md-12 col-3 pt-3 text-center">
+              <img class="w-75" :src="img">
+            </div>
+          </div>
         </div>
         <div class="col-md-10 order-md-1 order-0">
           <slot name="task"></slot>
@@ -60,21 +66,26 @@
 
 <style scoped>
   img {
-    width: 65%;
-    margin-top: 30px;
-    /* top: -101px; */
-    /* left: -109px; */
+    /* width: 65%; */
+    /* margin-top: 30px; */
     transform: rotate(-11deg);
     border-radius: 8px;
   }
 
+  h5 , h5 span {
+font-size: 1.1vw !important;
+  }
+
   @media (max-width: 767.98px) {
-    img {
+    /* img {
       position: relative;
       width: 15%;
       top: -45px;
       left: -103px;
       z-index: -1;
-    }
+    } */
+     h5 , h5 span {
+font-size: 20px !important;
+  }
   }
 </style>

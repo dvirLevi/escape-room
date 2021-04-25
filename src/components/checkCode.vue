@@ -1,5 +1,6 @@
 <template>
-  <div ref="checkCode" class="w-100 wrap-check img-contain f-center-right">
+  <div ref="checkCode" class="w-100 wrap-check img-contain f-center-right position-relative">
+    <bg coverOrContain="contain" :img="require('@/assets/ass17.png')" />
     <autoAudio v-if="play" :src="srcAudio" :ifLoop="false" :maxVol="1" :increment="1" :speedOfIncrement="0" :ifMuted="$store.state.ifMuted" @end-audio="play = false" />
     <template v-if="!dataRoom.ifCheck">
       <h4 class="mt-md-0 mt-3">לאחר סיום המשימה תוכל לבדוק כאן את הצופן</h4>
@@ -21,13 +22,15 @@
   // @ is an alias to /src
   import aInput from '@/components/aInput.vue'
   import autoAudio from '@/components/autoAudio.vue'
+  import bg from '@/components/bg.vue'
   import Swal from 'sweetalert2'
 
   export default {
     name: 'checkCode',
     components: {
       aInput,
-      autoAudio
+      autoAudio,
+      bg
     },
     props: {
       dataRoom: Object
@@ -41,7 +44,7 @@
     },
     methods: {
       checkCode() {
-        this.srcAudio = "https://pic.pikbest.com/00/53/31/85I888piCuC7.mp3";
+        this.srcAudio = "../audio/final-room.mp3";
           this.play = true;
         if (+this.code === this.dataRoom.code) {
           Swal.fire({
@@ -73,7 +76,7 @@
     watch: {
       ifCheck: function (ifCheck) {
         if (ifCheck) {
-          this.srcAudio = "https://pic.pikbest.com/00/57/98/17d888piCa2V.mp3";
+          this.srcAudio = "../audio/final-task.mp3";
           this.play = true;
           this.$refs.checkCode.scrollIntoView({
             behavior: "smooth",
@@ -95,8 +98,8 @@
 
 <style scoped>
   .wrap-check {
-    background-image: url('../assets/ass17.png');
-    min-height: 100px;
+    /* background-image: url('../assets/ass17.png'); */
+    min-height: 120px;
   }
 
   h4 {
