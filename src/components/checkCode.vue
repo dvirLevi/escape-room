@@ -1,5 +1,5 @@
 <template>
-  <div ref="checkCode" class="w-100 wrap-check img-contain f-center-right position-relative">
+  <div ref="checkCode" class="w-100 wrap-check img-contain f-right-top position-relative">
     <bg coverOrContain="contain" :img="require('@/assets/ass17.png')" />
     <autoAudio v-if="play" :src="srcAudio" :ifLoop="false" :maxVol="1" :increment="1" :speedOfIncrement="0" :ifMuted="$store.state.ifMuted" @end-audio="play = false" />
     <template v-if="!dataRoom.ifCheck">
