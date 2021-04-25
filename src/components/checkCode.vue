@@ -44,9 +44,9 @@
     },
     methods: {
       checkCode() {
-        this.srcAudio = "../audio/final-room.mp3";
-          this.play = true;
         if (+this.code === this.dataRoom.code) {
+          this.srcAudio = "../audio/final-room.mp3";
+          this.play = true;
           Swal.fire({
             title: 'יפה מאוד!',
             text: "הצלחת למצוא את הצופן של חדר מס'" + this.dataRoom.id,
