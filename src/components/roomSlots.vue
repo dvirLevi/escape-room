@@ -22,7 +22,7 @@
               <checkCode :dataRoom="correntRoom" />
             </div>
             <div class="col-md-12 col-3 pt-3 text-center">
-              <img class="w-75" :src="img">
+              <img class="w-100" :src="img">
             </div>
           </div>
         </div>

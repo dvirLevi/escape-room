@@ -65,27 +65,33 @@ export default createStore({
     ],
     codesCorrectOrder: [{
       correct: 7,
-      input: ""
+      input: "",
+      id: 1
     },
     {
       correct: 14,
-      input: ""
+      input: "",
+      id: 2
     },
     {
       correct: 15,
-      input: ""
+      input: "",
+      id: 3
     },
     {
       correct: 20,
-      input: ""
+      input: "",
+      id: 4
     },
     {
       correct: 7,
-      input: ""
+      input: "",
+      id: 5
     },
     {
       correct: 4,
-      input: ""
+      input: "",
+      id: 6
     }
   ]
   },

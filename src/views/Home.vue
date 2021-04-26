@@ -21,7 +21,7 @@
                 <li>מי שיגיע לסיום ראשון הוא המנצח!</li>
               </ul>
               <div class="w-100 ps-3">
-                <aInput class="mt-4" v-model="name" maxlength="8" placeholder="שם שחקן" />
+                <aInput class="mt-4" v-model="name" maxlength="8" placeholder="שם שחקן/קבוצה" />
               </div>
               <button class="g-butt bg-gradient mt-3 h5 p-2 w-50 " type="submit">התחלה</button>
             </form>

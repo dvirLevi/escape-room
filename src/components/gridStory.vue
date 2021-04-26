@@ -3,7 +3,7 @@
     <div class="col">
       <div class="w-100 wrap-grid">
         <div v-for="(box, index) in boxes" :key="box.id" :style="{gridArea: box.id}" class="f-center position-relative">
-          <i v-if="box.id === 'm1'" class="las la-arrow-left position-absolute h1 top p-e-n"></i>
+          <span class="start-arrow" v-if="box.id === 'm1'">התחלה<i class="las la-arrow-left "></i></span>
           <input :id="'input' + index" class="w-100 form-control text-center" v-model="box.num"
             @input="nextInput(index)" type="number" maxlength="1" :disabled="ifFreeze">
           <div class="position-absolute h2 m-0 operator" :class="box.class">{{box.operator}}</div>
@@ -159,7 +159,11 @@
     border-radius: 3px;
   }
 
-
+.start-arrow {
+      position: absolute;
+    top: 0;
+    font-size: 24px;
+}
 
   @media (max-width: 767.98px) {
     .wrap-grid {
@@ -170,5 +174,14 @@
     .story-box {
       font-size: 9px;
     }
+
+    
+.start-arrow {
+          top: 1px;
+    font-size: 12px;
+    width: 118%;
+    text-align: center;
+    font-weight: 700;
+}
   }
 </style>
