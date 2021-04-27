@@ -14,7 +14,7 @@
           <div class="col-md-4 order-md-1 order-2 position-relative pt-3 pb-3 mt-md-0 mt-5">
             <!-- <img src="@/assets/ass1.png" class="el lock-el"> -->
             <form class="p-3" @submit.prevent="pushName">
-              <h3 class="fw-bold">משה</h3>
+              <h3 class="fw-bold">יוסי</h3>
               <!-- <h3 class="fw-bold">הוראות</h3> -->
               <ul class="ps-0">
                 <li>חדר הבריחה מתאים כמשחק תחרותי לקבוצות וכאתגר לשחקן יחידי</li>
