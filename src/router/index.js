@@ -1,8 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import store from '../store'
 import Home from '../views/Home.vue'
 import {
     trackRouter
 } from "vue-gtag-next"
+
+
+const ifProvaidName = (to, from, next)=> {
+  if(!store.state.name) next({ name: 'Home' });
+  else next()
+}
 
 const routes = [
   {
@@ -16,12 +23,14 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Story.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/Story.vue'),
+    beforeEnter:  ifProvaidName,
   },
   {
     path: '/MainRoom',
     name: 'MainRoom',
     component: () => import('../views/MainRoom.vue'),
+    beforeEnter:  ifProvaidName,
     children: [
       {
         path: '',
@@ -62,12 +71,7 @@ const routes = [
         path: 'caveRoom',
         name: 'caveRoom',
         component: () => import('../views/rooms/caveRoom.vue'),
-      },
-      
-      // {
-      //   path: 'posts',
-      //   component: UserPosts
-      // }
+      }
     ]
   }
 
