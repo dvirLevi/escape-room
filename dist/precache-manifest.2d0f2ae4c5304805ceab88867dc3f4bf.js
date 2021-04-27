@@ -1,9 +1,5 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6a02faf7ea2a9584134ffe15779a0e44",
-    "url": "/_redirects"
-  },
-  {
     "revision": "6285517ced51890f709984336284d061",
     "url": "/audio/final-room.mp3"
   },
@@ -32,44 +28,92 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/about.3f26c470.css"
   },
   {
+    "revision": "30b350df7aed678d1fdf",
+    "url": "/css/about.3f26c470.css.map"
+  },
+  {
     "revision": "9ad2e206593890054208",
     "url": "/css/app.95dcb29b.css"
+  },
+  {
+    "revision": "9ad2e206593890054208",
+    "url": "/css/app.95dcb29b.css.map"
   },
   {
     "revision": "febcfae9b3471ce19bc7",
     "url": "/css/chunk-0d318b11.86343a8c.css"
   },
   {
+    "revision": "febcfae9b3471ce19bc7",
+    "url": "/css/chunk-0d318b11.86343a8c.css.map"
+  },
+  {
     "revision": "f3f397e45a3b9b519de1",
     "url": "/css/chunk-25b078fc.422aba53.css"
+  },
+  {
+    "revision": "f3f397e45a3b9b519de1",
+    "url": "/css/chunk-25b078fc.422aba53.css.map"
   },
   {
     "revision": "adf09d4f7286eeede85c",
     "url": "/css/chunk-2bb62532.c8c63c2e.css"
   },
   {
+    "revision": "adf09d4f7286eeede85c",
+    "url": "/css/chunk-2bb62532.c8c63c2e.css.map"
+  },
+  {
     "revision": "97294ac461eb387cd085",
     "url": "/css/chunk-3546639d.d3a02927.css"
+  },
+  {
+    "revision": "97294ac461eb387cd085",
+    "url": "/css/chunk-3546639d.d3a02927.css.map"
   },
   {
     "revision": "6a352d2fab56dbe7fb30",
     "url": "/css/chunk-3b38c8db.7d92b4d6.css"
   },
   {
+    "revision": "6a352d2fab56dbe7fb30",
+    "url": "/css/chunk-3b38c8db.7d92b4d6.css.map"
+  },
+  {
     "revision": "398a37910998c6635b88",
     "url": "/css/chunk-5e6a9a42.d579aca1.css"
+  },
+  {
+    "revision": "398a37910998c6635b88",
+    "url": "/css/chunk-5e6a9a42.d579aca1.css.map"
   },
   {
     "revision": "6ac64edfa640ecbfd59f",
     "url": "/css/chunk-615acb3a.04a56d88.css"
   },
   {
+    "revision": "6ac64edfa640ecbfd59f",
+    "url": "/css/chunk-615acb3a.04a56d88.css.map"
+  },
+  {
     "revision": "34bdeb733b1af8c26ae0",
     "url": "/css/chunk-73765c3a.6c2e3733.css"
   },
   {
+    "revision": "34bdeb733b1af8c26ae0",
+    "url": "/css/chunk-73765c3a.6c2e3733.css.map"
+  },
+  {
     "revision": "13011654fd62a8f754dc",
     "url": "/css/chunk-d12128a0.6d98e7c9.css"
+  },
+  {
+    "revision": "13011654fd62a8f754dc",
+    "url": "/css/chunk-d12128a0.6d98e7c9.css.map"
+  },
+  {
+    "revision": "b1545ae3d2e8889b7151aaecb85c1bf0",
+    "url": "/favicon.ico"
   },
   {
     "revision": "42b5ae1848a4a93117a46e474af64f85",
@@ -228,11 +272,71 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/ass9.ffe9cbe6.jpg"
   },
   {
+    "revision": "f130a0b70e386170cf6f011c0ca8c4f4",
+    "url": "/img/icons/android-chrome-192x192.png"
+  },
+  {
+    "revision": "0ff1bc4d14e5c9abcacba7c600d97814",
+    "url": "/img/icons/android-chrome-512x512.png"
+  },
+  {
+    "revision": "845a39478d0e2d4d5d32a092de2de250",
+    "url": "/img/icons/android-chrome-maskable-192x192.png"
+  },
+  {
+    "revision": "2695f5feb66cdb0c6f09d0e415824cf9",
+    "url": "/img/icons/android-chrome-maskable-512x512.png"
+  },
+  {
+    "revision": "936d6e411cabd71f0e627011c3f18fe2",
+    "url": "/img/icons/apple-touch-icon-120x120.png"
+  },
+  {
+    "revision": "1a034e64d80905128113e5272a5ab95e",
+    "url": "/img/icons/apple-touch-icon-152x152.png"
+  },
+  {
+    "revision": "c43cd371a49ee4ca17ab3a60e72bdd51",
+    "url": "/img/icons/apple-touch-icon-180x180.png"
+  },
+  {
+    "revision": "9a2b5c0f19de617685b7b5b42464e7db",
+    "url": "/img/icons/apple-touch-icon-60x60.png"
+  },
+  {
+    "revision": "af28d69d59284dd202aa55e57227b11b",
+    "url": "/img/icons/apple-touch-icon-76x76.png"
+  },
+  {
+    "revision": "66830ea6be8e7e94fb55df9f7b778f2e",
+    "url": "/img/icons/apple-touch-icon.png"
+  },
+  {
+    "revision": "4bb1a55479d61843b89a2fdafa7849b3",
+    "url": "/img/icons/favicon-16x16.png"
+  },
+  {
+    "revision": "98b614336d9a12cb3f7bedb001da6fca",
+    "url": "/img/icons/favicon-32x32.png"
+  },
+  {
+    "revision": "b89032a4a5a1879f30ba05a13947f26f",
+    "url": "/img/icons/msapplication-icon-144x144.png"
+  },
+  {
+    "revision": "058a3335d15a3eb84e7ae3707ba09620",
+    "url": "/img/icons/mstile-150x150.png"
+  },
+  {
+    "revision": "4e857233cbd3bb2d2db4f78bed62a52f",
+    "url": "/img/icons/safari-pinned-tab.svg"
+  },
+  {
     "revision": "e69a5e5654466f3d4e4be5d3305af829",
     "url": "/img/logo.e69a5e56.png"
   },
   {
-    "revision": "5ab08e868f772774aac06a28b04ba6d7",
+    "revision": "6d0d040a7915787e7c437e6e332eebb6",
     "url": "/index.html"
   },
   {
@@ -240,48 +344,96 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/about.7f681ad3.js"
   },
   {
+    "revision": "30b350df7aed678d1fdf",
+    "url": "/js/about.7f681ad3.js.map"
+  },
+  {
     "revision": "9ad2e206593890054208",
     "url": "/js/app.e6b37ab6.js"
+  },
+  {
+    "revision": "9ad2e206593890054208",
+    "url": "/js/app.e6b37ab6.js.map"
   },
   {
     "revision": "febcfae9b3471ce19bc7",
     "url": "/js/chunk-0d318b11.39371346.js"
   },
   {
+    "revision": "febcfae9b3471ce19bc7",
+    "url": "/js/chunk-0d318b11.39371346.js.map"
+  },
+  {
     "revision": "f3f397e45a3b9b519de1",
     "url": "/js/chunk-25b078fc.4c42c485.js"
+  },
+  {
+    "revision": "f3f397e45a3b9b519de1",
+    "url": "/js/chunk-25b078fc.4c42c485.js.map"
   },
   {
     "revision": "adf09d4f7286eeede85c",
     "url": "/js/chunk-2bb62532.1ce5e7c6.js"
   },
   {
+    "revision": "adf09d4f7286eeede85c",
+    "url": "/js/chunk-2bb62532.1ce5e7c6.js.map"
+  },
+  {
     "revision": "97294ac461eb387cd085",
     "url": "/js/chunk-3546639d.f46e5041.js"
+  },
+  {
+    "revision": "97294ac461eb387cd085",
+    "url": "/js/chunk-3546639d.f46e5041.js.map"
   },
   {
     "revision": "6a352d2fab56dbe7fb30",
     "url": "/js/chunk-3b38c8db.a099f404.js"
   },
   {
+    "revision": "6a352d2fab56dbe7fb30",
+    "url": "/js/chunk-3b38c8db.a099f404.js.map"
+  },
+  {
     "revision": "398a37910998c6635b88",
     "url": "/js/chunk-5e6a9a42.720a634d.js"
+  },
+  {
+    "revision": "398a37910998c6635b88",
+    "url": "/js/chunk-5e6a9a42.720a634d.js.map"
   },
   {
     "revision": "6ac64edfa640ecbfd59f",
     "url": "/js/chunk-615acb3a.193fae48.js"
   },
   {
+    "revision": "6ac64edfa640ecbfd59f",
+    "url": "/js/chunk-615acb3a.193fae48.js.map"
+  },
+  {
     "revision": "34bdeb733b1af8c26ae0",
     "url": "/js/chunk-73765c3a.c933e0f6.js"
+  },
+  {
+    "revision": "34bdeb733b1af8c26ae0",
+    "url": "/js/chunk-73765c3a.c933e0f6.js.map"
   },
   {
     "revision": "13011654fd62a8f754dc",
     "url": "/js/chunk-d12128a0.887873ed.js"
   },
   {
+    "revision": "13011654fd62a8f754dc",
+    "url": "/js/chunk-d12128a0.887873ed.js.map"
+  },
+  {
     "revision": "131cf1f19f10aafb6830",
     "url": "/js/chunk-vendors.d14d3e17.js"
+  },
+  {
+    "revision": "131cf1f19f10aafb6830",
+    "url": "/js/chunk-vendors.d14d3e17.js.map"
   },
   {
     "revision": "8fd1e97af93365235d91d7d06a225f39",
@@ -292,7 +444,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/logo.png"
   },
   {
-    "revision": "ea983ccf0b1a751fbe19db0332d02eed",
+    "revision": "f3433a59afc5aed32fe3e8170a688128",
     "url": "/manifest.json"
   },
   {
