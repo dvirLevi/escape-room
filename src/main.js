@@ -8,6 +8,7 @@ import store from './store'
 import "./style/global.css"
 import "./style/main.css"
 import roomSlots from '@/components/roomSlots.vue'
+import './registerServiceWorker'
 
 const app = createApp(App);
 
