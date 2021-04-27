@@ -19,7 +19,7 @@ export default createStore({
         link: "/MainRoom/1",
         code: 14,
         ifCheck: false,
-        ifResolved: true,
+        ifResolved: false,
         id: 1
       },
       {
@@ -27,7 +27,7 @@ export default createStore({
         link: "/MainRoom/2",
         code: 15,
         ifCheck: false,
-        ifResolved: true,
+        ifResolved: false,
         id: 2
       },
       {
@@ -35,7 +35,7 @@ export default createStore({
         link: "/MainRoom/3",
         code: 7,
         ifCheck: false,
-        ifResolved: true,
+        ifResolved: false,
         id: 3
       },
       {
@@ -43,7 +43,7 @@ export default createStore({
         link: "/MainRoom/4",
         code: 7,
         ifCheck: false,
-        ifResolved: true,
+        ifResolved: false,
         id: 4
       },
       {
@@ -51,7 +51,7 @@ export default createStore({
         link: "/MainRoom/5",
         code: 4,
         ifCheck: false,
-        ifResolved: true,
+        ifResolved: false,
         id: 5
       },
       {
@@ -59,7 +59,7 @@ export default createStore({
         link: "/MainRoom/6",
         code: 20,
         ifCheck: false,
-        ifResolved: true,
+        ifResolved: false,
         id: 6
       }
     ],
