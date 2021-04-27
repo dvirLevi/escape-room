@@ -13,13 +13,13 @@ module.exports = {
         name: 'BDFI',
         themeColor: '#2d3748',
         msTileColor: '#2d3748',
-        appleMobileWebAppCapable: 'no',
-        appleMobileWebAppStatusBarStyle: 'default',
-        manifestPath: 'manifest.json',
-        workboxPluginMode: 'InjectManifest',
+        // appleMobileWebAppCapable: 'no',
+        // appleMobileWebAppStatusBarStyle: 'default',
+        // manifestPath: 'manifest.json',
+        // workboxPluginMode: 'InjectManifest',
         workboxOptions: {
             // swSrc is required in InjectManifest mode.
-            swSrc: 'src/registerServiceWorker.js',
+            // swSrc: 'src/registerServiceWorker.js',
             // ...other Workbox options...
             exclude: [/_redirects/],
         }
