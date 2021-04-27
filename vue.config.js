@@ -3,8 +3,8 @@ module.exports = {
     // ...other vue-cli plugin options...
     pwa: {
         name: "חדר בריחה",
-        themeColor: '#d80806',
-        msTileColor: '#d80806',
+        themeColor: '#000',
+        msTileColor: '#000',
         // appleMobileWebAppCapable: 'no',
         // appleMobileWebAppStatusBarStyle: 'default',
         // manifestPath: 'manifest.json',
