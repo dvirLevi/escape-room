@@ -14,6 +14,7 @@ module.exports = {
             // swSrc is required in InjectManifest mode.
             // swSrc: 'src/registerServiceWorker.js',
             // ...other Workbox options...
+            skipWaiting: true,
             exclude: [/_redirects/],
         }
     }
