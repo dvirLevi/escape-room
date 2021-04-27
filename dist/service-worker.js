@@ -14,16 +14,12 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.a4b4eda5d34b055e8a846307c5cebe6c.js"
+  "/precache-manifest.6fb000f6a3d4817d15541ec870c2d89c.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "escape_room_rambam"});
 
-self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
-    self.skipWaiting();
-  }
-});
+workbox.core.skipWaiting();
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
