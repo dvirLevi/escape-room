@@ -19,7 +19,7 @@ export default createStore({
         link: "/MainRoom/1",
         code: 14,
         ifCheck: false,
-        ifResolved: false,
+        ifResolved: true,
         id: 1
       },
       {
@@ -27,7 +27,7 @@ export default createStore({
         link: "/MainRoom/2",
         code: 15,
         ifCheck: false,
-        ifResolved: false,
+        ifResolved: true,
         id: 2
       },
       {
@@ -35,7 +35,7 @@ export default createStore({
         link: "/MainRoom/3",
         code: 7,
         ifCheck: false,
-        ifResolved: false,
+        ifResolved: true,
         id: 3
       },
       {
@@ -43,7 +43,7 @@ export default createStore({
         link: "/MainRoom/4",
         code: 7,
         ifCheck: false,
-        ifResolved: false,
+        ifResolved: true,
         id: 4
       },
       {
@@ -51,7 +51,7 @@ export default createStore({
         link: "/MainRoom/5",
         code: 4,
         ifCheck: false,
-        ifResolved: false,
+        ifResolved: true,
         id: 5
       },
       {
@@ -59,7 +59,7 @@ export default createStore({
         link: "/MainRoom/6",
         code: 20,
         ifCheck: false,
-        ifResolved: false,
+        ifResolved: true,
         id: 6
       }
     ],
@@ -118,9 +118,28 @@ export default createStore({
     },
     passEndTimer(state, secondsAndMinutes) {
       state.endTime = secondsAndMinutes;
+      console.log('passEndTimer')
     },
   },
-  actions: {},
+  actions: {
+    async addScore(context) {
+      try {
+        let data = {name: context.state.name, endTime: context.state.endTime, collection: 'escape-room'};
+        console.log(data)
+        let res = await fetch('https://free-services.herokuapp.com/rambam-quiz/add-score-simple', {
+          method: 'post',
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data)
+        })
+        return await res.json()
+      } catch (err) {
+        console.log(err)
+        return false
+      }
+    },
+  },
   modules: {
     Gpuzzle,
     GmoneyBills,

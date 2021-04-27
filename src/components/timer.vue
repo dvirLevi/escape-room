@@ -52,6 +52,7 @@
             seconds: this.seconds,
             minutes: this.minutes
           });
+          this.$store.dispatch('addScore');
         }
       }
     }

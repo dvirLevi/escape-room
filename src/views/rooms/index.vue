@@ -19,6 +19,7 @@
       <div class="row mt-5 pb-5">
         <div class="col f-center">
           <div ref="cave" class="cave img-contain">
+            <i class="las la-arrow-down arrow-down" v-if="ifAllResolved"></i>
             <img class="fence" :style="{right: fencePosition +'%'}" src="@/assets/ass15.png" alt="">
             <img class="treasure-box c-p" @click="goToCave" src="@/assets/ass16.png" alt="">
           </div>
@@ -42,7 +43,7 @@
       }
     },
     mounted() {
-      if(this.ifAllResolved) this.openCave()
+      if (this.ifAllResolved) this.openCave()
     },
     methods: {
       openCave() {
@@ -61,9 +62,9 @@
           //   })
           // }, 300)
         }, 1200)
-      }, 
+      },
       goToCave() {
-        if(this.ifAllResolved) this.$router.push('/MainRoom/caveRoom')
+        if (this.ifAllResolved) this.$router.push('/MainRoom/caveRoom')
       }
     },
     computed: {
@@ -123,6 +124,33 @@
     z-index: 0;
   }
 
+  .arrow-down {
+    position: absolute;
+    top: 11%;
+    right: 42%;
+    font-size: 78px;
+    color: var(--main-color);
+    text-shadow: 1px 1px 9px black;
+    z-index: 0;
+    animation: arrow 2s infinite;
+  }
+
+  @keyframes arrow {
+    0% {
+      top: 0%;
+    }
+
+    50% {
+      top: 11%;
+    }
+
+     100% {
+      top: 0%;
+    }
+  }
+
+
+
   @media (max-width: 767.98px) {
     .door {
       width: 100%;
@@ -146,5 +174,9 @@
       width: 75%;
       padding-top: 45%;
     }
+
+    .arrow-down {
+    font-size: 43px;
+  }
   }
 </style>

@@ -4,7 +4,7 @@
     <div class="col-md-7 f-center-top mt-md-0 mt-5 order-md-1 order-2">
       <div class="w-100 f-center instarction">
         <!-- <h3 class="text-center p-3">סדרו את המספרים שקבלתם בכל חדר בסדר הרמוז באיגרת וגלו את הצופן שיפתח את התיבה</h3> -->
-        <h3 class="text-center p-3">אלו המספרים שאספתם בחדרים אך הם מעורבבים. הקלידו אותם בסדר הנכון מימין לשמאל</h3>
+        <h3 class="text-center p-3">אלו המספרים שאספתם בחדרים אך הם מעורבבים. עליכם להקליד אותם על כפתורי התיבה בסדר הנכון. כדי למצוא את הסדר הנכון היעזרו ברמז שמשמאל</h3>
         <div class="w-100 f-center">
           <h1 class="text-center fw-bold" v-for="code in shuffleCodes" :key="code.correct">{{code.correct}}</h1>
         </div>
@@ -70,9 +70,9 @@
             <img class="w-100" src="@/assets/ass20.png" alt="">
             <div class="wrap-text text-center">
               <h2>אתם אלופים!!!</h2>
-              <h2>אכן הצופן הוא:</h2>
+              <!-- <h2>אכן הצופן הוא:</h2>
               <h4 class="fw-bold"><span class="ms-2" v-for="code in codesCorrectOrder"
-                  :key="code.correct">{{code.correct}}</span></h4>
+                  :key="code.correct">{{code.correct}}</span></h4> -->
               <h2>הצלחתם לחלץ את האיגרת מהתיבה ובכך להציל את יהודי תימן</h2>
               <h2>הזמן שלקח לכם לסיים את המשימה הוא:</h2>
               <h2 class="fw-bold">{{endTime.minutes}} דקות ו {{endTime.seconds}} שניות</h2>
@@ -111,7 +111,7 @@
     methods: {
       checkIfCorrectOrder() {
         if (this.ifCorrectOrder) {
-          this.$store.commit('endEscapeRoom')
+          this.$store.commit('endEscapeRoom');
           setTimeout(() => {
             this.$refs.scroll.scrollIntoView({
               behavior: "smooth",

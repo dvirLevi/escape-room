@@ -3,12 +3,12 @@
     <bg coverOrContain="contain" :img="require('@/assets/ass17.png')" />
     <autoAudio v-if="play" :src="srcAudio" :ifLoop="false" :maxVol="1" :increment="1" :speedOfIncrement="0" :ifMuted="$store.state.ifMuted" @end-audio="play = false" />
     <template v-if="!dataRoom.ifCheck">
-      <h4 class="mt-md-0 mt-3">לאחר סיום המשימה תוכל לבדוק כאן את הצופן</h4>
+      <h4 class="mt-md-0 mt-3">לאחר סיום המשימה תוכלו לבדוק כאן את הצופן</h4>
     </template>
     <template v-else>
       <template v-if="!dataRoom.ifResolved">
         <aInput class="mt-md-0 mt-3" v-model="code" placeholder="בדיקת צופן" :required="false" />
-        <div class="g-butt bg-gradient mt-3 h5 p-2 ps-3 pe-3" @click="checkCode">בדוק</div>
+        <div class="g-butt bg-gradient mt-3 h5 p-2 ps-3 pe-3" @click="checkCode">בדיקה</div>
       </template>
       <template v-else>
         <h4 class="mt-md-0 mt-3">הצופן של חדר מס' {{dataRoom.id}} הוא <span
@@ -49,7 +49,7 @@
           this.play = true;
           Swal.fire({
             title: 'יפה מאוד!',
-            text: "הצלחת למצוא את הצופן של חדר מס'" + this.dataRoom.id,
+            text: "הצלחתם למצוא את הצופן של חדר מס'" + this.dataRoom.id,
             timer: 900,
             icon: 'success',
           })
@@ -61,7 +61,7 @@
         } else {
           Swal.fire({
             title: 'קוד שגוי',
-            text: 'נסה שוב',
+            text: 'נסו שוב',
             timer: 3000,
             icon: 'error',
           })
@@ -85,7 +85,7 @@
           });
           setTimeout(() => {
             Swal.fire({
-              title: 'סיימת את המשימה. עכשיו נותר לך למצוא את הצופן ולבדוק אותו בשדה הטקסט',
+              title: 'סיימתם את המשימה. עכשיו נותר לכם למצוא את הצופן ולבדוק אותו בשדה הטקסט',
               timer: 6000,
               icon: 'success',
             })
