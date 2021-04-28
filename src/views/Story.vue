@@ -7,12 +7,12 @@
         <div class="row mt-5">
           <div class="col position-relative">
             <!-- <img src="@/assets/ass11.png" class="el secret-el"> -->
-            <h1 class="position-relative">שלום {{$store.state.name}}, נבחרתם להיות שליחים למשימה סודית! <img
+            <h1 class="position-relative">נבחרתם להיות שליחים למשימה סודית!<img
                 src="@/assets/ass11.png" class="el secret-el"></h1>
             <textTyping class="text-typing p-3 mb-3" :text="text" fontFamily="Miriam Libre" color="#fff"
               @end-typing="showButt = true" />
             <template v-if="showButt">
-              <button ref="button" class="g-butt bg-gradient h2 p-2 ps-3 pe-3" @click="$router.push('/MainRoom')">קדימה
+              <button ref="button" class="g-butt bg-gradient h2 p-2 ps-3 pe-3" @click="$router.push('/MainRoom')">{{$store.state.name}}, קדימה
                 למשימה!</button>
               <img src="@/assets/ass6.png" class="el journey-el">
             </template>

@@ -26,6 +26,7 @@
               </div>
               <button class="g-butt bg-gradient mt-3 h5 p-2 w-50 " type="submit">התחלה</button>
             </form>
+            <installApp class="mt-3" />
           </div>
           <div class="col-md-8 order-md-2 order-1 text-center">
           <!-- <div class="col-md-9 text-center f-center-column pt-5 pb-5 position-relative"> -->
@@ -37,11 +38,10 @@
             <img class="logo" src="@/assets/ass23.png" alt="">
           </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
           <div class="col">
-            <installApp />
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
