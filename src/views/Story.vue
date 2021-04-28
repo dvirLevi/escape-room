@@ -134,7 +134,7 @@
     }
 
     .secret-el {
-      width: 38%;
+      width: 32%;
       top: 37%;
       right: -4%;
       transform: rotate(20deg);
