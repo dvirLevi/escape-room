@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.f91b8bbf69f7c242098cd900736f0482.js"
+  "/precache-manifest.a20defdda8b73344785d28cb1461747f.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "escape_room_rambam"});
