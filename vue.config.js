@@ -12,7 +12,8 @@ module.exports = {
         // assetsVersion: "v2",
         workboxOptions: {
             // ...other Workbox options...
-            // skipWaiting: true,
+            skipWaiting: true,
+            clientsClaim: true,
             exclude: [/_redirects/],
         }
     }
