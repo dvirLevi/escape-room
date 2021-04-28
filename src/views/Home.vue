@@ -37,6 +37,11 @@
             <img class="logo" src="@/assets/ass23.png" alt="">
           </div>
         </div>
+        <div class="row">
+          <div class="col">
+            <installApp />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -46,12 +51,15 @@
 <script>
   // @ is an alias to /src
   import aInput from '@/components/aInput.vue'
+  import installApp from '@/components/installApp.vue'
+  
   // import bg from '@/components/bg.vue'
 
   export default {
     name: 'Home',
     components: {
       aInput,
+      installApp
       // bg
     },
     data() {
