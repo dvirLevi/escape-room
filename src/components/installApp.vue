@@ -1,8 +1,10 @@
 <template>
   <div class="row" v-show="ifShow">
-    <div class="col center-all border-top pt-3 mt-3">
-      <div ref="addButton" class="butt center-all p-2 c-p ">
-        <i class="fas fa-cogs m-2"></i>
+    <div class="col f-center">
+      <div ref="addButton" class="w-100 g-butt f-center p-2 c-p ">
+        <span class="material-icons-outlined m-1">
+          download_for_offline
+        </span>
         <p class="m-0">להתקנת האפליקציה לחץ כאן</p>
       </div>
     </div>
@@ -74,16 +76,5 @@
 </script>
 
 <style scoped>
-  .butt {
-    background-color: #ff6868;
-    border-radius: 5px;
-    color: #fff;
-    width: 315px;
-    font-size: 20px;
-    font-weight: 100;
-    /* margin-top: 2px; */
-  }
-
-
   @media (max-width: 767.98px) {}
 </style>
