@@ -51,14 +51,14 @@
           deferredPrompt.userChoice.then((choiceResult) => {
             if (choiceResult.outcome === 'accepted') {
               Swal.fire({
-                type: 'success',
+                icon: 'success',
                 title: 'OK',
                 text: 'האפליקציה הותקנה בהצלחה!',
                 timer: 1500
               });
             } else {
               Swal.fire({
-                type: 'error',
+                icon: 'error',
                 title: 'בוטל',
                 text: 'ההתקנה נכשלה',
                 timer: 1500

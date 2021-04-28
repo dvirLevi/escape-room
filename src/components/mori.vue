@@ -92,6 +92,7 @@
             title: 'יפה מאוד',
             timer: 1200,
             icon: 'success',
+            timerProgressBar: true,
           })
           }
         }
@@ -102,6 +103,7 @@
             text: 'נסה שוב',
             timer: 1200,
             icon: 'error',
+            timerProgressBar: true,
           })
         }
         if (this.correctAnswers.length === 7) {

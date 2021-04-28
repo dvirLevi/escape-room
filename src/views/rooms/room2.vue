@@ -1,9 +1,11 @@
 <template>
- <roomSlots :correntRoom="correntRoom" :img="require('@/assets/ass9.png')">
+  <roomSlots :correntRoom="correntRoom" :img="require('@/assets/ass9.png')">
     <template v-slot:inst>
-      <h3>השליח חייב להגיע לשטרות הכסף שגזלו עוזרי משיח השקר מן היהודים. בהם יוכל לשחד את הרשעים במידה ולא יתנו לו
-            לעבור במעברי הגבול. אבל...חייבים למיין ולהוציא את כל שטרות הרמב"ם כדי שלא ידעו שהרמב"ם הוא זה ששלח את האגרת
-            שהרי אם יוודע הדבר הרמב"ם צפוי לעונש כבד</h3>
+      <h4>השליח חייב להגיע לשטרות הכסף שגזלו עוזרי משיח השקר מן היהודים. בהם יוכל לשחד את הרשעים במידה ולא יתנו לו
+        לעבור במעברי הגבול. </h4>
+      <h4>אבל... חייבים למיין ולהוציא את כל שטרות הרמב"ם כדי שלא ידעו שהרמב"ם הוא זה ששלח את האגרת
+        שהרי אם יוודע הדבר הרמב"ם צפוי לעונש כבד</h4>
+      <h4>כדי למיין - יש ללחוץ על השטרות אותן ברצונכם להוציא</h4>
     </template>
     <template v-slot:task>
       <moneyBills :ifFreeze="correntRoom.ifCheck" @end-game="$store.commit('endTask', correntRoom.id)" />
@@ -32,9 +34,5 @@
 </script>
 
 <style scoped>
- 
-
-  @media (max-width: 767.98px) {
-  
-  }
+  @media (max-width: 767.98px) {}
 </style>

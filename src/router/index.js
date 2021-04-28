@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import store from '../store'
+// import store from '../store'
 import Home from '../views/Home.vue'
 import {
     trackRouter
@@ -7,8 +7,9 @@ import {
 
 
 const ifProvaidName = (to, from, next)=> {
-  if(!store.state.name) next({ name: 'Home' });
-  else next()
+  // if(!store.state.name) next({ name: 'Home' });
+  // else next()
+  next()
 }
 
 const routes = [

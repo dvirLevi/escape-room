@@ -54,13 +54,6 @@
             inline: "nearest"
           });
           this.fencePosition = -35;
-          // setTimeout(() => {
-          //   Swal.fire({
-          //     title: 'סיימת את המשימה. עכשיו נותר לך למצוא את הצופן ולבדוק אותו בשדה הטקסט',
-          //     timer: 6000,
-          //     icon: 'success',
-          //   })
-          // }, 300)
         }, 1200)
       },
       goToCave() {

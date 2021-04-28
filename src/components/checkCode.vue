@@ -44,27 +44,26 @@
       }
     },
     methods: {
-      checkCode() {
+      async checkCode() {
         if (+this.code === this.dataRoom.code) {
           this.srcAudio = "../audio/final-room.mp3";
           this.play = true;
-          Swal.fire({
+          this.$store.commit('completeRoom', this.dataRoom.id)
+          await Swal.fire({
             title: 'יפה מאוד!',
             text: "הצלחתם למצוא את הצופן של חדר מס'" + this.dataRoom.id,
-            timer: 900,
+            timer: 3000,
             icon: 'success',
+            timerProgressBar: true,
           })
-
-          this.$store.commit('completeRoom', this.dataRoom.id)
-          setTimeout(() => {
-            this.$router.push('/mainRoom/')
-          }, 3000)
+          this.$router.push('/mainRoom/')
         } else {
           Swal.fire({
             title: 'קוד שגוי',
             text: 'נסו שוב',
             timer: 3000,
             icon: 'error',
+            timerProgressBar: true,
           })
         }
       }
@@ -75,22 +74,21 @@
       }
     },
     watch: {
-      ifCheck: function (ifCheck) {
+      ifCheck: async function (ifCheck) {
         if (ifCheck) {
           this.srcAudio = "../audio/final-task.mp3";
           this.play = true;
-          Swal.fire({
+          await Swal.fire({
             title: 'סיימתם את המשימה. עכשיו נותר לכם למצוא את הצופן ולבדוק אותו בשדה הטקסט',
-            timer: 2000,
+            timer: 4000,
             icon: 'success',
+            timerProgressBar: true,
           })
-          setTimeout(() => {
-            this.$refs.checkCode.scrollIntoView({
-              behavior: "smooth",
-              block: "center",
-              inline: "nearest"
-            });
-          }, 2300)
+          this.$refs.checkCode.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "nearest"
+          });
         }
       }
     }

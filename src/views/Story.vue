@@ -7,14 +7,19 @@
         <div class="row mt-5">
           <div class="col position-relative">
             <!-- <img src="@/assets/ass11.png" class="el secret-el"> -->
-            <h1 class="position-relative">נבחרתם להיות שליחים למשימה סודית!<img
-                src="@/assets/ass11.png" class="el secret-el"></h1>
+            <h1 class="position-relative">נבחרתם להיות שליחים למשימה סודית!<img src="@/assets/ass11.png"
+                class="el secret-el"></h1>
             <textTyping class="text-typing p-3 mb-3" :text="text" fontFamily="Miriam Libre" color="#fff"
               @end-typing="showButt = true" />
             <template v-if="showButt">
-              <button ref="button" class="g-butt bg-gradient h2 p-2 ps-3 pe-3" @click="$router.push('/MainRoom')">{{$store.state.name}}, קדימה
-                למשימה!</button>
-              <img src="@/assets/ass6.png" class="el journey-el">
+              <div class="w-100 f-center-right">
+                <button ref="button" class="g-butt bg-gradient h2 p-2 ps-3 pe-3"
+                  @click="$router.push('/MainRoom')">{{$store.state.name}}, קדימה
+                  למשימה!</button>
+                <img src="@/assets/ass6.png" class="journey-el">
+
+              </div>
+
             </template>
           </div>
         </div>
@@ -62,7 +67,7 @@
 </script>
 
 <style scoped>
-  /* @import url('https://fonts.googleapis.com/css2?family=Miriam+Libre:wght@400;700&display=swap'); */
+  @import url('https://fonts.googleapis.com/css2?family=Miriam+Libre:wght@400;700&display=swap');
 
   h1 {
     font-family: 'Miriam Libre', sans-serif;
@@ -88,13 +93,14 @@
     width: 150px;
     bottom: -5%;
     right: 20%;
+    opacity: 0.6;
   }
 
   .secret-el {
-    width: 14%;
-    top: -107%;
-    right: -3%;
-    transform: rotate(20deg);
+    width: 197px;
+    top: -82px;
+    left: 1%;
+    transform: rotate(-25deg);
     opacity: 0.4;
     z-index: 0;
   }
@@ -134,10 +140,9 @@
     }
 
     .secret-el {
-      width: 32%;
-      top: 37%;
-      right: -4%;
-      transform: rotate(20deg);
+      width: 121px;
+      top: 0px;
+      left: 4%;
     }
   }
 </style>
