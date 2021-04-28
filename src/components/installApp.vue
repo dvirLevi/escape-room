@@ -52,14 +52,14 @@
             if (choiceResult.outcome === 'accepted') {
               Swal.fire({
                 type: 'success',
-                title: 'יופי',
+                title: 'OK',
                 text: 'האפליקציה הותקנה בהצלחה!',
                 timer: 1500
               });
             } else {
               Swal.fire({
                 type: 'error',
-                title: 'אופס...',
+                title: 'בוטל',
                 text: 'ההתקנה נכשלה',
                 timer: 1500
               });
