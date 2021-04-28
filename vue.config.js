@@ -11,10 +11,8 @@ module.exports = {
         // workboxPluginMode: 'InjectManifest',
         // assetsVersion: "v2",
         workboxOptions: {
-            // swSrc is required in InjectManifest mode.
-            // swSrc: 'src/registerServiceWorker.js',
             // ...other Workbox options...
-            skipWaiting: true,
+            // skipWaiting: true,
             exclude: [/_redirects/],
         }
     }
