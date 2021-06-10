@@ -41,7 +41,7 @@
 
 
 
-  @media (max-width: 767.98px) {
+  @media (max-width: 991.98px) {
     .social-icons i {
       margin: 5px;
       /* font-size: 21px; */

@@ -73,7 +73,7 @@
     width: 80px;
   }
 
-  @media (max-width: 767.98px) {
+  @media (max-width: 991.98px) {
     h2 {
       font-size: 40px;
     }

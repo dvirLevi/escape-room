@@ -160,5 +160,5 @@
     box-shadow: 2px 3px 20px #000000 !important;
   }
 
-  @media (max-width: 767.98px) {}
+  @media (max-width: 991.98px) {}
 </style>

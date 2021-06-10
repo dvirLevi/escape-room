@@ -133,7 +133,7 @@
 
 
 
-  @media (max-width: 767.98px) {
+  @media (max-width: 991.98px) {
     .shuffle-bill {
       width: 28%;
       /* margin-left: -7.5%; */

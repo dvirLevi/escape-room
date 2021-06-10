@@ -135,7 +135,7 @@
     width: 100%;
   }
 
-  @media (max-width: 767.98px) {
+  @media (max-width: 991.98px) {
      form {
     border-radius: 0px;
   }

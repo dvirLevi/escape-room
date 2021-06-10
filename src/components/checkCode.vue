@@ -4,7 +4,7 @@
     <autoAudio v-if="play" :src="srcAudio" :ifLoop="false" :maxVol="1" :increment="1" :speedOfIncrement="0"
       :ifMuted="$store.state.ifMuted" @end-audio="play = false" />
     <template v-if="!dataRoom.ifCheck">
-      <h4 class="mt-lg-0 mt-3">לאחר סיום המשימה תוכלו לבדוק כאן את הצופן</h4>
+      <h3 class="mt-lg-0 mt-3">לאחר סיום המשימה תוכלו לבדוק כאן את הצופן</h3>
     </template>
     <template v-else>
       <template v-if="!dataRoom.ifResolved">
@@ -12,8 +12,8 @@
         <div class="g-butt bg-gradient mt-3 h5 p-2 ps-3 pe-3" @click="checkCode">בדיקה</div>
       </template>
       <template v-else>
-        <h4 class="mt-lg-0 mt-3">הצופן של חדר מס' {{dataRoom.id}} הוא <span
-            class="main-color fw-bolder h3">{{dataRoom.code}}</span></h4>
+        <h3 class="mt-lg-0 mt-3">הצופן של חדר מס' {{dataRoom.id}} הוא <span
+            class="main-color fw-bolder h3">{{dataRoom.code}}</span></h3>
       </template>
     </template>
   </div>
@@ -105,5 +105,5 @@
     font-weight: 700;
   }
 
-  @media (max-width: 767.98px) {}
+  @media (max-width: 991.98px) {}
 </style>

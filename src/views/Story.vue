@@ -115,7 +115,7 @@
   }
 
 
-  @media (max-width: 767.98px) {
+  @media (max-width: 991.98px) {
     h1 {
       font-size: 30px;
     }

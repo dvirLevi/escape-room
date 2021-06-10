@@ -165,7 +165,7 @@
     font-size: 24px;
 }
 
-  @media (max-width: 767.98px) {
+  @media (max-width: 991.98px) {
     .wrap-grid {
       grid-template-rows: .5fr .5fr 1fr 1fr 1fr .5fr;
 

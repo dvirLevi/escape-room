@@ -138,7 +138,7 @@
     border: solid 1px rgb(0, 0, 0);
   }
 
-  @media (max-width: 767.98px) {
+  @media (max-width: 991.98px) {
     .sentence h6 {
       font-size: 10px;
     }

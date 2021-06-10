@@ -46,7 +46,7 @@
     border-radius: 8px;
   }
 
-  @media (max-width: 767.98px) {
+  @media (max-width: 991.98px) {
       .logo {
     width: 100px;
   }

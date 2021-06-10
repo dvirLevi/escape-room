@@ -76,7 +76,7 @@
 font-size: 1.1vw !important;
   }
 
-  @media (max-width: 767.98px) {
+  @media (max-width: 991.98px) {
     /* img {
       position: relative;
       width: 15%;

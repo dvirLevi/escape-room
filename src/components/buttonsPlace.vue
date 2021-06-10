@@ -26,5 +26,5 @@
   top: 0;
   right: 0;
 } */
-  @media (max-width: 767.98px) {}
+  @media (max-width: 991.98px) {}
 </style>
