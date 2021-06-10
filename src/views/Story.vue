@@ -141,7 +141,7 @@
 
     .secret-el {
       width: 121px;
-      top: 0px;
+      top: -43px;
       left: 4%;
     }
   }

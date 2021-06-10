@@ -24,19 +24,19 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/audio/victory.mp3"
   },
   {
-    "revision": "34e89261d4c73473cc37",
-    "url": "/css/about.c5781043.css"
+    "revision": "593e33ad24004b70bc81",
+    "url": "/css/about.03d89d4a.css"
   },
   {
-    "revision": "34e89261d4c73473cc37",
-    "url": "/css/about.c5781043.css.map"
+    "revision": "593e33ad24004b70bc81",
+    "url": "/css/about.03d89d4a.css.map"
   },
   {
-    "revision": "2a67a613115c3e1b3097",
+    "revision": "6f51410707ced36b2ed3",
     "url": "/css/app.3ddeaeff.css"
   },
   {
-    "revision": "2a67a613115c3e1b3097",
+    "revision": "6f51410707ced36b2ed3",
     "url": "/css/app.3ddeaeff.css.map"
   },
   {
@@ -336,24 +336,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/logo.48af489b.png"
   },
   {
-    "revision": "51867391f2ceba0e8160d6fe7d0932b3",
+    "revision": "c25e2005ae2d7f6a82245f3ec0eb26d7",
     "url": "/index.html"
   },
   {
-    "revision": "34e89261d4c73473cc37",
-    "url": "/js/about.ce000619.js"
+    "revision": "593e33ad24004b70bc81",
+    "url": "/js/about.ab18801b.js"
   },
   {
-    "revision": "34e89261d4c73473cc37",
-    "url": "/js/about.ce000619.js.map"
+    "revision": "593e33ad24004b70bc81",
+    "url": "/js/about.ab18801b.js.map"
   },
   {
-    "revision": "2a67a613115c3e1b3097",
-    "url": "/js/app.f4ed3a11.js"
+    "revision": "6f51410707ced36b2ed3",
+    "url": "/js/app.c2694681.js"
   },
   {
-    "revision": "2a67a613115c3e1b3097",
-    "url": "/js/app.f4ed3a11.js.map"
+    "revision": "6f51410707ced36b2ed3",
+    "url": "/js/app.c2694681.js.map"
   },
   {
     "revision": "72f1a5967b5f36ef971f",
