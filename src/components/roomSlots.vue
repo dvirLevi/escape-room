@@ -2,7 +2,7 @@
   <div class="row mt-3">
     <div class="col">
       <div class="row">
-        <div class="col-md-2 f-right-top main-color">
+        <div class="col-lg-2 f-right-top main-color">
           <router-link to="/MainRoom">
             <h5 class="fw-bold mt-1 f-center g-butt p-2">
               <span class="material-icons-outlined">
@@ -10,23 +10,23 @@
               </span>חזרה לחדר הראשי</h5>
           </router-link>
         </div>
-        <div class="col-md-10">
+        <div class="col-lg-10">
           <slot name="inst"></slot>
           <!-- <h3>סדרו את המפה שתנחה את השליח מתימן לספרד</h3> -->
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2 order-md-0 order-1">
+        <div class="col-lg-2 order-lg-0 order-1">
           <div class="row">
-            <div class="col-md-12 col-9">
+            <div class="col-lg-12 col-9">
               <checkCode :dataRoom="correntRoom" />
             </div>
-            <div class="col-md-12 col-3 pt-3 text-center">
+            <div class="col-lg-12 col-3 pt-3 text-center">
               <img class="w-100" :src="img">
             </div>
           </div>
         </div>
-        <div class="col-md-10 order-md-1 order-0">
+        <div class="col-lg-10 order-lg-1 order-0">
           <slot name="task"></slot>
           <!-- <puzzle :ifShuffle="correntRoom.ifResolved" @end-game="$store.commit('endTask', correntRoom.id)" /> -->
         </div>

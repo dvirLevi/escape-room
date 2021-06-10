@@ -3,7 +3,7 @@
     <div class="col">
       <div class="w-100">
         <div class="w-100 f-center-right" v-if="correctAnswers.length">
-          <div class="h5 mb-0 p-md-3 p-1 pt-3 pb-3 mb-3 text-center ans" v-for="(ans, index) in correctAnswers"
+          <div class="h5 mb-0 p-lg-3 p-1 pt-3 pb-3 mb-3 text-center ans" v-for="(ans, index) in correctAnswers"
             :key="ans.id">{{index+1}}. {{ans.ans}}</div>
         </div>
         <div class="w-100 f-center-right" v-if="answers.length">

@@ -1,7 +1,7 @@
 <template>
-  <div class="row row-cave position-relative mt-md-5 mt-3">
+  <div class="row row-cave position-relative mt-lg-5 mt-3">
     <bg class="bg" coverOrContain="cover" opacity=".7" :img="require('@/assets/ass14.png')" />
-    <div class="col-md-7 f-center-top mt-md-0 mt-5 order-md-1 order-2">
+    <div class="col-lg-7 f-center-top mt-lg-0 mt-5 order-lg-1 order-2">
       <div class="w-100 f-center instarction">
         <!-- <h3 class="text-center p-3">סדרו את המספרים שקבלתם בכל חדר בסדר הרמוז באיגרת וגלו את הצופן שיפתח את התיבה</h3> -->
         <h3 class="text-center p-3">אלו המספרים שאספתם בחדרים אך הם מעורבבים. עליכם להקליד אותם על כפתורי התיבה בסדר הנכון. כדי למצוא את הסדר הנכון היעזרו ברמז שבמגילה</h3>
@@ -23,7 +23,7 @@
 
       </div>
     </div>
-    <div class="col-md-5 f-center order-md-2 order-1">
+    <div class="col-lg-5 f-center order-lg-2 order-1">
       <div class="w-100" v-if="!endEscapeRoom">
         <h5 class="fw-bold text-center">לפניכם קלף סודי, עתיק וקדוש ובו ציטוטים מ"איגרת תימן" שנשלחה על ידי הרמב"ם. קראו
           את האיגרת, לאחר מכן הפכו

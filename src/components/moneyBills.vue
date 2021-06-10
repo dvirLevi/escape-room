@@ -10,10 +10,10 @@
           <img class="w-100" src="@/assets/moneyBills/ass1.jpg">
         </div>
       </div>
-      <div class="f-center w-100 mt-3 mb-md-5 mb-0 pe-md-5">
+      <div class="f-center w-100 mt-3 mb-lg-5 mb-0 pe-lg-5">
         <img class="select-bill" v-for="bill in selectBills" :key="bill.id" :src="bill.img" draggable="false">
       </div>
-      <div class="f-center w-100 mt-5 mb-5 pb-md-5 pb-0">
+      <div class="f-center w-100 mt-5 mb-5 pb-lg-5 pb-0">
         <img class="shuffle-bill" v-for="bill in shuffleBills" :key="bill.id" :src="bill.img"
           :style="{transform: `rotate(${getRandNum(0, 360)}deg)`}" @click="findBills(bill.id, bill.ifCorrect)"
           draggable="false">

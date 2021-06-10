@@ -10,8 +10,8 @@
 
       </div> -->
       <div class="container p-0">
-        <div class="row mt-md-5 mt-0">
-          <div class="col-md-4 order-md-1 order-2 position-relative pt-3 pb-3 mt-md-0 mt-5">
+        <div class="row mt-lg-5 mt-0">
+          <div class="col-lg-4 order-lg-1 order-2 position-relative pt-3 pb-3 mt-lg-0 mt-5">
             <!-- <img src="@/assets/ass1.png" class="el lock-el"> -->
             <form class="p-3" @submit.prevent="pushName">
               <!-- <h3 class="fw-bold">יוסי</h3> -->
@@ -28,8 +28,8 @@
             </form>
             <installApp class="mt-3" />
           </div>
-          <div class="col-md-8 order-md-2 order-1 text-center">
-          <!-- <div class="col-md-9 text-center f-center-column pt-5 pb-5 position-relative"> -->
+          <div class="col-lg-8 order-lg-2 order-1 text-center">
+          <!-- <div class="col-lg-9 text-center f-center-column pt-5 pb-5 position-relative"> -->
             <!-- <img src="@/assets/ass3.png" class="el building-el">
             <img src="@/assets/ass4.png" class="el page-el">
             <img src="@/assets/ass5.png" class="el box-el">
@@ -147,11 +147,11 @@
       font-size: 21px;
     } */
 
-    /* .col-md-8 {
+    /* .col-lg-8 {
       order: 1;
     }
 
-    .col-md-4 {
+    .col-lg-4 {
       order: 2;
     } */
 
